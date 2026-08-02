@@ -3,23 +3,27 @@
 // represented so all lanes, pills, and card variants can be exercised.
 import type { FeedItem, Project } from '../types';
 import mockIonwave from '../assets/mock-ionwave.png';
-import mockSunset from '../assets/mock-sunset.png';
 import mockPlasma from '../assets/mock-plasma.png';
+import mockSunset from '../assets/mock-sunset.png';
+import shotShdw from '../assets/shot-shdw.jpg';
+import shotBodeverse from '../assets/shot-bodeverse.jpg';
 
+// Real screenshots of the live sites (spec §3.2), captured headless.
+// Refresh: rerun the capture (see memory/notes) and replace the two jpgs.
 export const PROJECTS: Project[] = [
   {
     id: 'shdw',
     name: 'SHDW GALLERY',
-    tagline: 'archive fashion, curated drops',
+    tagline: 'archive fashion marketplace — curated drops, one of each',
     url: 'https://shdw.gallery',
-    shot: mockSunset,
+    shot: shotShdw,
   },
   {
     id: 'bodeverse',
     name: 'BODEVERSE',
-    tagline: 'the bode universe — ip, story, shop',
+    tagline: 'the bode universe — original IP, story, shop',
     url: 'https://bodeverse.com',
-    shot: mockIonwave,
+    shot: shotBodeverse,
   },
 ];
 

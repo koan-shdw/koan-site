@@ -37,7 +37,9 @@ const truncate = (s, n = 500) => {
   return t.length > n ? `${t.slice(0, n - 1)}…` : t;
 };
 
-// ---- github events ---------------------------------------------------------
+// ---- github: releases only -------------------------------------------------
+// The feed shows finished work, not process: releases, never pushes or repo
+// creations (user decision 2026-08-02).
 async function githubItems() {
   let events = [];
   try {
@@ -47,51 +49,95 @@ async function githubItems() {
     return [];
   }
   const items = [];
-  const pushes = new Map(); // "<repo>|<day>" → aggregate
-
   for (const ev of events) {
+    if (ev.type !== 'ReleaseEvent' || ev.payload?.action !== 'published') continue;
     const repo = ev.repo?.name ?? '';
     const short = repo.split('/')[1] ?? repo;
-    if (ev.type === 'ReleaseEvent' && ev.payload?.action === 'published') {
-      const r = ev.payload.release;
-      items.push({
-        id: `gh-rel-${r.id}`,
-        source: 'github',
-        date: r.published_at,
-        title: `${short} ${r.tag_name}` + (r.name && r.name !== r.tag_name ? ` — ${r.name}` : ''),
-        body: truncate(r.body),
-        link: r.html_url,
-      });
-    } else if (ev.type === 'CreateEvent' && ev.payload?.ref_type === 'repository') {
-      items.push({
-        id: `gh-new-${repo}`,
-        source: 'github',
-        date: ev.created_at,
-        title: `new repo — ${short}`,
-        body: truncate(ev.payload.description ?? ''),
-        link: `https://github.com/${repo}`,
-      });
-    } else if (ev.type === 'PushEvent') {
-      const key = `${repo}|${ev.created_at.slice(0, 10)}`;
-      const cur = pushes.get(key) ?? { date: ev.created_at, repo, short, msgs: [], count: 0 };
-      cur.count += ev.payload?.commits?.length ?? 0;
-      for (const c of ev.payload?.commits ?? []) cur.msgs.push(c.message.split('\n')[0]);
-      if (ev.created_at > cur.date) cur.date = ev.created_at;
-      pushes.set(key, cur);
-    }
-  }
-  for (const [key, p] of pushes) {
-    if (!p.count) continue;
+    const r = ev.payload.release;
     items.push({
-      id: `gh-push-${key}`,
+      id: `gh-rel-${r.id}`,
       source: 'github',
-      date: p.date,
-      title: `${p.short} — ${p.count} commit${p.count === 1 ? '' : 's'}`,
-      body: truncate([...new Set(p.msgs)].slice(0, 6).join(' · ')),
-      link: `https://github.com/${p.repo}`,
+      date: r.published_at,
+      title: `${short} ${r.tag_name}` + (r.name && r.name !== r.tag_name ? ` — ${r.name}` : ''),
+      body: truncate(r.body),
+      link: r.html_url,
     });
   }
   return items;
+}
+
+// ---- youtube: channel RSS (no API key) --------------------------------------
+const YT_CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID ?? 'UC2aWoJWpzsV2qhfJPW6F5PA'; // @koan_shdw
+
+const XML_ENT = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&apos;': "'" };
+const decodeXml = (s) => (s ?? '').replace(/&amp;|&lt;|&gt;|&quot;|&#39;|&apos;/g, (m) => XML_ENT[m]);
+
+async function youtubeItems() {
+  try {
+    const res = await fetch(`https://www.youtube.com/feeds/videos.xml?channel_id=${YT_CHANNEL_ID}`, {
+      headers: { 'user-agent': 'koan-site-feed' },
+    });
+    if (!res.ok) throw new Error(String(res.status));
+    const xml = await res.text();
+    const items = [];
+    for (const m of xml.matchAll(/<entry>([\s\S]*?)<\/entry>/g)) {
+      const e = m[1];
+      const vid = e.match(/<yt:videoId>([^<]+)/)?.[1];
+      const date = e.match(/<published>([^<]+)/)?.[1];
+      if (!vid || !date) continue;
+      items.push({
+        id: `yt-${vid}`,
+        source: 'youtube',
+        date,
+        title: decodeXml(e.match(/<title>([^<]*)/)?.[1]),
+        body: truncate(decodeXml(e.match(/<media:description>([\s\S]*?)<\/media:description>/)?.[1])),
+        media: [`https://i.ytimg.com/vi/${vid}/hqdefault.jpg`],
+        link: `https://www.youtube.com/watch?v=${vid}`,
+      });
+    }
+    return items;
+  } catch (e) {
+    console.error(`youtube feed failed (${e.message}) — skipping`);
+    return [];
+  }
+}
+
+// ---- finished public projects (repos with >=1 release) ----------------------
+const PROJ_OUT = join(ROOT, 'public', 'projects.json');
+
+async function buildProjects() {
+  let repos = [];
+  try {
+    repos = await gh(`/users/${USER}/repos?per_page=100&sort=updated`);
+  } catch (e) {
+    console.error('projects: repo list failed:', e.message);
+    return;
+  }
+  const projects = [];
+  for (const r of repos) {
+    if (r.fork || r.private) continue;
+    try {
+      const rel = await gh(`/repos/${r.full_name}/releases/latest`);
+      projects.push({
+        id: r.name,
+        name: r.name,
+        desc: r.description ?? '',
+        url: r.html_url,
+        tag: rel.tag_name,
+        date: rel.published_at,
+      });
+    } catch {
+      // no releases → not a finished project → not listed
+    }
+  }
+  projects.sort((a, b) => b.date.localeCompare(a.date));
+  const prevP = existsSync(PROJ_OUT) ? (JSON.parse(readFileSync(PROJ_OUT, 'utf8')).projects ?? []) : [];
+  if (JSON.stringify(projects) === JSON.stringify(prevP)) {
+    console.log(`projects.json unchanged (${projects.length} projects)`);
+  } else {
+    writeFileSync(PROJ_OUT, JSON.stringify({ generated: new Date().toISOString(), projects }, null, 1));
+    console.log(`projects.json: ${projects.length} finished projects`);
+  }
 }
 
 // ---- koan-posts ------------------------------------------------------------
@@ -150,8 +196,12 @@ async function postItems() {
 }
 
 // ---- merge + write ---------------------------------------------------------
-const prev = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')).items ?? []) : [];
-const fresh = [...(await postItems()), ...(await githubItems())];
+// legacy purge: push/new-repo items no longer belong in the feed
+const prev = (existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')).items ?? []) : []).filter(
+  (it) => !/^gh-(push|new)-/.test(it.id),
+);
+const fresh = [...(await postItems()), ...(await githubItems()), ...(await youtubeItems())];
+await buildProjects();
 const byId = new Map();
 for (const it of prev) byId.set(it.id, it);
 for (const it of fresh) byId.set(it.id, it); // fresh wins

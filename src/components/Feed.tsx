@@ -8,14 +8,15 @@ import { FeedCard } from './FeedCard';
 type Mode = 'masonry' | 'feed' | 'columns';
 
 const SOURCES: { id: FeedSource; label: string; empty: string }[] = [
-  { id: 'github', label: 'github', empty: 'no repo activity yet — pushes and releases land here.' },
-  { id: 'instagram', label: 'instagram', empty: 'no posts yet — next sync brings them in.' },
+  { id: 'github', label: 'github', empty: 'no releases yet — finished versions land here.' },
+  { id: 'instagram', label: 'instagram', empty: 'no posts yet — instagram wires up last.' },
   { id: 'x', label: 'x', empty: 'nothing here yet — tweets get added by hand, one at a time.' },
+  { id: 'youtube', label: 'youtube', empty: 'no videos yet — uploads sync from the channel.' },
   { id: 'claude', label: 'claude', empty: 'no conversations published yet — “post that” puts one here.' },
 ];
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
-  { id: 'masonry', label: 'grid', hint: 'masonry — packed overview' },
+  { id: 'masonry', label: 'grid', hint: 'square grid — the overview' },
   { id: 'feed', label: 'feed', hint: 'one column, reading order' },
   { id: 'columns', label: 'cols', hint: 'one lane per platform' },
 ];
@@ -46,6 +47,13 @@ export function Feed({ items }: { items: FeedItem[] }) {
   );
   const shown = filter ? sorted.filter((i) => i.source === filter) : sorted;
 
+  const counts = useMemo(() => {
+    const c = {} as Record<FeedSource, number>;
+    for (const s of SOURCES) c[s.id] = 0;
+    for (const i of sorted) c[i.source] = (c[i.source] ?? 0) + 1;
+    return c;
+  }, [sorted]);
+
   const lanes = useMemo(
     () =>
       SOURCES.filter((s) => !filter || s.id === filter).map((s) => ({
@@ -65,11 +73,18 @@ export function Feed({ items }: { items: FeedItem[] }) {
           {SOURCES.map((s) => (
             <button
               key={s.id}
-              className={`pill ${filter === s.id ? 'on' : ''}`}
+              className={`pill ${filter === s.id ? 'on' : ''} ${counts[s.id] ? '' : 'dim'}`}
               onClick={() => setFilter((f) => (f === s.id ? null : s.id))}
-              title={filter === s.id ? 'click again for everything' : `show only ${s.label}`}
+              title={
+                filter === s.id
+                  ? 'click again for everything'
+                  : counts[s.id]
+                    ? `show only ${s.label}`
+                    : s.empty
+              }
             >
               {s.label}
+              {counts[s.id] > 0 && <span className="pill-n">{counts[s.id]}</span>}
             </button>
           ))}
         </div>
@@ -105,8 +120,14 @@ export function Feed({ items }: { items: FeedItem[] }) {
         </div>
       ) : shown.length === 0 ? (
         <p className="empty">{emptyFor(filter)}</p>
+      ) : mode === 'masonry' ? (
+        <div className="sqgrid">
+          {shown.map((i) => (
+            <FeedCard key={i.id} item={i} tile />
+          ))}
+        </div>
       ) : (
-        <div className={mode === 'masonry' ? 'masonry' : 'feedcol'}>
+        <div className="feedcol">
           {shown.map((i) => (
             <div key={i.id} className="m-item">
               <FeedCard item={i} />

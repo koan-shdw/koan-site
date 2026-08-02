@@ -1,24 +1,31 @@
-// Identity layer (spec §3.1) — name, title, two-line bio, links row.
-// Mono chrome chips per bible ch.02; edit LINKS in one place.
+// Identity layer (spec §3.1) — name, real name, role, contact links.
+// Contact lives HERE and only here; the feed pills below are content filters,
+// never contact. Edit LINKS in one place.
 const LINKS = [
-  { label: 'email', href: 'mailto:alexanderhughmitchell@gmail.com', hint: 'write to koan' },
-  { label: 'instagram', href: 'https://instagram.com/koan', hint: 'art + drops' },
-  { label: 'github', href: 'https://github.com/koan', hint: 'the apps' },
-  { label: 'x', href: 'https://x.com/koan', hint: 'announcements' },
+  { label: 'email', href: 'mailto:alex@shdw.gallery', hint: 'write to koan' },
+  { label: 'ig · koan.shdw', href: 'https://instagram.com/koan.shdw', hint: 'personal' },
+  { label: 'ig · shdw.gallery', href: 'https://instagram.com/shdw.gallery', hint: 'the gallery' },
+  { label: 'x', href: 'https://x.com/koan_shdw', hint: 'announcements' },
+  { label: 'youtube', href: 'https://youtube.com/@koan_shdw', hint: 'video' },
+  { label: 'github', href: 'https://github.com/koan-shdw', hint: 'the tools' },
 ];
 
 export function Header() {
   return (
     <header className="id">
       <div className="id-name">KOAN</div>
+      <div className="id-real">Alexander Mitchell</div>
       <div className="id-title">ART PRODUCER</div>
-      <p className="id-bio">
-        archive fashion, original IP, and software that makes art. everything below is one
-        feed — every platform, one card.
-      </p>
-      <nav className="id-links" aria-label="links">
+      <nav className="id-links" aria-label="contact">
         {LINKS.map((l) => (
-          <a key={l.label} className="chip" href={l.href} title={l.hint} target={l.href.startsWith('mailto') ? undefined : '_blank'} rel="noreferrer">
+          <a
+            key={l.label}
+            className="chip"
+            href={l.href}
+            title={l.hint}
+            target={l.href.startsWith('mailto') ? undefined : '_blank'}
+            rel="noreferrer"
+          >
             {l.label}
           </a>
         ))}

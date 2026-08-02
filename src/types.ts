@@ -2,7 +2,17 @@
 // Milestone 3's Railway service must serve exactly this; the UI never learns
 // platform-specific shapes.
 
-export type FeedSource = 'github' | 'instagram' | 'x' | 'claude';
+export type FeedSource = 'github' | 'instagram' | 'x' | 'youtube' | 'claude';
+
+/** A finished public repo (has at least one release) — the small projects grid. */
+export interface SmallProject {
+  id: string;
+  name: string;
+  desc: string;
+  url: string;
+  tag: string;
+  date: string;
+}
 
 export interface FeedItem {
   id: string;

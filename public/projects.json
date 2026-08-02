@@ -1,0 +1,21 @@
+{
+ "generated": "2026-08-02T08:56:44.563Z",
+ "projects": [
+  {
+   "id": "koan-ansi",
+   "name": "koan-ansi",
+   "desc": "Image & video to authentic BBS-scene ANSI art — CP437 blocks, DOS 16 colors, half-block trick, Ansimation (.ansim) format. CLI + zero-backend web tool.",
+   "url": "https://github.com/koan-shdw/koan-ansi",
+   "tag": "v1.0.0",
+   "date": "2026-08-02T08:11:17Z"
+  },
+  {
+   "id": "video-dancer",
+   "name": "video-dancer",
+   "desc": "",
+   "url": "https://github.com/koan-shdw/video-dancer",
+   "tag": "v0.7.2",
+   "date": "2026-08-01T14:22:13Z"
+  }
+ ]
+}
