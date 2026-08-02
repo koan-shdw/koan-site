@@ -159,6 +159,12 @@ const items = [...byId.values()]
   .filter((it) => it.date && it.source)
   .sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
-mkdirSync(dirname(OUT), { recursive: true });
-writeFileSync(OUT, JSON.stringify({ generated: new Date().toISOString(), items }, null, 1));
-console.log(`feed.json: ${items.length} items (${fresh.length} fresh, ${prev.length} carried)`);
+// idempotent: identical items → leave the file untouched (no timestamp churn,
+// so the workflow's commit step no-ops on quiet hours)
+if (JSON.stringify(items) === JSON.stringify(prev)) {
+  console.log(`feed.json unchanged (${items.length} items)`);
+} else {
+  mkdirSync(dirname(OUT), { recursive: true });
+  writeFileSync(OUT, JSON.stringify({ generated: new Date().toISOString(), items }, null, 1));
+  console.log(`feed.json: ${items.length} items (${fresh.length} fresh, ${prev.length} carried)`);
+}

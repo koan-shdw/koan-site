@@ -26,7 +26,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
+      # always operate on the branch head — a rerun of an old run must not
+      # rebuild from a stale SHA and then fight the feed commits on main
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -46,6 +50,7 @@ jobs:
           git add public/feed.json
           if ! git diff --cached --quiet; then
             git commit -m "feed: refresh"
+            git pull --rebase origin main
             git push
           fi
 
