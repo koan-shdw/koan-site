@@ -12,6 +12,8 @@ export interface SmallProject {
   url: string;
   tag: string;
   date: string;
+  /** product shot (curated) or repo-card fallback */
+  img?: string;
 }
 
 export interface FeedItem {

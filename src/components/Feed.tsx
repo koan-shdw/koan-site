@@ -68,7 +68,8 @@ export function Feed({ items }: { items: FeedItem[] }) {
     src ? SOURCES.find((s) => s.id === src)!.empty : 'nothing yet — the feed fills on first sync.';
 
   return (
-    <section className="feed">
+    <section className="feed sec">
+      <h2 className="sec-head">feed — every platform, one stream</h2>
       <div className="feed-bar">
         <div className="pills" role="group" aria-label="filter by source">
           {SOURCES.map((s) => (

@@ -39,23 +39,28 @@ export default function App() {
       <div className="site">
         <Header />
         <main>
-          <section className="projects" aria-label="main projects">
-            {PROJECTS.map((p) => (
-              <ProjectCard key={p.id} p={p} />
-            ))}
+          <section className="sec" aria-label="main projects">
+            <h2 className="sec-head">main projects</h2>
+            <div className="projects">
+              {PROJECTS.map((p) => (
+                <ProjectCard key={p.id} p={p} />
+              ))}
+            </div>
           </section>
           {minis && (
-            <section className="minis" aria-label="finished public projects">
-              <button
-                className="minis-head"
-                onClick={toggleMinis}
-                title={minisOpen ? 'collapse the grid' : 'expand the grid'}
-                aria-expanded={minisOpen}
-              >
-                <span className="minis-caret">{minisOpen ? '▾' : '▸'}</span>
-                public tools · finished builds
-                <span className="minis-n">{minis.length}</span>
-              </button>
+            <section className="sec" aria-label="finished public projects">
+              <h2 className="sec-head as-btn">
+                <button
+                  className="sec-toggle"
+                  onClick={toggleMinis}
+                  title={minisOpen ? 'collapse the grid' : 'expand the grid'}
+                  aria-expanded={minisOpen}
+                >
+                  <span className="sec-caret">{minisOpen ? '▾' : '▸'}</span>
+                  public tools
+                  <span className="sec-n">{minis.length}</span>
+                </button>
+              </h2>
               {minisOpen && (
                 <div className="minis-grid">
                   {minis.map((p) => (
@@ -67,11 +72,14 @@ export default function App() {
                       rel="noreferrer"
                       title={`${p.tag} · open on github`}
                     >
-                      <span className="mini-name">{p.name}</span>
-                      {p.desc && <span className="mini-desc">{p.desc}</span>}
-                      <span className="mini-meta">
-                        <span className="mini-tag">{p.tag}</span>
-                        <span>{p.date.slice(0, 10)}</span>
+                      {p.img && <img className="mini-img" src={p.img} alt="" loading="lazy" />}
+                      <span className="mini-body">
+                        <span className="mini-name">{p.name}</span>
+                        {p.desc && <span className="mini-desc">{p.desc}</span>}
+                        <span className="mini-meta">
+                          <span className="mini-tag">{p.tag}</span>
+                          <span>{p.date.slice(0, 10)}</span>
+                        </span>
                       </span>
                     </a>
                   ))}

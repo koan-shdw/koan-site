@@ -51,6 +51,16 @@ const stripMd = (s) =>
     .replace(/\s{2,}/g, ' ')
     .trim();
 
+// Card image for a repo: curated product shot when one exists in
+// public/media/tools/, github's repo card only as the fallback.
+function repoImage(fullName) {
+  const short = fullName.split('/')[1] ?? fullName;
+  const shot = join(ROOT, 'public', 'media', 'tools', `${short}.png`);
+  return existsSync(shot)
+    ? `media/tools/${short}.png`
+    : `https://opengraph.githubassets.com/1/${fullName}`;
+}
+
 // ---- github: releases only -------------------------------------------------
 // The feed shows finished work, not process: releases, never pushes or repo
 // creations (user decision 2026-08-02).
@@ -72,10 +82,15 @@ async function githubItems() {
       id: `gh-rel-${r.id}`,
       source: 'github',
       date: r.published_at,
-      title: `${short} ${r.tag_name}` + (r.name && r.name !== r.tag_name ? ` — ${r.name}` : ''),
+      // release name says it best ("KOAN.ansi 1.0.0") — but a bare version
+      // number gets the project name prefixed ("video-dancer 0.7.2")
+      title: (() => {
+        const nm = (r.name ?? '').trim();
+        const bareVersion = /^v?\d[\d.\-a-z]*$/i.test(nm);
+        return nm && !bareVersion ? nm : `${short} ${nm || r.tag_name}`;
+      })(),
       body: truncate(stripMd(r.body)),
-      // github's auto-generated repo card — every github item carries an image
-      media: [`https://opengraph.githubassets.com/1/${repo}`],
+      media: [repoImage(repo)],
       link: r.html_url,
     });
   }
@@ -141,6 +156,7 @@ async function buildProjects() {
         url: r.html_url,
         tag: rel.tag_name,
         date: rel.published_at,
+        img: repoImage(r.full_name),
       });
     } catch {
       // no releases → not a finished project → not listed
@@ -236,7 +252,7 @@ const keepRel = new Set([...newestRel.values()].map((it) => it.id));
 items = items.filter((it) => !it.id.startsWith('gh-rel-') || keepRel.has(it.id));
 for (const [repo, it] of newestRel) {
   if (keepRel.has(it.id) && !it.media?.length && repo) {
-    it.media = [`https://opengraph.githubassets.com/1/${repo}`];
+    it.media = [repoImage(repo)];
   }
 }
 

@@ -1,14 +1,14 @@
 {
- "generated": "2026-08-02T12:13:44.828Z",
+ "generated": "2026-08-02T12:32:07.143Z",
  "items": [
   {
    "id": "gh-rel-363734131",
    "source": "github",
    "date": "2026-08-02T08:11:17Z",
-   "title": "koan-ansi v1.0.0 — KOAN.ansi 1.0.0",
+   "title": "KOAN.ansi 1.0.0",
    "body": "Image & video → authentic BBS-scene ANSI art. First public release. classic (pure CP437, real .ans + SAUCE, iCE colors) and extended (unicode quarter blocks) charsets — pick per render, or --charset both for a side-by-side compare vga16 (authentic DOS 16) and truecolor palettes Ansimation (.ansim) — the animated format: packed cell grids + fps, one JSON payload a web player loops (spec in the README) CLI (koan-ansi) + zero-backend web tool (attached as a single offline HTML file — open it in an…",
    "media": [
-    "https://opengraph.githubassets.com/1/koan-shdw/koan-ansi"
+    "media/tools/koan-ansi.png"
    ],
    "link": "https://github.com/koan-shdw/koan-ansi/releases/tag/v1.0.0"
   },
@@ -16,7 +16,7 @@
    "id": "gh-rel-363542807",
    "source": "github",
    "date": "2026-08-01T14:22:13Z",
-   "title": "video-dancer v0.7.2 — 0.7.2",
+   "title": "video-dancer 0.7.2",
    "body": "",
    "media": [
     "https://opengraph.githubassets.com/1/koan-shdw/video-dancer"
@@ -27,7 +27,7 @@
    "id": "gh-rel-349955081",
    "source": "github",
    "date": "2026-07-07T00:21:48Z",
-   "title": "KOAN-IMG v2.0.0-beta.3 — KOAN.img 2.0.0-beta.3",
+   "title": "KOAN.img 2.0.0-beta.3",
    "body": "Windows installer (unsigned beta). On first launch SmartScreen warns: click More info then Run anyway. The app downloads its AI runtime (~2.7 GB) once on first run. Requires an NVIDIA CUDA GPU.",
    "media": [
     "https://opengraph.githubassets.com/1/koan-shdw/KOAN-IMG"

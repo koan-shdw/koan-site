@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FeedItem } from '../types';
+import { Icon } from './icons';
 
 // The one shared card (spec §3.3) — every source renders through this, only
 // the layout container around it changes (§4).
 
-const BADGE: Record<FeedItem['source'], { tag: string; name: string }> = {
-  github: { tag: 'GH', name: 'github' },
-  instagram: { tag: 'IG', name: 'instagram' },
-  x: { tag: 'X', name: 'x' },
-  youtube: { tag: 'YT', name: 'youtube' },
-  claude: { tag: 'CL', name: 'claude' },
+const SOURCE_NAME: Record<FeedItem['source'], string> = {
+  github: 'github',
+  instagram: 'instagram',
+  x: 'x',
+  youtube: 'youtube',
+  claude: 'claude',
 };
 
 export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolean }) {
@@ -32,8 +33,8 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         {hasMedia && <img className="tile-img" src={item.media![0]} alt="" loading="lazy" />}
         {hasMedia && <div className="tile-scrim" />}
         <div className="tile-top">
-          <span className="badge" title={BADGE[item.source].name}>
-            {BADGE[item.source].tag}
+          <span className="badge" title={SOURCE_NAME[item.source]}>
+            <Icon name={item.source} size={13} />
           </span>
           <span className="card-date">{item.date.slice(0, 10)}</span>
           {hasJa && (
@@ -64,7 +65,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
-                title={`open on ${BADGE[item.source].name}`}
+                title={`open on ${SOURCE_NAME[item.source]}`}
               >
                 open ↗
               </a>
@@ -96,8 +97,9 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   return (
     <article className={`card post src-${item.source}`}>
       <div className="card-top">
-        <span className="badge" title={BADGE[item.source].name}>
-          {BADGE[item.source].tag}
+        <span className="src-name">
+          <Icon name={item.source} size={14} />
+          {SOURCE_NAME[item.source]}
         </span>
         <span className="card-date">{item.date.slice(0, 10)}</span>
         {hasJa && (
@@ -123,7 +125,13 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
       {hasMedia ? (
         <>
           <div className="post-media">
-            <img src={item.media![0]} alt="" loading="lazy" />
+            {item.link ? (
+              <a href={item.link} target="_blank" rel="noreferrer" title={`open on ${SOURCE_NAME[item.source]}`}>
+                <img src={item.media![0]} alt="" loading="lazy" />
+              </a>
+            ) : (
+              <img src={item.media![0]} alt="" loading="lazy" />
+            )}
           </div>
           {title && <h3 className="card-title">{title}</h3>}
           {body && (
@@ -171,7 +179,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
             </span>
           ))}
           {item.link && (
-            <a className="card-link" href={item.link} target="_blank" rel="noreferrer" title={`open on ${BADGE[item.source].name}`}>
+            <a className="card-link" href={item.link} target="_blank" rel="noreferrer" title={`open on ${SOURCE_NAME[item.source]}`}>
               open ↗
             </a>
           )}
