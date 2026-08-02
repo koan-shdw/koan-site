@@ -1,0 +1,27 @@
+{
+  "name": "koan-site",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "art:sources": "node tools/gen-placeholders.mjs",
+    "art:convert": "node tools/img2ansi.mjs tools/samples/sunset-grid.png --id sunset-grid --title \"SUNSET.GRID\" --cols 120 -o src/library/sunset-grid.json && node tools/img2ansi.mjs tools/samples/ionwave.png --id ionwave --title \"IONWAVE\" --cols 120 -o src/library/ionwave.json",
+    "art:plasma": "node tools/gen-plasma.mjs",
+    "art:all": "npm run art:sources && npm run art:convert && npm run art:plasma"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^5.0.0",
+    "sharp": "^0.34.2",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.0"
+  }
+}
