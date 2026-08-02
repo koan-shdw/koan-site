@@ -132,8 +132,14 @@ a {
 
 /* ── identity ───────────────────────────────────────────────────────── */
 
+/* identity on glass — the UI layer never fights the ANSI raw */
 .id {
   margin: 8px 0 24px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+  backdrop-filter: blur(12px) saturate(1.1);
 }
 
 .id-name {
@@ -421,6 +427,11 @@ a {
   border-radius: 4px;
 }
 
+/* github repo cards are 2:1 — show them whole, no crop, no bands */
+.post.src-github .post-media img {
+  aspect-ratio: 2 / 1;
+}
+
 .post-square {
   aspect-ratio: 1;
   display: flex;
@@ -448,6 +459,19 @@ a {
 
 .card-body.clamp.sq {
   -webkit-line-clamp: 11;
+}
+
+/* short text = the artwork: big centered type (insta text-post move) */
+.card-body.big {
+  font: 600 22px/1.4 var(--sans);
+  color: var(--txt-hi);
+  text-align: center;
+  text-wrap: balance;
+}
+
+.tile-body.big {
+  font: 600 17px/1.4 var(--sans);
+  color: var(--txt-hi);
 }
 
 .card-body.clamp.cap {
@@ -836,5 +860,18 @@ a {
   }
   .modes {
     display: none; /* mobile is always the single feed (spec §4) */
+  }
+  /* pills scroll sideways instead of clipping */
+  .pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    scrollbar-width: none;
+  }
+  .pills::-webkit-scrollbar {
+    display: none;
+  }
+  .pill {
+    flex: 0 0 auto;
   }
 }

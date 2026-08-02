@@ -26,8 +26,9 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   // the square; without media the text itself fills the tile.
   if (tile) {
     const hasMedia = Boolean(item.media?.length);
+    const big = !hasMedia && body.length < 130;
     return (
-      <article className={`card tile ${hasMedia ? 'tm' : 'tt'}`}>
+      <article className={`card tile src-${item.source} ${hasMedia ? 'tm' : 'tt'}`}>
         {hasMedia && <img className="tile-img" src={item.media![0]} alt="" loading="lazy" />}
         {hasMedia && <div className="tile-scrim" />}
         <div className="tile-top">
@@ -48,7 +49,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         </div>
         <div className="tile-main">
           {title && <h3 className="tile-title">{title}</h3>}
-          {!hasMedia && <p className="tile-body">{body}</p>}
+          {!hasMedia && <p className={`tile-body ${big ? 'big' : ''}`}>{body}</p>}
         </div>
         {(item.tags?.length || item.link) && (
           <div className="tile-foot">
@@ -88,10 +89,12 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   }, [expanded, body]);
 
   // Feed mode: insta-post format — header row, square media (or the text
-  // itself filling the square), caption underneath.
+  // itself filling the square), caption underneath. Short text = big type,
+  // the insta text-post move.
   const hasMedia = Boolean(item.media?.length);
+  const big = !hasMedia && body.length < 130;
   return (
-    <article className="card post">
+    <article className={`card post src-${item.source}`}>
       <div className="card-top">
         <span className="badge" title={BADGE[item.source].name}>
           {BADGE[item.source].tag}
@@ -144,7 +147,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         <>
           <div className={`post-square ${expanded ? 'open' : ''}`}>
             {title && <h3 className="post-sq-title">{title}</h3>}
-            <p ref={bodyRef} className={`card-body ${expanded ? '' : 'clamp sq'}`}>
+            <p ref={bodyRef} className={`card-body ${big ? 'big' : ''} ${expanded ? '' : 'clamp sq'}`}>
               {body}
             </p>
           </div>

@@ -37,6 +37,20 @@ const truncate = (s, n = 500) => {
   return t.length > n ? `${t.slice(0, n - 1)}…` : t;
 };
 
+// release notes arrive as markdown — the feed shows plain text
+const stripMd = (s) =>
+  (s ?? '')
+    .replace(/```[\s\S]*?```/g, ' ')
+    .replace(/`([^`]*)`/g, '$1')
+    .replace(/\*\*([^*]*)\*\*/g, '$1')
+    .replace(/__([^_]*)__/g, '$1')
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*[-*]\s+/gm, '')
+    .replace(/\[([^\]]*)\]\(([^)]*)\)/g, '$1')
+    .replace(/\r?\n+/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+
 // ---- github: releases only -------------------------------------------------
 // The feed shows finished work, not process: releases, never pushes or repo
 // creations (user decision 2026-08-02).
@@ -59,7 +73,9 @@ async function githubItems() {
       source: 'github',
       date: r.published_at,
       title: `${short} ${r.tag_name}` + (r.name && r.name !== r.tag_name ? ` — ${r.name}` : ''),
-      body: truncate(r.body),
+      body: truncate(stripMd(r.body)),
+      // github's auto-generated repo card — every github item carries an image
+      media: [`https://opengraph.githubassets.com/1/${repo}`],
       link: r.html_url,
     });
   }
@@ -205,9 +221,26 @@ await buildProjects();
 const byId = new Map();
 for (const it of prev) byId.set(it.id, it);
 for (const it of fresh) byId.set(it.id, it); // fresh wins
-const items = [...byId.values()]
-  .filter((it) => it.date && it.source)
-  .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+let items = [...byId.values()].filter((it) => it.date && it.source);
+
+// one card per project: keep only the newest release per repo, and make sure
+// every kept github card has its repo-card image
+const newestRel = new Map(); // repo → item
+for (const it of items) {
+  if (!it.id.startsWith('gh-rel-')) continue;
+  const repo = (it.link ?? '').split('/').slice(3, 5).join('/');
+  const cur = newestRel.get(repo);
+  if (!cur || String(it.date) > String(cur.date)) newestRel.set(repo, it);
+}
+const keepRel = new Set([...newestRel.values()].map((it) => it.id));
+items = items.filter((it) => !it.id.startsWith('gh-rel-') || keepRel.has(it.id));
+for (const [repo, it] of newestRel) {
+  if (keepRel.has(it.id) && !it.media?.length && repo) {
+    it.media = [`https://opengraph.githubassets.com/1/${repo}`];
+  }
+}
+
+items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
 // idempotent: identical items → leave the file untouched (no timestamp churn,
 // so the workflow's commit step no-ops on quiet hours)
