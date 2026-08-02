@@ -403,8 +403,55 @@ a {
 }
 
 .feedcol {
-  max-width: 640px;
+  max-width: 520px; /* insta-column proportions */
   margin: 0 auto;
+}
+
+/* insta-post card (feed mode) */
+.post-media {
+  margin-top: 8px;
+}
+
+.post-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.post-square {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--field);
+  overflow: hidden;
+}
+
+.post-square.open {
+  aspect-ratio: auto; /* 'more' releases the square */
+}
+
+.post-sq-title {
+  font: 600 17px var(--sans);
+  color: var(--txt-hi);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.card-body.clamp.sq {
+  -webkit-line-clamp: 11;
+}
+
+.card-body.clamp.cap {
+  -webkit-line-clamp: 3; /* caption under media stays short */
 }
 
 .lanes {
@@ -778,8 +825,11 @@ a {
   .projects {
     grid-template-columns: 1fr;
   }
+  .minis-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid stays a grid on phones */
+  }
   .sqgrid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: 1fr; /* grid view degrades to the single column */
   }
   .lanes {
     grid-template-columns: 1fr;

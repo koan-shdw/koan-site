@@ -87,8 +87,11 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
     return () => ro.disconnect();
   }, [expanded, body]);
 
+  // Feed mode: insta-post format — header row, square media (or the text
+  // itself filling the square), caption underneath.
+  const hasMedia = Boolean(item.media?.length);
   return (
-    <article className="card">
+    <article className="card post">
       <div className="card-top">
         <span className="badge" title={BADGE[item.source].name}>
           {BADGE[item.source].tag}
@@ -114,27 +117,47 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         )}
       </div>
 
-      {title && <h3 className="card-title">{title}</h3>}
-
-      <p ref={bodyRef} className={`card-body ${expanded ? '' : 'clamp'}`}>
-        {body}
-      </p>
-      {(overflows || expanded) && (
-        <button
-          className="card-more"
-          onClick={() => setExpanded((v) => !v)}
-          title={expanded ? 'collapse' : 'read the whole thing'}
-        >
-          {expanded ? 'less ▴' : 'more ▾'}
-        </button>
-      )}
-
-      {item.media && item.media.length > 0 && (
-        <div className={`card-media ${item.media.length > 1 ? 'multi' : ''}`}>
-          {item.media.map((m, i) => (
-            <img key={i} src={m} alt="" loading="lazy" />
-          ))}
-        </div>
+      {hasMedia ? (
+        <>
+          <div className="post-media">
+            <img src={item.media![0]} alt="" loading="lazy" />
+          </div>
+          {title && <h3 className="card-title">{title}</h3>}
+          {body && (
+            <>
+              <p ref={bodyRef} className={`card-body ${expanded ? '' : 'clamp cap'}`}>
+                {body}
+              </p>
+              {(overflows || expanded) && (
+                <button
+                  className="card-more"
+                  onClick={() => setExpanded((v) => !v)}
+                  title={expanded ? 'collapse' : 'read the whole thing'}
+                >
+                  {expanded ? 'less ▴' : 'more ▾'}
+                </button>
+              )}
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <div className={`post-square ${expanded ? 'open' : ''}`}>
+            {title && <h3 className="post-sq-title">{title}</h3>}
+            <p ref={bodyRef} className={`card-body ${expanded ? '' : 'clamp sq'}`}>
+              {body}
+            </p>
+          </div>
+          {(overflows || expanded) && (
+            <button
+              className="card-more"
+              onClick={() => setExpanded((v) => !v)}
+              title={expanded ? 'collapse' : 'read the whole thing'}
+            >
+              {expanded ? 'less ▴' : 'more ▾'}
+            </button>
+          )}
+        </>
       )}
 
       {(item.tags?.length || item.link) && (

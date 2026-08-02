@@ -5,7 +5,7 @@ import { FeedCard } from './FeedCard';
 // Views (spec §4): desktop gets masonry / feed / columns behind a toggle;
 // mobile is always one column with the pills as filters. Same card everywhere.
 
-type Mode = 'masonry' | 'feed' | 'columns';
+type Mode = 'grid' | 'feed' | 'columns';
 
 const SOURCES: { id: FeedSource; label: string; empty: string }[] = [
   { id: 'github', label: 'github', empty: 'no releases yet — finished versions land here.' },
@@ -16,15 +16,16 @@ const SOURCES: { id: FeedSource; label: string; empty: string }[] = [
 ];
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
-  { id: 'masonry', label: 'grid', hint: 'square grid — the overview' },
-  { id: 'feed', label: 'feed', hint: 'one column, reading order' },
+  { id: 'feed', label: 'feed', hint: 'one column, reading order — the default' },
+  { id: 'grid', label: 'grid', hint: 'square thumbnails — the overview' },
   { id: 'columns', label: 'cols', hint: 'one lane per platform' },
 ];
 
 export function Feed({ items }: { items: FeedItem[] }) {
   const [mode, setMode] = useState<Mode>(() => {
     const saved = localStorage.getItem('koan.feedmode');
-    return saved === 'feed' || saved === 'columns' ? saved : 'masonry';
+    // feed is THE default; old saved 'masonry' migrates there too
+    return saved === 'grid' || saved === 'columns' ? saved : 'feed';
   });
   const [filter, setFilter] = useState<FeedSource | null>(null);
 
@@ -120,7 +121,7 @@ export function Feed({ items }: { items: FeedItem[] }) {
         </div>
       ) : shown.length === 0 ? (
         <p className="empty">{emptyFor(filter)}</p>
-      ) : mode === 'masonry' ? (
+      ) : mode === 'grid' ? (
         <div className="sqgrid">
           {shown.map((i) => (
             <FeedCard key={i.id} item={i} tile />

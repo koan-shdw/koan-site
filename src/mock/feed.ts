@@ -14,14 +14,14 @@ export const PROJECTS: Project[] = [
   {
     id: 'shdw',
     name: 'SHDW GALLERY',
-    tagline: 'archive fashion marketplace — curated drops, one of each',
+    tagline: "producing projects with the world's leading artists",
     url: 'https://shdw.gallery',
     shot: shotShdw,
   },
   {
     id: 'bodeverse',
     name: 'BODEVERSE',
-    tagline: 'the bode universe — original IP, story, shop',
+    tagline: 'honouring the cultural legacy of Vaughn and Mark Bode',
     url: 'https://bodeverse.com',
     shot: shotBodeverse,
   },
