@@ -7,31 +7,24 @@ import { FeedCard } from './FeedCard';
 
 type Mode = 'grid' | 'feed' | 'columns';
 
-const SOURCES: { id: FeedSource; label: string; empty: string }[] = [
-  { id: 'github', label: 'github', empty: 'no releases yet — finished versions land here.' },
-  { id: 'instagram', label: 'instagram', empty: 'no posts yet — instagram wires up last.' },
-  { id: 'x', label: 'x', empty: 'nothing here yet — tweets get added by hand, one at a time.' },
-  { id: 'youtube', label: 'youtube', empty: 'no videos yet — uploads sync from the channel.' },
-  { id: 'claude', label: 'claude', empty: 'no conversations published yet — “post that” puts one here.' },
+const SOURCES: { id: FeedSource; label: string }[] = [
+  { id: 'github', label: 'github' },
+  { id: 'instagram', label: 'instagram' },
+  { id: 'x', label: 'x' },
+  { id: 'youtube', label: 'youtube' },
+  { id: 'claude', label: 'notes' },
 ];
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
-  { id: 'feed', label: 'feed', hint: 'one column, reading order — the default' },
-  { id: 'grid', label: 'grid', hint: 'square thumbnails — the overview' },
+  { id: 'grid', label: 'grid', hint: 'square thumbnails, the default' },
+  { id: 'feed', label: 'feed', hint: 'one column, reading order' },
   { id: 'columns', label: 'cols', hint: 'one lane per platform' },
 ];
 
 export function Feed({ items }: { items: FeedItem[] }) {
-  const [mode, setMode] = useState<Mode>(() => {
-    const saved = localStorage.getItem('koan.feedmode');
-    // feed is THE default; old saved 'masonry' migrates there too
-    return saved === 'grid' || saved === 'columns' ? saved : 'feed';
-  });
+  // grid always opens first (user decision 2026-08-02); the toggle is per-visit
+  const [mode, setMode] = useState<Mode>('grid');
   const [filter, setFilter] = useState<FeedSource | null>(null);
-
-  useEffect(() => {
-    localStorage.setItem('koan.feedmode', mode);
-  }, [mode]);
 
   // Esc backs out one layer: an active filter clears first (bible grammar).
   useEffect(() => {
@@ -64,26 +57,25 @@ export function Feed({ items }: { items: FeedItem[] }) {
     [sorted, filter],
   );
 
-  const emptyFor = (src: FeedSource | null) =>
-    src ? SOURCES.find((s) => s.id === src)!.empty : 'nothing yet — the feed fills on first sync.';
-
   return (
     <section className="feed sec">
-      <h2 className="sec-head">feed — every platform, one stream</h2>
+      <h2 className="sec-head">stream</h2>
       <div className="feed-bar">
         <div className="pills" role="group" aria-label="filter by source">
+          <button
+            className={`pill ${filter === null ? 'on' : ''}`}
+            onClick={() => setFilter(null)}
+            title="everything, unfiltered"
+          >
+            all
+            {sorted.length > 0 && <span className="pill-n">{sorted.length}</span>}
+          </button>
           {SOURCES.map((s) => (
             <button
               key={s.id}
               className={`pill ${filter === s.id ? 'on' : ''} ${counts[s.id] ? '' : 'dim'}`}
               onClick={() => setFilter((f) => (f === s.id ? null : s.id))}
-              title={
-                filter === s.id
-                  ? 'click again for everything'
-                  : counts[s.id]
-                    ? `show only ${s.label}`
-                    : s.empty
-              }
+              title={filter === s.id ? 'back to all' : `only ${s.label}`}
             >
               {s.label}
               {counts[s.id] > 0 && <span className="pill-n">{counts[s.id]}</span>}
@@ -113,7 +105,7 @@ export function Feed({ items }: { items: FeedItem[] }) {
                 <span className="lane-n">{lane.items.length}</span>
               </div>
               {lane.items.length === 0 ? (
-                <p className="empty">{lane.empty}</p>
+                <p className="empty">nothing yet</p>
               ) : (
                 lane.items.map((i) => <FeedCard key={i.id} item={i} />)
               )}
@@ -121,7 +113,7 @@ export function Feed({ items }: { items: FeedItem[] }) {
           ))}
         </div>
       ) : shown.length === 0 ? (
-        <p className="empty">{emptyFor(filter)}</p>
+        <p className="empty">nothing yet</p>
       ) : mode === 'grid' ? (
         <div className="sqgrid">
           {shown.map((i) => (

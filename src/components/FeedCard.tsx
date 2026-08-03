@@ -10,7 +10,7 @@ const SOURCE_NAME: Record<FeedItem['source'], string> = {
   instagram: 'instagram',
   x: 'x',
   youtube: 'youtube',
-  claude: 'claude',
+  claude: 'notes', // internal id stays 'claude' (feed.json contract); the reader sees notes
 };
 
 export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolean }) {

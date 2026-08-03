@@ -24,10 +24,14 @@ export class AnsiEngine {
   private trans: Transition | null = null;
   private revealed: number[] = [];
   private lastKind: TransitionKind | null = null;
+  private overrideKind: TransitionKind | 'auto' = 'auto';
   private raf = 0;
   private readonly reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   private readonly dwellMs: number;
   private readonly transitionMs: number;
+
+  /** The player bar listens here — fired whenever the engine heads to a new artwork. */
+  onArt?: (index: number) => void;
 
   constructor(
     private canvas: HTMLCanvasElement,
@@ -94,12 +98,7 @@ export class AnsiEngine {
         }
       }
       if (this.arts.length > 1 && now - this.modeStart >= this.dwellMs) {
-        this.next = (this.cur + 1) % this.arts.length;
-        const target = this.arts[this.next];
-        this.trans = createTransition(this.pickKind(), target.cols, target.rows);
-        this.revealed = [];
-        this.mode = 'transition';
-        this.modeStart = now;
+        this.beginTransition((this.cur + 1) % this.arts.length, now);
       }
     } else {
       const p = Math.min(1, (now - this.modeStart) / this.transitionMs);
@@ -125,10 +124,66 @@ export class AnsiEngine {
   };
 
   private pickKind(): TransitionKind {
+    if (this.overrideKind !== 'auto') return this.overrideKind;
     const kinds: TransitionKind[] = ['mosaic', 'wipe'];
     let k = kinds[Math.floor(Math.random() * kinds.length)];
     if (k === this.lastKind) k = kinds[(kinds.indexOf(k) + 1) % kinds.length];
     this.lastKind = k;
     return k;
+  }
+
+  private beginTransition(to: number, now: number): void {
+    this.next = to;
+    const target = this.arts[to];
+    this.trans = createTransition(this.pickKind(), target.cols, target.rows);
+    this.revealed = [];
+    this.mode = 'transition';
+    this.modeStart = now;
+    this.onArt?.(to);
+  }
+
+  // ── player bar API ──────────────────────────────────────────────────
+
+  /** Index the viewer is looking at (or heading toward, mid-transition). */
+  currentIndex(): number {
+    return this.mode === 'transition' && this.next >= 0 ? this.next : this.cur;
+  }
+
+  artTitle(i: number): string {
+    const a = this.arts[i];
+    return a?.title ?? a?.id ?? '';
+  }
+
+  count(): number {
+    return this.arts.length;
+  }
+
+  /** Pin the transition style, or 'auto' for the random pick. */
+  setKind(k: TransitionKind | 'auto'): void {
+    this.overrideKind = k;
+  }
+
+  /** Jump to an artwork now (wraps). Reduced motion swaps instantly. */
+  goTo(i: number): void {
+    const n = ((i % this.arts.length) + this.arts.length) % this.arts.length;
+    const now = performance.now();
+    if (this.reduced) {
+      this.cur = n;
+      this.next = -1;
+      this.trans = null;
+      this.revealed = [];
+      this.mode = 'dwell';
+      this.modeStart = now;
+      this.frame = 0;
+      this.frameAt = 0;
+      this.repaint();
+      this.onArt?.(n);
+      return;
+    }
+    if (n === this.currentIndex()) {
+      this.modeStart = now; // already there: just restart the dwell
+      return;
+    }
+    this.beginTransition(n, now);
   }
 }

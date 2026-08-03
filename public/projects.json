@@ -1,11 +1,11 @@
 {
- "generated": "2026-08-02T12:30:49.169Z",
+ "generated": "2026-08-02T13:42:56.752Z",
  "projects": [
   {
    "id": "koan-ansi",
    "name": "koan-ansi",
-   "desc": "Image & video to authentic BBS-scene ANSI art — CP437 blocks, DOS 16 colors, half-block trick, Ansimation (.ansim) format. CLI + zero-backend web tool.",
-   "url": "https://github.com/koan-shdw/koan-ansi",
+   "desc": "Small ANSI art generator. Image and video in, BBS art out.",
+   "url": "https://koan-shdw.github.io/koan-ansi/",
    "tag": "v1.0.0",
    "date": "2026-08-02T08:11:17Z",
    "img": "media/tools/koan-ansi.png"
@@ -13,11 +13,20 @@
   {
    "id": "video-dancer",
    "name": "video-dancer",
-   "desc": "",
+   "desc": "Desktop AI video generation creative suite.",
    "url": "https://github.com/koan-shdw/video-dancer",
    "tag": "v0.7.2",
    "date": "2026-08-01T14:22:13Z",
-   "img": "https://opengraph.githubassets.com/1/koan-shdw/video-dancer"
+   "img": "media/tools/video-dancer.png"
+  },
+  {
+   "id": "KOAN-IMG",
+   "name": "KOAN-IMG",
+   "desc": "AI image curation tool. Search your own archive by meaning.",
+   "url": "https://github.com/koan-shdw/KOAN-IMG",
+   "tag": "v2.0.0-beta.3",
+   "date": "2026-07-07T00:21:48Z",
+   "img": "media/tools/KOAN-IMG.png"
   }
  ]
 }

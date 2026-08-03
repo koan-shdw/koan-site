@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-02T12:32:07.143Z",
+ "generated": "2026-08-02T13:30:45.916Z",
  "items": [
   {
    "id": "gh-rel-363734131",
@@ -19,9 +19,39 @@
    "title": "video-dancer 0.7.2",
    "body": "",
    "media": [
-    "https://opengraph.githubassets.com/1/koan-shdw/video-dancer"
+    "media/tools/video-dancer.png"
    ],
    "link": "https://github.com/koan-shdw/video-dancer/releases/tag/v0.7.2"
+  },
+  {
+   "id": "ig-DbWEmCuS_jz",
+   "source": "instagram",
+   "date": "2026-07-28T12:00:00Z",
+   "body": "VIDEO DANCER v0.4.0\nThe ultimate video generation desktop app.\n\nOriginally just built it for myself, \nbut it’s too good not to share.\n\n#seedance2 video gen with 8 refs\n#veo video to video edit\nbuilt in full non liner editor, \ndynamic reference and style management, \nfable MCP bridge, \neven in build nano banana. Why the fuck not\n\nTotally free. Just make cool shit and have fun.\n\n#aivideos #higgsfieldai #falai",
+   "media": [
+    "media/ig/DbWEmCuS_jz.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DbWEmCuS_jz/"
+  },
+  {
+   "id": "ig-DbWCuYEyhWM",
+   "source": "instagram",
+   "date": "2026-07-28T12:00:00Z",
+   "body": "Video Dancer - V0.4.0\n\nI made this for myself, but it’s too good not to share.\n\nThe ultimate (probably only) desktop video generation app. Created to help us turn our visions into videos.\n\nAvailable now. Windows and Mac installer, byo API. Link is in the desc, have at it. \n\nTotally free. I don’t even want your engagement. \n\nJust have fun and make cool shit.\nWhole point of life. 👊 \n\n#seedance2 #aivideo #claude #higgsfield #falai",
+   "media": [
+    "media/ig/DbWCuYEyhWM.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DbWCuYEyhWM/"
+  },
+  {
+   "id": "ig-DbSkS9sSgB7",
+   "source": "instagram",
+   "date": "2026-07-27T12:00:00Z",
+   "body": "Snake Queen \n\nI just put the finishing touches on a desktop video generation app that interfaces with Seeddance, Sora and VEO.\n\nIt’s called VideoDancer. \n\nIt’s a full feature non linear editing suite with integrated video and images generation.\n\nIt lets you manage assets, storyboards, actions and styles all from one app. It also has Claude integration, via api or desktop MCP. The goal is to give you full granular control to get your exact ideas into video as easily and cheaply as possible.\n\nIt’s up on my git, free and it has an installer. Just byo API through FAL.ai.\n\nThis was the first test. It proved fast and easy to use. I’ll run a few more tests in different styles. This week, If I can find time.\n\nHope you like it. Let me know what you think.",
+   "media": [
+    "media/ig/DbSkS9sSgB7.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DbSkS9sSgB7/"
   },
   {
    "id": "gh-rel-349955081",
@@ -30,9 +60,290 @@
    "title": "KOAN.img 2.0.0-beta.3",
    "body": "Windows installer (unsigned beta). On first launch SmartScreen warns: click More info then Run anyway. The app downloads its AI runtime (~2.7 GB) once on first run. Requires an NVIDIA CUDA GPU.",
    "media": [
-    "https://opengraph.githubassets.com/1/koan-shdw/KOAN-IMG"
+    "media/tools/KOAN-IMG.png"
    ],
    "link": "https://github.com/koan-shdw/KOAN-IMG/releases/tag/v2.0.0-beta.3"
+  },
+  {
+   "id": "ig-DaGwLJoymbR",
+   "source": "instagram",
+   "date": "2026-06-27T12:00:00Z",
+   "body": "BODĒVERSE LINE UP #2 more to come @markbodeofficial @vaughnbodeofficial @shdw.gallery @thebookofvaughn #bodecharacters #markbode #vaughnbode #bodeart",
+   "media": [
+    "media/ig/DaGwLJoymbR.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DaGwLJoymbR/"
+  },
+  {
+   "id": "ig-DZ1UpjQi0sR",
+   "source": "instagram",
+   "date": "2026-06-20T12:00:00Z",
+   "body": "BODĒVERSE LINEUP NUMBER 1 MORE TO COME FROM @markbodeofficial @vaughnbodeofficial @shdw.gallery",
+   "media": [
+    "media/ig/DZ1UpjQi0sR.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DZ1UpjQi0sR/"
+  },
+  {
+   "id": "ig-DYBfsH-Gdd1",
+   "source": "instagram",
+   "date": "2026-05-06T12:00:00Z",
+   "body": "CULT\n\nAN EXHIBITION OF NEW WORK BY YOZO KELENMI\n\nWe’d like to update you on one of the rising stars of the Tokyo art scene. Yozo Kelenmi emerged from Harajuku in the mid-2020s. His debut exhibition What If opened at Gallery Harajuku in September 2025 and sold out immediately to some of Hong Kong’s, Taiwan’s and Tokyo’s most influential collectors.\n\nHis style, post-Shibuya punk, takes 2000s Tokyo street culture, punk, graffiti, gangs and Y2K futurism into a near-future urban setting. The technique is immaculate, the backgrounds dense with hidden manga references and story-filled details. Each painting stands alone, but together they form a single connected universe.\n\nHis Instagram @yozo.__ has grown rapidly since his debut, with an engagement rate that outpaces artists with ten times his following. A trajectory we believe reflects his talent, vision and potential role as a defining voice of the modern Tokyo art scene.\nHis second exhibition, CULT, opens in Tokyo, autumn 2026. We’re documenting work as it comes in, and wanted to let our collectors know that the digital catalogue will be ready in September. Email info@shdw.gallery to join the waiting list.\n\n———————————\nThe CULT catalogue will be available in September.\nEmail us now to join the waiting list.",
+   "media": [
+    "media/ig/DYBfsH-Gdd1.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DYBfsH-Gdd1/"
+  },
+  {
+   "id": "ig-DXVor9EicWk",
+   "source": "instagram",
+   "date": "2026-04-19T12:00:00Z",
+   "body": "CHEECH WIZARD & DA' LIZARD\nBODEVERSE 4 EVER",
+   "media": [
+    "media/ig/DXVor9EicWk.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DXVor9EicWk/"
+  },
+  {
+   "id": "ig-DVvwNoCiUWI",
+   "source": "instagram",
+   "date": "2026-03-11T12:00:00Z",
+   "body": "New work by @yozo.__ \n\nMy Turn- 若頭\nH61 W91 D2 (cm) - Acrylic and heat reactive ink on canvas - (2026)\n\nA waiting list now opened for the new collection, launching Fall 2026.\nDM or Email.",
+   "media": [
+    "media/ig/DVvwNoCiUWI.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DVvwNoCiUWI/"
+  },
+  {
+   "id": "ig-DVpsdvciWok",
+   "source": "instagram",
+   "date": "2026-03-08T12:00:00Z",
+   "body": "Transcendent Algorithm, 2018 by Shohei Otomo.\n\nJoin SHDW mailing list for stealth drops, projects and news.",
+   "media": [
+    "media/ig/DVpsdvciWok.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DVpsdvciWok/"
+  },
+  {
+   "id": "ig-DU4JBeWkmd3",
+   "source": "instagram",
+   "date": "2026-02-17T12:00:00Z",
+   "body": "Recently back from Tokyo where we shot with @markbodeofficial. This clip will accompany an upcoming feature article in @nikkeiasia by @rolandkelts about Mark fulfilling a lifelong dream of bringing the Bodē universe to Asia. \n\nCamera by @jorgenovoajr, edit by @funktionalfilms, music by @xtra_loop_genius.\n\n#documentary #underground #comics graffiti",
+   "media": [
+    "media/ig/DU4JBeWkmd3.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DU4JBeWkmd3/"
+  },
+  {
+   "id": "ig-DUF1C74EqzV",
+   "source": "instagram",
+   "date": "2026-01-29T12:00:00Z",
+   "body": "Prints are available now. \nLimited edition. \n\n@shdw.gallery \n@koan.shdw",
+   "media": [
+    "media/ig/DUF1C74EqzV.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DUF1C74EqzV/"
+  },
+  {
+   "id": "ig-DUE4xZuEmAG",
+   "source": "instagram",
+   "date": "2026-01-28T12:00:00Z",
+   "body": "SUPER NOVA by @yozokelenmi\nHeat reactive ink screen print.\n\nLimited edition of 25.\nPrint available now.\n\n@shdw.gallery for details.",
+   "media": [
+    "media/ig/DUE4xZuEmAG.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DUE4xZuEmAG/"
+  },
+  {
+   "id": "ig-DUDbLSnCZxD",
+   "source": "instagram",
+   "date": "2026-01-28T12:00:00Z",
+   "body": "SUPER NOVA by Yozo Kelenmi is available now!\n\nYozo’s first edition print.\nLimited to 25 editions. (Be quick)\n\nBuy now via SHDW or directly on Instagram here.",
+   "media": [
+    "media/ig/DUDbLSnCZxD.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DUDbLSnCZxD/"
+  },
+  {
+   "id": "ig-DTsh8G3iSed",
+   "source": "instagram",
+   "date": "2026-01-19T12:00:00Z",
+   "body": "SUPER NOVA PRINT\nBy YOZO KELENMI\nCOMING SOON.",
+   "media": [
+    "media/ig/DTsh8G3iSed.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DTsh8G3iSed/"
+  },
+  {
+   "id": "ig-DNcO9BUp3TF",
+   "source": "instagram",
+   "date": "2025-08-16T12:00:00Z",
+   "body": "SHDW\nEditions & Projects.\nFollow for updates.\n🔥🍶",
+   "media": [
+    "media/ig/DNcO9BUp3TF.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DNcO9BUp3TF/"
+  },
+  {
+   "id": "ig-DLmyD-ZyrZO",
+   "source": "instagram",
+   "date": "2025-07-02T12:00:00Z",
+   "body": "Speak",
+   "media": [
+    "media/ig/DLmyD-ZyrZO.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DLmyD-ZyrZO/"
+  },
+  {
+   "id": "ig-DLKg_vLSo69",
+   "source": "instagram",
+   "date": "2025-06-21T12:00:00Z",
+   "body": "A technique @markbodeofficial suggested.",
+   "media": [
+    "media/ig/DLKg_vLSo69.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DLKg_vLSo69/"
+  },
+  {
+   "id": "ig-DH9-2kCyT2r",
+   "source": "instagram",
+   "date": "2025-04-02T12:00:00Z",
+   "body": "Penchan",
+   "media": [
+    "media/ig/DH9-2kCyT2r.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DH9-2kCyT2r/"
+  },
+  {
+   "id": "ig-DHZ4d8aSL8g",
+   "source": "instagram",
+   "date": "2025-03-19T12:00:00Z",
+   "body": "View from morning meditation spot, \n24 hours apart.",
+   "media": [
+    "media/ig/DHZ4d8aSL8g.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DHZ4d8aSL8g/"
+  },
+  {
+   "id": "x-1884495139667955956",
+   "source": "x",
+   "date": "2025-01-29T06:53:48Z",
+   "body": "Thank you @vhils1",
+   "link": "https://x.com/koan_shdw/status/1884495139667955956"
+  },
+  {
+   "id": "x-1879048659029066211",
+   "source": "x",
+   "date": "2025-01-14T06:11:26Z",
+   "body": "Dance, Kali, Dance\n595x840, ash, acrylic, paper, ink on wood panel, 2025.",
+   "media": [
+    "media/x/1879048659029066211.jpg"
+   ],
+   "link": "https://x.com/koan_shdw/status/1879048659029066211"
+  },
+  {
+   "id": "ig-DEy3MJdSP3F",
+   "source": "instagram",
+   "date": "2025-01-13T12:00:00Z",
+   "body": "Dance, Kali, Dance\n595x840, ash, acrylic, paper, ink on wood panel, 2025.\n\nGetting sick of this image getting popped by the AI, hopefully the bloody great big X’s throw it off this time.",
+   "media": [
+    "media/ig/DEy3MJdSP3F.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DEy3MJdSP3F/"
+  },
+  {
+   "id": "ig-DEsFS1nSLoc",
+   "source": "instagram",
+   "date": "2025-01-11T12:00:00Z",
+   "body": "Dance, Kali, Dance.\n\n595x840, ash, acrylic, paper, ink on wood panel. 2025.",
+   "media": [
+    "media/ig/DEsFS1nSLoc.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DEsFS1nSLoc/"
+  },
+  {
+   "id": "ig-DD3k13BSaMy",
+   "source": "instagram",
+   "date": "2024-12-21T12:00:00Z",
+   "body": "The 60th birthday of @luciano_mario__private. The descendant of Lucky Luciano who became a leading member of the Yamaguchi Gumi, Japans most powerful Yakuza family.\n\nWhat an honour to be able to document such a unique group of great characters. Thank you @arnaud_diemer for the introduction.\n\nAnd Happy birthday Mario.",
+   "media": [
+    "media/ig/DD3k13BSaMy.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DD3k13BSaMy/"
+  },
+  {
+   "id": "ig-DB6UqEkSeoX",
+   "source": "instagram",
+   "date": "2024-11-03T12:00:00Z",
+   "body": "Anonymous gAIt\nCamouflage study",
+   "media": [
+    "media/ig/DB6UqEkSeoX.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DB6UqEkSeoX/"
+  },
+  {
+   "id": "ig-DAleZgHyhSE",
+   "source": "instagram",
+   "date": "2024-10-01T12:00:00Z",
+   "body": "@koan.shdw & @shohei_otomo \nA.I. Music Vid. #aimv <~\nBADMAN by Wiley, king of grime.",
+   "media": [
+    "media/ig/DAleZgHyhSE.jpg"
+   ],
+   "link": "https://www.instagram.com/p/DAleZgHyhSE/"
+  },
+  {
+   "id": "x-1823631038670889439",
+   "source": "x",
+   "date": "2024-08-14T08:01:35Z",
+   "body": "AI vid experiments with Shohei",
+   "link": "https://x.com/koan_shdw/status/1823631038670889439"
+  },
+  {
+   "id": "x-1823630814837661709",
+   "source": "x",
+   "date": "2024-08-14T08:00:42Z",
+   "body": "After two decades of producing projects for other artists, I'm presenting my own artwork for the first time. I still feel like I have a lot to learn before presuming to display my work, but I've come to realize that life is short and the time to share is now.\n\nThe concept for this exhibition came from conversations with Shohei Otomo. Our discussions usually circle back to the notion of sacrifice. The idea is that good art necessitates a sacrifice. Something must be relinquished; some amount of suffering or loss must happen to create meaningful work. I personally relate to the classical notion that any significant endeavor should start with a sacrifice.\n\nDo you want the gods to take you seriously? Burn a lamb, evoke Crom, The Muses, spill blood. Thus, the concept for my first exhibition became apparent.",
+   "media": [
+    "media/x/1823630814837661709.jpg"
+   ],
+   "link": "https://x.com/koan_shdw/status/1823630814837661709"
+  },
+  {
+   "id": "x-1805122296107196835",
+   "source": "x",
+   "date": "2024-06-24T06:14:27Z",
+   "body": "1973 - A woman IRA volunteer on active service in west Belfast with an AR18 assault rifle.",
+   "media": [
+    "media/x/1805122296107196835.jpg"
+   ],
+   "link": "https://x.com/koan_shdw/status/1805122296107196835"
+  },
+  {
+   "id": "x-1805120849898594620",
+   "source": "x",
+   "date": "2024-06-24T06:08:42Z",
+   "body": "Ouhhh... Husbant you made A.I. ... Now we see man-made horrors beyond our comprehension.",
+   "link": "https://x.com/koan_shdw/status/1805120849898594620"
+  },
+  {
+   "id": "x-1766015754036744340",
+   "source": "x",
+   "date": "2024-03-08T08:19:01Z",
+   "body": "",
+   "media": [
+    "media/x/1766015754036744340.jpg"
+   ],
+   "link": "https://x.com/koan_shdw/status/1766015754036744340"
+  },
+  {
+   "id": "x-1766014609197265189",
+   "source": "x",
+   "date": "2024-03-08T08:14:28Z",
+   "body": "from Kami (HTZK)",
+   "media": [
+    "media/x/1766014609197265189.jpg"
+   ],
+   "link": "https://x.com/koan_shdw/status/1766014609197265189"
   }
  ]
 }

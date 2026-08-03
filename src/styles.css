@@ -8,6 +8,10 @@
      never tinted by it ("old soul, new skin", spec §7b) */
   --panel: rgba(21, 21, 24, 0.85);
   --panel2: rgba(30, 30, 34, 0.88);
+  /* the identity card's lighter glass — half strength, the art shows through */
+  --panel-glass: rgba(21, 21, 24, 0.5);
+  /* legibility strip behind section titles — glass, no card */
+  --title-glass: rgba(8, 8, 10, 0.45);
   --field: rgba(9, 9, 11, 0.6);
   --header: rgba(13, 13, 15, 0.85);
 
@@ -134,14 +138,29 @@ a {
 
 /* ── identity ───────────────────────────────────────────────────────── */
 
-/* identity — the grey box: name anchor, role, one primary contact, socials */
+/* identity — the grey box: name anchor, role, email top-right, socials along
+   the bottom. Same outline as every card; only the glass is lighter (50%). */
 .id {
+  position: relative;
+  overflow: hidden; /* clips the art typer */
   margin: 8px 0 24px;
-  background: var(--panel);
+  background: var(--panel-glass);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 18px 18px 14px;
   backdrop-filter: blur(14px) saturate(1.05);
+}
+
+.id-artfill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.id-in {
+  position: relative; /* content rides above the art typer */
 }
 
 .id-name {
@@ -165,23 +184,17 @@ a {
   margin-top: 3px;
 }
 
-.id-contact {
-  display: flex;
-  align-items: flex-end;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-}
-
 .id-mail {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: inline-flex;
   align-items: center;
   gap: 7px;
   font: 400 13px var(--mono);
   color: var(--txt-hi);
   text-decoration: none;
+  background: var(--panel);
   border: 1px solid var(--line2);
   border-radius: 4px;
   padding: 6px 12px;
@@ -196,9 +209,12 @@ a {
 
 .id-social {
   display: flex;
+  justify-content: flex-end;
   gap: 4px;
-  margin-left: auto;
   flex-wrap: wrap;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
 
 .soc {
@@ -230,6 +246,7 @@ a {
   margin: 0 0 24px;
 }
 
+/* section titles ride on a glass strip — legible over the art, not a card */
 .sec-head {
   display: flex;
   align-items: baseline;
@@ -237,15 +254,21 @@ a {
   font: 400 11px var(--mono);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--txt);
+  background: var(--title-glass);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 6px;
+  border-radius: 4px 4px 0 0;
+  padding: 6px 10px;
   margin: 0 0 12px;
 }
 
 .sec-head.as-btn {
   display: block;
+  background: none;
+  backdrop-filter: none;
   padding: 0;
+  border-bottom: none;
 }
 
 .sec-toggle {
@@ -258,8 +281,11 @@ a {
   letter-spacing: inherit;
   text-transform: inherit;
   color: inherit;
+  background: var(--title-glass);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 6px;
+  border-radius: 4px 4px 0 0;
+  padding: 6px 10px;
   margin-bottom: 12px;
   min-height: 24px;
   transition: color 0.15s;
@@ -593,9 +619,12 @@ a {
   font: 400 11px var(--mono);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--txt);
+  background: var(--title-glass);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 6px;
+  border-radius: 4px 4px 0 0;
+  padding: 6px 10px;
 }
 
 .lane-n {
@@ -625,6 +654,13 @@ a {
 
 .card:hover {
   border-color: var(--line2);
+}
+
+/* notes stand apart: brighter border + a fine halo frame */
+.card.src-claude {
+  border-color: var(--line2);
+  outline: 1px solid var(--line);
+  outline-offset: 3px;
 }
 
 .card-top {
@@ -928,11 +964,103 @@ a {
   text-align: center;
 }
 
+/* ── docks (fixed corners) ──────────────────────────────────────────── */
+
+.dock {
+  position: fixed;
+  bottom: 12px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  background: var(--header);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+}
+
+.dock-b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  min-height: 24px;
+  padding: 4px 8px;
+  font: 400 11px var(--mono);
+  color: var(--muted);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+}
+
+.dock-b:hover {
+  color: var(--txt-hi);
+  background: var(--panel2);
+}
+
+.dock-b.on {
+  color: var(--txt-hi);
+  background: var(--panel2);
+}
+
+.dock-sep {
+  width: 1px;
+  align-self: stretch;
+  margin: 2px 4px;
+  background: var(--line);
+}
+
+/* background player, bottom left */
+.ansi-dock {
+  left: 12px;
+}
+
+.dock-title {
+  font: 400 11px var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--txt);
+  padding: 0 4px;
+  min-width: 96px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* contact dock, bottom right — appears once the identity card scrolls away */
+.soc-dock {
+  right: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+
+.soc-dock.show {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
 /* ── responsive ─────────────────────────────────────────────────────── */
 
 @media (max-width: 880px) {
   .projects {
     grid-template-columns: 1fr;
+  }
+  /* the mobile card standard: taller window, more of the site visible */
+  .proj-shot {
+    aspect-ratio: 16 / 10;
+  }
+  .id-social {
+    justify-content: space-between;
+    gap: 0;
+  }
+  .soc {
+    min-width: 0;
+    flex: 1;
+  }
+  .ansi-dock {
+    display: none; /* the player is a desktop toy */
   }
   .minis-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)); /* grid stays a grid on phones */

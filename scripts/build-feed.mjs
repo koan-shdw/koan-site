@@ -133,8 +133,19 @@ async function youtubeItems() {
   }
 }
 
-// ---- finished public projects (repos with >=1 release) ----------------------
+// ---- tools in development (topic scheme) ------------------------------------
+// A repo is a tool IFF its GitHub topics include 'koan-tool'. The topic is
+// explicit intent: tagged repos always list, releases or not. Card url is the
+// homepage (live web app) when set, else the repo (installer/download case).
 const PROJ_OUT = join(ROOT, 'public', 'projects.json');
+
+// The one-line descs, in the site's voice. GitHub's repo description is the
+// fallback for anything not named here.
+const PROJECT_DESC = {
+  'video-dancer': 'Desktop AI video generation creative suite.',
+  'koan-ansi': 'Small ANSI art generator. Image and video in, BBS art out.',
+  'KOAN-IMG': 'AI image curation tool. Search your own archive by meaning.',
+};
 
 async function buildProjects() {
   let repos = [];
@@ -147,20 +158,23 @@ async function buildProjects() {
   const projects = [];
   for (const r of repos) {
     if (r.fork || r.private) continue;
+    if (!(r.topics ?? []).includes('koan-tool')) continue;
+    // newest release of any kind (betas ship); a tagged repo with none still lists
+    let rel = null;
     try {
-      const rel = await gh(`/repos/${r.full_name}/releases/latest`);
-      projects.push({
-        id: r.name,
-        name: r.name,
-        desc: r.description ?? '',
-        url: r.html_url,
-        tag: rel.tag_name,
-        date: rel.published_at,
-        img: repoImage(r.full_name),
-      });
-    } catch {
-      // no releases → not a finished project → not listed
+      [rel] = await gh(`/repos/${r.full_name}/releases?per_page=1`);
+    } catch (e) {
+      console.error(`projects: releases for ${r.name} failed (${e.message})`);
     }
+    projects.push({
+      id: r.name,
+      name: r.name,
+      desc: PROJECT_DESC[r.name] ?? r.description ?? '',
+      url: r.homepage || r.html_url,
+      tag: rel?.tag_name ?? '',
+      date: rel?.published_at ?? r.pushed_at,
+      img: repoImage(r.full_name),
+    });
   }
   projects.sort((a, b) => b.date.localeCompare(a.date));
   const prevP = existsSync(PROJ_OUT) ? (JSON.parse(readFileSync(PROJ_OUT, 'utf8')).projects ?? []) : [];
