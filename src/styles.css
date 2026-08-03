@@ -142,7 +142,6 @@ a {
    the bottom. Same outline as every card; only the glass is lighter (50%). */
 .id {
   position: relative;
-  overflow: hidden; /* clips the art typer */
   margin: 8px 0 24px;
   background: var(--panel-glass);
   border: 1px solid var(--line);
@@ -151,16 +150,8 @@ a {
   backdrop-filter: blur(14px) saturate(1.05);
 }
 
-.id-artfill {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
 .id-in {
-  position: relative; /* content rides above the art typer */
+  position: relative; /* anchor for the email pill */
 }
 
 .id-name {
