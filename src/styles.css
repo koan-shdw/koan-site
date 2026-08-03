@@ -1053,6 +1053,13 @@ a {
     min-width: 0;
     flex: 1;
   }
+  /* long labels truncate instead of colliding on narrow phones */
+  .soc-l {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
   /* narrow phones: smaller email pill so it never meets the name */
   .id-mail {
     font-size: 11px;

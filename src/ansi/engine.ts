@@ -133,6 +133,12 @@ export class AnsiEngine {
   }
 
   private beginTransition(to: number, now: number): void {
+    if (this.mode === 'transition') {
+      // aborting mid-transition: wipe the old target's revealed cells first
+      this.next = -1;
+      this.revealed = [];
+      this.repaint();
+    }
     this.next = to;
     const target = this.arts[to];
     this.trans = createTransition(this.pickKind(), target.cols, target.rows);

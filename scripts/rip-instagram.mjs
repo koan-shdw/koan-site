@@ -22,14 +22,15 @@ if (codes.length === 0) {
   process.exit(1);
 }
 
+// &amp; decodes LAST so nested entities (&amp;#39;) do not double-decode
 const unent = (s) =>
   (s ?? '')
-    .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
     .replace(/&quot;/g, '"')
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
-    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)));
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+    .replace(/&amp;/g, '&');
 
 const meta = (html, prop) =>
   html.match(new RegExp(`property="${prop}"\\s+content="([^"]*)"`))?.[1] ??

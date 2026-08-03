@@ -23,6 +23,20 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   const title = ja && item.titleJa ? item.titleJa : item.title;
   const body = ja && item.bodyJa ? item.bodyJa : item.body;
 
+  // Clamp detection must track layout width (view modes reflow cards).
+  // Lives above the tile branch: hooks must run on every render path.
+  useEffect(() => {
+    const el = bodyRef.current;
+    if (!el) return;
+    const measure = () => {
+      if (!expanded) setOverflows(el.scrollHeight > el.clientHeight + 1);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [expanded, body]);
+
   // Square tile (grid mode, spec change 2026-08-02: insta-style): media fills
   // the square; without media the text itself fills the tile.
   if (tile) {
@@ -75,19 +89,6 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
       </article>
     );
   }
-
-  // Clamp detection must track layout width (view modes reflow cards).
-  useEffect(() => {
-    const el = bodyRef.current;
-    if (!el) return;
-    const measure = () => {
-      if (!expanded) setOverflows(el.scrollHeight > el.clientHeight + 1);
-    };
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [expanded, body]);
 
   // Feed mode: insta-post format — header row, square media (or the text
   // itself filling the square), caption underneath. Short text = big type,
