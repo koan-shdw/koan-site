@@ -41,7 +41,7 @@
   --ansi-dim-a: 0.5;
 }
 
-/* z ladder (one place): content 1 < sticky feed bar 5 < zoom overlay 60 */
+/* z ladder (one place): content 1 < sticky feed bar 5 = corner docks 5 < zoom overlay 60 */
 
 * {
   box-sizing: border-box;
@@ -656,11 +656,14 @@ a {
   border-color: var(--line2);
 }
 
-/* notes stand apart: brighter border + a fine halo frame */
+/* notes stand apart: the one 2px emphasis border in the stream */
 .card.src-claude {
+  border-width: 2px;
   border-color: var(--line2);
-  outline: 1px solid var(--line);
-  outline-offset: 3px;
+}
+
+.card.src-claude:hover {
+  border-color: var(--accent);
 }
 
 .card-top {
@@ -1058,6 +1061,12 @@ a {
   .soc {
     min-width: 0;
     flex: 1;
+  }
+  /* narrow phones: smaller email pill so it never meets the name */
+  .id-mail {
+    font-size: 11px;
+    gap: 4px;
+    padding: 4px 8px;
   }
   .ansi-dock {
     display: none; /* the player is a desktop toy */

@@ -242,10 +242,10 @@ async function postItems() {
 }
 
 // ---- merge + write ---------------------------------------------------------
-// legacy purge: push/new-repo items no longer belong in the feed
-const prev = (existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')).items ?? []) : []).filter(
-  (it) => !/^gh-(push|new)-/.test(it.id),
-);
+// legacy purge: push/new-repo items no longer belong in the feed. The
+// no-change guard compares against the RAW file so a purge alone still writes.
+const prevRaw = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')).items ?? []) : [];
+const prev = prevRaw.filter((it) => !/^gh-(push|new)-/.test(it.id));
 const fresh = [...(await postItems()), ...(await githubItems()), ...(await youtubeItems())];
 await buildProjects();
 const byId = new Map();
@@ -274,7 +274,7 @@ items.sort((a, b) => String(b.date).localeCompare(String(a.date)));
 
 // idempotent: identical items → leave the file untouched (no timestamp churn,
 // so the workflow's commit step no-ops on quiet hours)
-if (JSON.stringify(items) === JSON.stringify(prev)) {
+if (JSON.stringify(items) === JSON.stringify(prevRaw)) {
   console.log(`feed.json unchanged (${items.length} items)`);
 } else {
   mkdirSync(dirname(OUT), { recursive: true });

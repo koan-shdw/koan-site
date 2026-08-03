@@ -16,8 +16,8 @@ const SOURCES: { id: FeedSource; label: string }[] = [
 ];
 
 const MODES: { id: Mode; label: string; hint: string }[] = [
-  { id: 'grid', label: 'grid', hint: 'square thumbnails, the default' },
-  { id: 'feed', label: 'feed', hint: 'one column, reading order' },
+  { id: 'grid', label: 'grid', hint: 'square grid' },
+  { id: 'feed', label: 'feed', hint: 'one column' },
   { id: 'columns', label: 'cols', hint: 'one lane per platform' },
 ];
 
@@ -65,7 +65,7 @@ export function Feed({ items }: { items: FeedItem[] }) {
           <button
             className={`pill ${filter === null ? 'on' : ''}`}
             onClick={() => setFilter(null)}
-            title="everything, unfiltered"
+            title="everything"
           >
             all
             {sorted.length > 0 && <span className="pill-n">{sorted.length}</span>}
@@ -113,6 +113,8 @@ export function Feed({ items }: { items: FeedItem[] }) {
           ))}
         </div>
       ) : shown.length === 0 ? (
+        // bare "nothing yet" is a sanctioned law-9 exception (user decision
+        // 2026-08-02: no flavor text on empty states)
         <p className="empty">nothing yet</p>
       ) : mode === 'grid' ? (
         <div className="sqgrid">

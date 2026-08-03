@@ -8,11 +8,11 @@ import { ArtFill, GlitchTitle } from './ArtTyper';
 export const EMAIL = 'alex@shdw.gallery';
 
 export const SOCIALS = [
-  { icon: 'instagram', label: 'koan.shdw', href: 'https://instagram.com/koan.shdw', hint: '@koan.shdw — personal' },
-  { icon: 'instagram', label: 'shdw.gallery', href: 'https://instagram.com/shdw.gallery', hint: '@shdw.gallery — the gallery' },
+  { icon: 'instagram', label: 'koan.shdw', href: 'https://instagram.com/koan.shdw', hint: 'personal ig' },
+  { icon: 'instagram', label: 'shdw.gallery', href: 'https://instagram.com/shdw.gallery', hint: 'the gallery ig' },
   { icon: 'x', label: 'x', href: 'https://x.com/koan_shdw', hint: '@koan_shdw' },
   { icon: 'youtube', label: 'youtube', href: 'https://youtube.com/@koan_shdw', hint: '@koan_shdw' },
-  { icon: 'github', label: 'github', href: 'https://github.com/koan-shdw', hint: 'koan-shdw — the tools' },
+  { icon: 'github', label: 'github', href: 'https://github.com/koan-shdw', hint: 'the tools' },
 ];
 
 export function Header() {
