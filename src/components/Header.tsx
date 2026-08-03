@@ -3,7 +3,6 @@
 // along the bottom. Contact lives HERE and only here; feed pills are filters,
 // never contact. Behind it all, the art typer.
 import { Icon } from './icons';
-import { GlitchTitle } from './ArtTyper';
 
 export const EMAIL = 'alex@shdw.gallery';
 
@@ -25,7 +24,7 @@ export function Header() {
         </a>
         <h1 className="id-name">KOAN</h1>
         <div className="id-real">Alexander Mitchell</div>
-        <GlitchTitle />
+        <div className="id-title">ART PRODUCER</div>
         <nav className="id-social" aria-label="social links">
           {SOCIALS.map((s) => (
             <a key={s.label} className="soc" href={s.href} title={s.hint} target="_blank" rel="noreferrer">
