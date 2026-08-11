@@ -164,10 +164,11 @@ a {
   white-space: nowrap;
 }
 
-/* the figlet logotype: pasted over the card edge, breaks free of the glass */
+/* the figlet logotype: pasted over the card edge, breaks free of the glass.
+   speaks in the frame's voice — same grey as the card outlines */
 .id-ascii {
   font: 700 9px/1.05 var(--mono);
-  color: var(--txt-hi);
+  color: var(--line2);
   margin: -32px 0 0;
   white-space: pre;
   overflow: visible;
@@ -176,28 +177,102 @@ a {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); /* over art — sanctioned scrim */
 }
 
-/* picker phase only — dies when the font is chosen. fixed top corner so
-   the card reads final underneath */
-.logo-pick {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 61; /* above the zoom overlay while picking */
-  font: 400 11px var(--mono);
-  color: var(--txt);
-  background: var(--header);
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  padding: 4px 6px;
-  max-width: 220px;
-}
-
 /* thedraw logos: blocky color cells, tight leading */
 .id-ascii.td {
   font-weight: 400;
   font-size: 10px;
   line-height: 1;
   text-shadow: none;
+}
+
+/* ── logotype picker grid (KOAN egg — extension of the ansi controller) ── */
+
+.logo-grid {
+  position: fixed;
+  left: 12px;
+  bottom: 64px; /* rides just above the dock */
+  z-index: 61;
+  width: min(860px, calc(100vw - 24px));
+  max-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--header);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line2);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lg-head {
+  font: 400 11px var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.lg-grid {
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+  padding: 8px;
+}
+
+.lg-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--panel);
+  text-align: left;
+  overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 96px;
+}
+
+.lg-cell:hover {
+  border-color: var(--line2);
+}
+
+.lg-cell.on {
+  border-color: var(--ok);
+}
+
+.lg-prev {
+  margin: 0;
+  font: 400 4.5px/1.1 var(--mono);
+  color: var(--txt);
+  white-space: pre;
+  max-height: 66px;
+  overflow: hidden;
+}
+
+.lg-prev.td {
+  font-size: 5px;
+  line-height: 1;
+}
+
+.lg-name {
+  font: 400 10px var(--mono);
+  color: var(--muted);
+}
+
+.lg-rand {
+  font: 700 22px var(--mono);
+  color: var(--txt-hi);
+}
+
+.lg-load {
+  font: 400 11px var(--mono);
+  color: var(--dim);
+  padding: 6px 10px;
+  border-top: 1px solid var(--line);
 }
 
 .id-name {
@@ -244,14 +319,29 @@ a {
   border-color: var(--accent);
 }
 
+/* bottom row: the quote holds the left, socials keep the right */
+.id-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.id-quote {
+  font: 400 13px/1.5 var(--sans);
+  color: var(--muted);
+  margin: 0 0 6px;
+  max-width: 340px;
+}
+
 .id-social {
   display: flex;
   justify-content: flex-end;
   gap: 4px;
   flex-wrap: wrap;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
 }
 
 .soc {
@@ -689,6 +779,18 @@ a {
   padding: 8px 10px 10px;
   backdrop-filter: blur(12px) saturate(1.1);
   transition: border-color 0.15s;
+}
+
+/* ── single-line CP437 frames (the BBS outline, user round 2026-08-11) ──
+   real ┌─┐│└┘ glyphs tiled as border-image; grey baked into the SVG
+   (data URIs can't read vars — keep in step with --line2) */
+.card,
+.id {
+  border-style: solid;
+  border-width: 14px 10px;
+  border-color: transparent;
+  border-radius: 0;
+  border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='42'><g font-family='Consolas,Menlo,monospace' font-size='14' fill='rgba(210,210,220,0.45)'><text x='1' y='11'>┌</text><text x='11' y='11'>─</text><text x='21' y='11'>┐</text><text x='1' y='25'>│</text><text x='21' y='25'>│</text><text x='1' y='39'>└</text><text x='11' y='39'>─</text><text x='21' y='39'>┘</text></g></svg>") 14 10 / 14px 10px round;
 }
 
 .card:hover {

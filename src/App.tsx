@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import { AnsiBackground } from './ansi/AnsiBackground';
 import type { AnsiEngine } from './ansi/engine';
 import { LIBRARY } from './library';
-import { Header } from './components/Header';
+import { Header, LOGO_DEFAULT } from './components/Header';
+import { LogoPicker } from './components/LogoPicker';
+import type { TdfRows } from './components/logo';
 import { ProjectCard } from './components/ProjectCard';
 import { Feed } from './components/Feed';
 import { FeedCard } from './components/FeedCard';
@@ -16,6 +18,11 @@ import type { FeedItem, SmallProject } from './types';
 // #/note/<slug> — a note's own shareable page (docs/convo-notes-spec.md §9)
 const parseNoteHash = () =>
   decodeURIComponent(window.location.hash.match(/^#\/note\/(.+)$/)?.[1] ?? '') || null;
+
+// the shortlist a fresh load draws from at random — user-curated
+const FAVORITES = [LOGO_DEFAULT];
+const LOGO_KEY = 'koan.logoFont';
+const drawLogo = () => FAVORITES[Math.floor(Math.random() * FAVORITES.length)];
 
 export default function App() {
   const [engine, setEngine] = useState<AnsiEngine | null>(null);
@@ -57,6 +64,48 @@ export default function App() {
     ? items.find((i) => i.id === `post-${noteSlug}` || i.id === noteSlug) ?? null
     : null;
 
+  // logotype: KOAN (caps) summons the picker grid, Esc dismisses; picks
+  // stick, __random draws from FAVORITES each load
+  const [logoFont, setLogoFont] = useState(() => localStorage.getItem(LOGO_KEY) ?? drawLogo());
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [tdf, setTdf] = useState<Record<string, TdfRows> | null>(null);
+
+  useEffect(() => {
+    let buf = '';
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.target as HTMLElement).closest?.('input, textarea, select')) return;
+      if (e.key === 'Escape') {
+        setPickerOpen(false);
+        return;
+      }
+      if (e.key.length !== 1) return;
+      buf = (buf + e.key).slice(-4);
+      if (buf === 'KOAN') setPickerOpen(true);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, []);
+
+  // the colored set is 1.9MB — fetched only for the summoned picker or an
+  // active colored logo, never for civilians
+  useEffect(() => {
+    if (!tdf && (pickerOpen || logoFont.startsWith('td:'))) {
+      void import('./assets/logos-tdf.json').then((m) =>
+        setTdf(m.default as unknown as Record<string, TdfRows>),
+      );
+    }
+  }, [pickerOpen, logoFont, tdf]);
+
+  const pickLogo = (f: string) => {
+    if (f === '__random') {
+      localStorage.removeItem(LOGO_KEY);
+      setLogoFont(drawLogo());
+      return;
+    }
+    setLogoFont(f);
+    localStorage.setItem(LOGO_KEY, f);
+  };
+
   useEffect(() => {
     document.title = note?.title ? `${note.title} · KOAN` : 'KOAN';
   }, [note?.title]);
@@ -78,7 +127,7 @@ export default function App() {
       <>
         <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
         <div className="site note-page">
-          <Header />
+          <Header font={logoFont} tdf={tdf} />
           <main className="note-main">
             <a className="note-back" href="#/">
               ← the stream
@@ -106,7 +155,7 @@ export default function App() {
         <div className="site">
           <main>
             <div {...zone(0)}>
-              <Header />
+              <Header font={logoFont} tdf={tdf} />
             </div>
             <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
@@ -170,6 +219,7 @@ export default function App() {
       </div>
       <AnsiDock engine={engine} />
       <SocialDock />
+      {pickerOpen && <LogoPicker current={logoFont} tdf={tdf} onPick={pickLogo} />}
     </>
   );
 }
