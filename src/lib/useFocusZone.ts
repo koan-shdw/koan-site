@@ -25,26 +25,53 @@ export function useFocusZone(count: number, dep?: unknown) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const easeOut = (t: number) => 1 - (1 - t) ** 3;
+    const clamp01 = (t: number) => Math.min(1, Math.max(0, t));
+
+    // The growing composition stays centered: shifts[k] centers zones 0..k
+    // as one card (floor 24px from the top). Measured transform-free —
+    // valid while frozen, where natural rects are scroll-independent.
+    let marks: { shifts: number[] } | null = null;
+    const measure = (els: HTMLElement[]) => {
+      els.forEach((el) => {
+        el.style.transform = '';
+      });
+      const base = els[0].getBoundingClientRect().top;
+      const shifts = els.slice(0, -1).map((_, k) => {
+        const h = els[k].getBoundingClientRect().bottom - base;
+        return Math.max(24, (window.innerHeight - h) / 2) - base;
+      });
+      marks = { shifts };
+    };
 
     const assemble = () => {
+      const els = refs.current.slice(0, count).filter((el): el is HTMLElement => Boolean(el));
+      if (els.length < 2) return;
       const active = window.innerWidth > 880 && !reduced;
-      const arrivals = count - 1; // zone 0 (the card) never moves
+      const arrivals = els.length - 1; // zone 0 (the card) never arrives
       const step = num('--assembly-step', 0.7) * window.innerHeight;
       const from = num('--arrive-from', 0.5) * window.innerHeight;
       const p = step > 0 ? window.scrollY / (step * arrivals) : 1;
-      for (let i = 1; i < count; i++) {
-        const el = refs.current[i];
-        if (!el) continue;
-        const k = i - 1;
-        const q = Math.min(1, Math.max(0, p * arrivals - k));
-        if (!active || q >= 1) {
+      if (!active || p >= 1) {
+        els.forEach((el) => {
           el.style.transform = '';
           el.style.willChange = '';
-        } else {
-          el.style.transform = `translateY(${Math.round((1 - easeOut(q)) * from)}px)`;
-          el.style.willChange = 'transform';
-        }
+        });
+        return;
       }
+      if (!marks) measure(els);
+      // shift eases from "card alone centered" through each grown
+      // composition, and back to 0 while the stream lands — so the release
+      // into normal scroll is seamless
+      const t = [...marks!.shifts, 0];
+      let shift = t[0];
+      for (let k = 1; k <= arrivals; k++) {
+        shift += (t[Math.min(k, t.length - 1)] - t[k - 1]) * easeOut(clamp01(p * arrivals - (k - 1)));
+      }
+      els.forEach((el, i) => {
+        const q = i === 0 ? 1 : clamp01(p * arrivals - (i - 1));
+        el.style.transform = `translateY(${Math.round(shift + (1 - easeOut(q)) * from)}px)`;
+        el.style.willChange = 'transform';
+      });
     };
 
     const pick = () => {
@@ -73,12 +100,16 @@ export function useFocusZone(count: number, dep?: unknown) {
     // no rAF wrapper: scroll events are already frame-aligned, and queued
     // frames never run in a hidden pane (koan-site gotcha #3) — pick is a
     // handful of rect reads, cheap enough to run inline
+    const onResize = () => {
+      marks = null; // heights and viewport moved — re-center from scratch
+      pick();
+    };
     pick();
     window.addEventListener('scroll', pick, { passive: true });
-    window.addEventListener('resize', pick);
+    window.addEventListener('resize', onResize);
     return () => {
       window.removeEventListener('scroll', pick);
-      window.removeEventListener('resize', pick);
+      window.removeEventListener('resize', onResize);
     };
   }, [count, dep]);
 
