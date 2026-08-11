@@ -18,7 +18,7 @@ export function useFocusZone(count: number) {
         setLit(first < 0 ? 0 : first);
         return;
       }
-      const y = window.innerHeight * 0.38;
+      const y = window.innerHeight * 0.5; // snap centers zones — lit follows center
       let best = 0;
       let bestD = Infinity;
       refs.current.slice(0, count).forEach((el, i) => {

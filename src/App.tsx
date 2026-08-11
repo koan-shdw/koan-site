@@ -106,7 +106,7 @@ export default function App() {
               )}
             </section>
           )}
-          <div {...zone(3)}>
+          <div {...zone(3, 'zone-stream')}>
             <Feed items={items} />
           </div>
         </main>

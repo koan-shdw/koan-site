@@ -13,10 +13,20 @@ convo round; recorded here.
 ## 2. Scroll focus — one zone lit
 
 The page is four zones: identity card, main projects, tools in development,
-stream. Exactly one is lit at a time — the one under the focal line, 38%
-down the viewport. The rest sink: `opacity .55, saturate(.6),
-brightness(.85)`, 350ms ease. Clamped at the page edges so something is
-always lit. `prefers-reduced-motion`: no transition, still lit/dim.
+stream. Exactly one is lit at a time — the one under the viewport center.
+The rest sink, 350ms ease. Clamped at the page edges so something is always
+lit. `prefers-reduced-motion`: no transition, still lit/dim.
+
+Soft-snap revision (2026-08-11, tweak round 1 — opacity was noise):
+
+- **Dim is never opacity.** Transparent zones let the ANSI art combine with
+  content — noisier, not calmer. Dim = `brightness(.6) saturate(.45)
+  blur(1px)`: depth of field, content stays solid.
+- **Soft snap.** `scroll-snap-type: y proximity` on the page; zones snap to
+  center, the stream snaps to its start then scrolls free (it's long).
+- **Air.** Header zone is 70vh with the card centered — the page opens with
+  space. Zones get ~16vh between them so short sections hold their moment
+  instead of being skipped.
 
 - `src/lib/useFocusZone.ts` — rAF-throttled scroll listener, returns the lit
   index. No IntersectionObserver (the focal-line rule needs one winner,

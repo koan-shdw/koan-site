@@ -870,12 +870,45 @@ a {
 /* ── scroll focus (docs/focus-ui-spec.md §2–3) — one zone lit ───────── */
 
 .zone {
-  transition: opacity 0.35s ease, filter 0.35s ease;
+  transition: filter 0.35s ease;
 }
 
+/* dim is NEVER opacity — transparency lets the art combine with content,
+   noisier not calmer (user, tweak round 1). depth of field instead */
 .zone.dim {
-  opacity: 0.55;
-  filter: saturate(0.6) brightness(0.85);
+  filter: brightness(0.6) saturate(0.45) blur(1px);
+}
+
+/* soft snap: zones pull to center and hold; the stream snaps to its start
+   then scrolls free (docs/focus-ui-spec.md §2) */
+html {
+  scroll-snap-type: y proximity;
+}
+
+.zone {
+  scroll-snap-align: center;
+}
+
+.zone.zone-stream {
+  scroll-snap-align: start;
+  scroll-margin-top: 8px;
+}
+
+/* the page opens with air: identity centered in 70vh */
+.site > .zone:first-child {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* short sections hold their moment — real space between zones */
+main > .zone {
+  margin-bottom: 16vh;
+}
+
+main > .zone:last-child {
+  margin-bottom: 0;
 }
 
 /* the lit zone speaks phosphor: --ok per contract, never the accent.
