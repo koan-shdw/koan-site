@@ -68,8 +68,9 @@ export default function App() {
   // the name grid; hover previews live, click commits; Esc backs out one
   // layer (grid, then chip). Picks stick; __random draws from FAVORITES.
   const [logoFont, setLogoFont] = useState(() => localStorage.getItem(LOGO_KEY) ?? drawLogo());
-  const [egg, setEgg] = useState(false);
-  const [gridOpen, setGridOpen] = useState(false);
+  // ?egg opens the picker on load — debugging the grid without a keyboard
+  const [egg, setEgg] = useState(() => window.location.search.includes('egg'));
+  const [gridOpen, setGridOpen] = useState(() => window.location.search.includes('egg'));
   const [previewFont, setPreviewFont] = useState<string | null>(null);
   const [tdf, setTdf] = useState<Record<string, TdfRows> | null>(null);
 

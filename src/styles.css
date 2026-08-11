@@ -234,7 +234,11 @@ a {
   font: 400 11px var(--mono);
   color: var(--txt);
   text-align: left;
-  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  min-height: 24px; /* law 2 — and the grid's first layout squashed
+                       unconstrained rows to 9px (user found it) */
+  padding: 0 8px;
   border: 1px solid transparent;
   border-radius: 4px;
   white-space: nowrap;
