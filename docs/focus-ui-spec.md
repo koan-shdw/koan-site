@@ -27,25 +27,27 @@ Tweak round 2 (2026-08-11 — snap felt janky; user wants stick-and-dock):
 superseded by round 3. Lesson kept: sticky travel is confined to the
 containing block's CONTENT box — padding is not runway.
 
-Tweak round 3 (2026-08-11 — sections must stack where they are, not race
-to the top one at a time):
+Tweak round 3 (2026-08-11 — cumulative pinned stack): superseded. The
+assembled stack squatted on the viewport and squeezed the stream under it —
+unreadable (user). Kept lesson: measured offsets need JS.
 
-- **Cumulative stack.** All zones are siblings; `.rw` spacers
-  (`--stack-gap`) are the climbs. Every zone except the stream is sticky at
-  a measured cumulative offset: id card at `--stack-top`, projects at
-  card-bottom + `--dock-gap`, tools below that. Docked sections STAY.
-  Heights are unknowable in CSS, so `useFocusZone` measures zones
-  (ResizeObserver — tools folding re-measures) and writes inline `top`s
-  plus `--stack-bottom`.
-- **The stream never pins.** It slides beneath the assembled frosted stack
-  (`position: relative; z-index: 1` under the zones' 2). The feed bar
-  docks at `--stack-bottom`.
-- **Mobile (≤880) never pins** — the stack would eat the screen. Static
-  zones, 24px runways, 10vh opening.
-- Dials: `--stack-top` 12px, `--dock-gap` 24px (px only — the hook parses
-  them), `--stack-gap` 24vh, opening air 22vh.
-- Easing on the climb would need CSS scroll-driven animations — parked as a
-  later dial.
+Tweak round 4 (2026-08-11 — the real mechanic, user-dictated):
+
+- **The page is FROZEN while it builds.** `.site` is sticky top 0 inside
+  `.track`; `.track::after` (3 arrivals × `--assembly-step` × 100vh) is the
+  runway. During it the page holds still: the id card rests mid-screen
+  (`main` padding-top 32vh), and projects → tools → stream each glide up
+  from `--arrive-from` (× viewport) below their resting places into
+  position, eased (cubic out), one arrival per step of scroll.
+- **Landing = release.** Transforms clear on landing (sticky children need
+  their containing blocks back). When the last section lands the runway is
+  spent, the pin releases, and the page scrolls 1:1 — completely normal,
+  card off the top, down into the feed.
+- **The stream still never holds** — it lands last and scrolls immediately.
+- **Mobile (≤880) and reduced-motion skip the show**: runway 0, pin
+  static, normal page.
+- Dials: `--assembly-step` 0.7, `--arrive-from` 0.5 (unitless × viewport;
+  the hook parses them), opening air 32vh.
 
 - `src/lib/useFocusZone.ts` — rAF-throttled scroll listener, returns the lit
   index. No IntersectionObserver (the focal-line rule needs one winner,

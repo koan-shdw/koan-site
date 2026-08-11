@@ -419,7 +419,7 @@ a {
 
 .feed-bar {
   position: sticky;
-  top: var(--stack-bottom, 0px); /* docks just under the assembled stack */
+  top: 0;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -879,36 +879,32 @@ a {
   filter: brightness(0.6) saturate(0.45) blur(1px);
 }
 
-/* cumulative stack (tweak round 3): every zone except the stream pins at a
-   measured cumulative offset — projects docks under the id card and STAYS,
-   tools under projects. The stream slides beneath the assembled stack.
-   Offsets are measured by useFocusZone (heights are unknowable in CSS) and
-   written as inline top. THE dials (px only — the hook parses them): */
+/* assembly intro (tweak round 4): the page is FROZEN while it builds.
+   .site pins inside .track; the track's tail is the runway. The id card
+   rests mid-screen; projects, tools, then the stream glide up from
+   --arrive-from below their resting places into position, one per
+   --assembly-step of scroll (useFocusZone drives the transforms). Last
+   one lands, the pin releases, the page scrolls 1:1 like normal.
+   THE dials (unitless, × viewport height — the hook parses them): */
 :root {
-  --stack-top: 12px; /* where the id card rests */
-  --dock-gap: 24px; /* joint between docked sections */
-  --stack-gap: 24vh; /* runway between sections — bigger = longer climbs */
+  --assembly-step: 0.7; /* scroll length per arrival */
+  --arrive-from: 0.5; /* how far below its place a section starts */
 }
 
-.rw {
-  height: var(--stack-gap);
+.track > .site {
+  position: sticky;
+  top: 0;
+}
+
+/* the runway: 3 arrivals × step × 100vh of frozen scroll */
+.track::after {
+  content: '';
+  display: block;
+  height: calc(var(--assembly-step) * 300vh);
 }
 
 main {
-  padding-top: 22vh; /* the page opens with air, card sits low */
-}
-
-.zone {
-  position: sticky;
-  top: var(--stack-top); /* pre-JS fallback; the hook writes the real one */
-  z-index: 2;
-}
-
-/* the stream never pins — longer than the screen, scrolls the moment it
-   lands, and passes under the frosted stack */
-.zone.zone-stream {
-  position: relative;
-  z-index: 1;
+  padding-top: 32vh; /* the card rests mid-screen while the page builds */
 }
 
 /* the lit zone speaks phosphor: --ok per contract, never the accent.
@@ -952,6 +948,13 @@ main {
 @media (prefers-reduced-motion: reduce) {
   .zone {
     transition: none;
+  }
+  /* no show: the runway collapses, the pin is inert, page is just a page */
+  .track::after {
+    height: 0;
+  }
+  .track > .site {
+    position: static;
   }
 }
 
@@ -1289,18 +1292,15 @@ main {
     contain: none;
     max-height: 640px;
   }
-  /* phones never pin — the stack would eat the whole screen */
-  .zone {
-    position: static;
+  /* phones skip the show — no runway, no pin, just the page */
+  .track::after {
+    height: 0;
   }
-  .rw {
-    height: 24px;
+  .track > .site {
+    position: static;
   }
   main {
     padding-top: 10vh;
-  }
-  .feed-bar {
-    top: 0;
   }
   .lanes {
     grid-template-columns: 1fr;

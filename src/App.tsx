@@ -100,14 +100,15 @@ export default function App() {
   return (
     <>
       <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
-      <div className="site">
-        {/* cumulative stack: zones are siblings, .rw spacers are the runway */}
-        <main>
-          <div {...zone(0)}>
-            <Header />
-          </div>
-          <div className="rw" />
-          <section aria-label="main projects" {...zone(1, 'sec')}>
+      {/* assembly intro: .track's tail is the runway, .site pins inside it
+          while the sections glide into place (docs/focus-ui-spec.md §2) */}
+      <div className="track">
+        <div className="site">
+          <main>
+            <div {...zone(0)}>
+              <Header />
+            </div>
+            <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
             <div className="projects">
               {PROJECTS.map((p) => (
@@ -115,7 +116,6 @@ export default function App() {
               ))}
             </div>
           </section>
-          <div className="rw" />
           {minis && (
             <>
               <section aria-label="tools in development" {...zone(2, 'sec')}>
@@ -159,14 +159,14 @@ export default function App() {
                 </div>
               )}
             </section>
-              <div className="rw" />
             </>
           )}
           <div {...zone(3, 'zone-stream')}>
             <Feed items={items} />
           </div>
         </main>
-        <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
+          <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
+        </div>
       </div>
       <AnsiDock engine={engine} />
       <SocialDock />
