@@ -7,9 +7,10 @@ import mockPlasma from '../assets/mock-plasma.png';
 import mockSunset from '../assets/mock-sunset.png';
 import shotShdw from '../assets/shot-shdw.jpg';
 import shotBodeverse from '../assets/shot-bodeverse.jpg';
+import shotMartian from '../assets/shot-martian.jpg';
 
 // Real screenshots of the live sites (spec §3.2), captured headless.
-// Refresh: rerun the capture (see memory/notes) and replace the two jpgs.
+// Refresh: rerun the capture (see memory/notes) and replace the jpgs.
 export const PROJECTS: Project[] = [
   {
     id: 'shdw',
@@ -24,6 +25,13 @@ export const PROJECTS: Project[] = [
     tagline: 'honouring the cultural legacy of Vaughn and Mark Bode',
     url: 'https://bodeverse.com',
     shot: shotBodeverse,
+  },
+  {
+    id: 'martian',
+    name: 'MARTIAN MUSEUM',
+    tagline: 'curating artwork for the first museums on Mars',
+    url: 'https://martianmuseum.com',
+    shot: shotMartian,
   },
 ];
 
