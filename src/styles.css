@@ -906,7 +906,9 @@ a {
 }
 
 main {
-  padding-top: 32vh; /* the card rests mid-screen while the page builds */
+  /* the hook sets --intro-pad so the resting layout IS the centered trio —
+     the composition never has to drift to meet the release */
+  padding-top: var(--intro-pad, 32vh);
 }
 
 /* the lit zone speaks phosphor: --ok per contract, never the accent.

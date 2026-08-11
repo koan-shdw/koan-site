@@ -28,14 +28,26 @@ export function useFocusZone(count: number, dep?: unknown) {
     const clamp01 = (t: number) => Math.min(1, Math.max(0, t));
 
     // The growing composition stays centered: shifts[k] centers zones 0..k
-    // as one card (floor 24px from the top). Measured transform-free —
-    // valid while frozen, where natural rects are scroll-independent.
+    // as one card (floor 24px from the top). First, --intro-pad pins the
+    // RESTING layout at the centered-trio position, so the last shift is
+    // zero by construction — the trio holds still while the stream lands
+    // and the release clears nothing. Measured transform-free — valid
+    // while frozen, where natural rects are scroll-independent.
     let marks: { shifts: number[] } | null = null;
     const measure = (els: HTMLElement[]) => {
       els.forEach((el) => {
         el.style.transform = '';
       });
-      const base = els[0].getBoundingClientRect().top;
+      const main = els[0].closest('main');
+      let base = els[0].getBoundingClientRect().top;
+      const trioH =
+        els[els.length - 2].getBoundingClientRect().bottom - base;
+      if (main) {
+        const pad = parseFloat(getComputedStyle(main).paddingTop) || 0;
+        const target = Math.max(24, (window.innerHeight - trioH) / 2);
+        root.style.setProperty('--intro-pad', `${Math.round(pad + target - base)}px`);
+        base = els[0].getBoundingClientRect().top; // reflow, re-anchor
+      }
       const shifts = els.slice(0, -1).map((_, k) => {
         const h = els[k].getBoundingClientRect().bottom - base;
         return Math.max(24, (window.innerHeight - h) / 2) - base;
