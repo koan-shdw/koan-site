@@ -16,6 +16,23 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = join(ROOT, 'src', 'assets', 'logos.json');
 const OUT_TDF = join(ROOT, 'src', 'assets', 'logos-tdf.json');
+const OUT_FAV = join(ROOT, 'src', 'assets', 'logos-fav.json');
+
+// The user's shortlist (2026-08-11) — a fresh load draws one at random.
+// td: entries get their renders baked into logos-fav.json so the header
+// never needs the 1.9MB chunk; figlet ones live in logos.json already.
+const FAVORITES = [
+  'AMC AAA01',
+  'Mono 12',
+  'td:SunnyShine',
+  'td:Banshee',
+  'td:Burning Cyan',
+  'td:CyberforceBl',
+  'td:FinalDestiny',
+  'td:HardwiredBC',
+  'td:Nest Red',
+  'td:Tronics Cyan',
+];
 
 const out = {};
 let skipped = 0;
@@ -49,7 +66,8 @@ function parseTdf(buf) {
   const magic = '\x13TheDraw FONTS file\x1a';
   for (let i = 0; i < magic.length; i++) if (buf[i] !== magic.charCodeAt(i)) return null;
   const font = {
-    name: buf.slice(25, 25 + buf[24]).toString('latin1').trim(),
+    // padded with NULs to 12 bytes — strip or the names carry ghosts
+    name: buf.slice(25, 25 + buf[24]).toString('latin1').replace(/\0+/g, '').trim(),
     type: buf[41],
     spacing: buf[42],
     chars: [],
@@ -129,6 +147,19 @@ if (existsSync(TDF_DIR)) {
   }
   writeFileSync(OUT_TDF, JSON.stringify(tdf));
   console.log(`logos-tdf.json: ${Object.keys(tdf).length} thedraw fonts (${bad} skipped)`);
+
+  const fav = { list: FAVORITES, td: {} };
+  for (const key of FAVORITES) {
+    if (!key.startsWith('td:')) {
+      if (!(key in out)) console.error(`favorite MISSING from figlet set: ${key}`);
+      continue;
+    }
+    const name = key.slice(3);
+    if (tdf[name]) fav.td[name] = tdf[name];
+    else console.error(`favorite MISSING from thedraw set: ${name}`);
+  }
+  writeFileSync(OUT_FAV, JSON.stringify(fav));
+  console.log(`logos-fav.json: ${fav.list.length} favorites, ${Object.keys(fav.td).length} baked td renders`);
 } else {
   console.log(`TDF_DIR not found (${TDF_DIR}) — logos-tdf.json not regenerated`);
 }

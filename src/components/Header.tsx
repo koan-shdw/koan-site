@@ -9,6 +9,11 @@
 import { Icon } from './icons';
 import { TdfLine, type TdfRows } from './logo';
 import LOGOS from '../assets/logos.json';
+import FAV from '../assets/logos-fav.json';
+
+// favorite td renders ride in the tiny baked file — the header only waits
+// on the 1.9MB chunk for non-shortlist colored picks
+const FAV_TD = FAV.td as unknown as Record<string, TdfRows>;
 
 export const EMAIL = 'alex@shdw.gallery';
 export const LOGO_DEFAULT = 'ANSI Shadow';
@@ -22,7 +27,9 @@ export const SOCIALS = [
 ];
 
 export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRows> | null }) {
-  const tdRows = font.startsWith('td:') ? tdf?.[font.slice(3)] : undefined;
+  const tdRows = font.startsWith('td:')
+    ? FAV_TD[font.slice(3)] ?? tdf?.[font.slice(3)]
+    : undefined;
   const figlet =
     !font.startsWith('td:') && font in LOGOS
       ? (LOGOS as Record<string, string>)[font]

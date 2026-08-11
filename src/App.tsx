@@ -3,6 +3,7 @@ import { AnsiBackground } from './ansi/AnsiBackground';
 import type { AnsiEngine } from './ansi/engine';
 import { LIBRARY } from './library';
 import { Header, LOGO_DEFAULT } from './components/Header';
+import FAV from './assets/logos-fav.json';
 import { LogoPicker } from './components/LogoPicker';
 import type { TdfRows } from './components/logo';
 import { ProjectCard } from './components/ProjectCard';
@@ -19,8 +20,10 @@ import type { FeedItem, SmallProject } from './types';
 const parseNoteHash = () =>
   decodeURIComponent(window.location.hash.match(/^#\/note\/(.+)$/)?.[1] ?? '') || null;
 
-// the shortlist a fresh load draws from at random — user-curated
-const FAVORITES = [LOGO_DEFAULT];
+// the shortlist a fresh load draws from at random — user-curated, baked by
+// gen-logos.mjs (td renders included so the header skips the 1.9MB chunk)
+const FAVORITES: string[] = FAV.list;
+const FAV_TD = FAV.td as unknown as Record<string, TdfRows>;
 const LOGO_KEY = 'koan.logoFont';
 const drawLogo = () => FAVORITES[Math.floor(Math.random() * FAVORITES.length)];
 
@@ -95,9 +98,10 @@ export default function App() {
   }, []);
 
   // the colored set is 1.9MB — fetched once the egg wakes (hover previews
-  // need it) or when a colored logo is active, never for civilians
+  // need it) or for a colored logo NOT baked into the favorites; never for
+  // civilians on a shortlist draw
   useEffect(() => {
-    if (!tdf && (egg || logoFont.startsWith('td:'))) {
+    if (!tdf && (egg || (logoFont.startsWith('td:') && !(logoFont.slice(3) in FAV_TD)))) {
       void import('./assets/logos-tdf.json').then((m) =>
         setTdf(m.default as unknown as Record<string, TdfRows>),
       );
