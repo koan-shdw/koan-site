@@ -24,15 +24,26 @@ Tweak round 1 (2026-08-11 — opacity was noise):
   blur(1px)`: depth of field, content stays solid.
 
 Tweak round 2 (2026-08-11 — snap felt janky; user wants stick-and-dock):
+superseded by round 3. Lesson kept: sticky travel is confined to the
+containing block's CONTENT box — padding is not runway.
 
-- **Stick-and-dock replaces snap.** Each zone is `position: sticky` at
-  `--stack-top` inside a `.hold` wrapper; the hold's bottom padding
-  (`--stack-gap`) is the runway the next section climbs while the current
-  one stays pinned. Runway spent = docked = the pair scrolls as one,
-  stacked like the normal page. Pure CSS, two dials in `:root`.
-- **The stream never holds.** It's longer than the screen — it docks under
-  tools and scrolls free immediately (`position: static`).
-- **Opening air**: `.hold-first` pads the top 22vh so the card sits low.
+Tweak round 3 (2026-08-11 — sections must stack where they are, not race
+to the top one at a time):
+
+- **Cumulative stack.** All zones are siblings; `.rw` spacers
+  (`--stack-gap`) are the climbs. Every zone except the stream is sticky at
+  a measured cumulative offset: id card at `--stack-top`, projects at
+  card-bottom + `--dock-gap`, tools below that. Docked sections STAY.
+  Heights are unknowable in CSS, so `useFocusZone` measures zones
+  (ResizeObserver — tools folding re-measures) and writes inline `top`s
+  plus `--stack-bottom`.
+- **The stream never pins.** It slides beneath the assembled frosted stack
+  (`position: relative; z-index: 1` under the zones' 2). The feed bar
+  docks at `--stack-bottom`.
+- **Mobile (≤880) never pins** — the stack would eat the screen. Static
+  zones, 24px runways, 10vh opening.
+- Dials: `--stack-top` 12px, `--dock-gap` 24px (px only — the hook parses
+  them), `--stack-gap` 24vh, opening air 22vh.
 - Easing on the climb would need CSS scroll-driven animations — parked as a
   later dial.
 

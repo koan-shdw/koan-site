@@ -29,8 +29,16 @@ function Bubbles({ turns }: { turns: ConvoTurn[] }) {
 
 const CONVO_CLAMP = 8; // turns shown before 'more' in feed/lane modes
 
-export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolean }) {
-  const [expanded, setExpanded] = useState(false);
+export function FeedCard({
+  item,
+  tile = false,
+  full = false, // a note's own page: opens fully expanded, no page link
+}: {
+  item: FeedItem;
+  tile?: boolean;
+  full?: boolean;
+}) {
+  const [expanded, setExpanded] = useState(full);
   const [overflows, setOverflows] = useState(false);
   const [ja, setJa] = useState(false);
   const bodyRef = useRef<HTMLParagraphElement>(null);
@@ -53,6 +61,12 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
     : expanded
       ? 'click = fold it back'
       : 'click = read the whole thing';
+
+  // notes have no external home — they link to their own page instead
+  const pageHref =
+    !full && !item.link && item.source === 'claude'
+      ? `#/note/${item.id.replace(/^post-/, '')}`
+      : null;
 
   // Clamp detection must track layout width (view modes reflow cards).
   // Lives above the tile branch: hooks must run on every render path.
@@ -105,7 +119,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
             !hasMedia && <p className={`tile-body ${big ? 'big' : ''}`}>{body}</p>
           )}
         </div>
-        {(item.tags?.length || item.link) && (
+        {(item.tags?.length || item.link || pageHref) && (
           <div className="tile-foot">
             {item.tags?.slice(0, 3).map((t) => (
               <span key={t} className="tag">
@@ -121,6 +135,11 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
                 title={`open on ${SOURCE_NAME[item.source]}`}
               >
                 open ↗
+              </a>
+            )}
+            {pageHref && (
+              <a className="card-link" href={pageHref} title="its own page — share this note">
+                page ↗
               </a>
             )}
           </div>
@@ -227,7 +246,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         </>
       )}
 
-      {(item.tags?.length || item.link) && (
+      {(item.tags?.length || item.link || pageHref) && (
         <div className="card-foot">
           {item.tags?.map((t) => (
             <span key={t} className="tag">
@@ -237,6 +256,11 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
           {item.link && (
             <a className="card-link" href={item.link} target="_blank" rel="noreferrer" title={`open on ${SOURCE_NAME[item.source]}`}>
               open ↗
+            </a>
+          )}
+          {pageHref && (
+            <a className="card-link" href={pageHref} title="its own page — share this note">
+              page ↗
             </a>
           )}
         </div>

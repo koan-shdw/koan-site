@@ -419,7 +419,7 @@ a {
 
 .feed-bar {
   position: sticky;
-  top: 0;
+  top: var(--stack-bottom, 0px); /* docks just under the assembled stack */
   z-index: 5;
   display: flex;
   align-items: center;
@@ -879,40 +879,36 @@ a {
   filter: brightness(0.6) saturate(0.45) blur(1px);
 }
 
-/* stick-and-dock (tweak round 2): a zone pins at --stack-top inside its
-   hold; the hold's bottom padding is the runway the next section climbs.
-   runway spent = docked = the pair scrolls as one, stacked like normal.
-   THE two dials: */
+/* cumulative stack (tweak round 3): every zone except the stream pins at a
+   measured cumulative offset — projects docks under the id card and STAYS,
+   tools under projects. The stream slides beneath the assembled stack.
+   Offsets are measured by useFocusZone (heights are unknowable in CSS) and
+   written as inline top. THE dials (px only — the hook parses them): */
 :root {
-  --stack-top: 12px; /* where a pinned section rests */
-  --stack-gap: 24vh; /* runway between sections — bigger = longer hold */
+  --stack-top: 12px; /* where the id card rests */
+  --dock-gap: 24px; /* joint between docked sections */
+  --stack-gap: 24vh; /* runway between sections — bigger = longer climbs */
 }
 
-/* runway must be CONTENT, not padding — sticky travel is confined to the
-   containing block's content box (padding gave zero travel, cost a round) */
-.hold::after {
-  content: '';
-  display: block;
+.rw {
   height: var(--stack-gap);
 }
 
-.hold-first {
+main {
   padding-top: 22vh; /* the page opens with air, card sits low */
-}
-
-.hold-last::after {
-  content: none;
 }
 
 .zone {
   position: sticky;
-  top: var(--stack-top);
+  top: var(--stack-top); /* pre-JS fallback; the hook writes the real one */
+  z-index: 2;
 }
 
-/* the stream never holds — it's longer than the screen and people scroll
-   it the moment they see it. it docks and runs free */
+/* the stream never pins — longer than the screen, scrolls the moment it
+   lands, and passes under the frosted stack */
 .zone.zone-stream {
-  position: static;
+  position: relative;
+  z-index: 1;
 }
 
 /* the lit zone speaks phosphor: --ok per contract, never the accent.
@@ -962,6 +958,31 @@ a {
 /* every card clicks through (focus round §4) */
 .card {
   cursor: pointer;
+}
+
+/* ── note page (#/note/<slug> — a note's own shareable page) ────────── */
+
+.note-page main {
+  padding-top: 0;
+}
+
+.note-main {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.note-back {
+  display: inline-block;
+  font: 400 11px var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 12px;
+}
+
+.note-back:hover {
+  color: var(--txt-hi);
 }
 
 /* ── convo posts (format: convo — transcript as back and forth) ─────── */
@@ -1267,6 +1288,19 @@ a {
     grid-row: auto; /* single column: content-sized, capped, no span */
     contain: none;
     max-height: 640px;
+  }
+  /* phones never pin — the stack would eat the whole screen */
+  .zone {
+    position: static;
+  }
+  .rw {
+    height: 24px;
+  }
+  main {
+    padding-top: 10vh;
+  }
+  .feed-bar {
+    top: 0;
   }
   .lanes {
     grid-template-columns: 1fr;

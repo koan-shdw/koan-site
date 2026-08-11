@@ -155,6 +155,20 @@ first convo post, committed to koan-posts by the build session:
 - Live: after FEED_TOKEN lands, dispatch the workflow, confirm the post on
   koan-shdw.github.io/koan-site.
 
+## 9. Note pages (added 2026-08-11, GO'd)
+
+Notes have no external home — each gets its own shareable page:
+
+- URL: `#/note/<slug>` (hash — GitHub Pages has no server routing). Slug =
+  feed id minus the `post-` prefix.
+- The page renders the same ANSI background, the ID header, a "← the
+  stream" link, then the one note full-width in a 680px column, fully
+  expanded (`FeedCard full`), en/日本語 toggle intact. `document.title`
+  carries the note title.
+- Note/convo cards grow a `page ↗` link in the foot; sourced cards keep
+  `open ↗` out to their platform.
+- Unknown slug: "no such note — back to the stream" (law 9).
+
 ## Out of scope
 
 - Audio playback of convos (text only — voice mode exports no audio).

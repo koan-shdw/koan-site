@@ -5,6 +5,7 @@ import { LIBRARY } from './library';
 import { Header } from './components/Header';
 import { ProjectCard } from './components/ProjectCard';
 import { Feed } from './components/Feed';
+import { FeedCard } from './components/FeedCard';
 import { AnsiDock } from './components/AnsiDock';
 import { SocialDock } from './components/SocialDock';
 import { MOCK_FEED, PROJECTS } from './mock/feed';
@@ -12,10 +13,15 @@ import { loadFeed, loadProjects } from './lib/loadFeed';
 import { useFocusZone } from './lib/useFocusZone';
 import type { FeedItem, SmallProject } from './types';
 
+// #/note/<slug> — a note's own shareable page (docs/convo-notes-spec.md §9)
+const parseNoteHash = () =>
+  decodeURIComponent(window.location.hash.match(/^#\/note\/(.+)$/)?.[1] ?? '') || null;
+
 export default function App() {
   const [engine, setEngine] = useState<AnsiEngine | null>(null);
   // mock renders instantly; the real feed swaps in when feed.json answers
   const [items, setItems] = useState<FeedItem[]>(MOCK_FEED);
+  const [noteSlug, setNoteSlug] = useState<string | null>(parseNoteHash);
   // finished public repos (>=1 release) — section hidden until data exists
   const [minis, setMinis] = useState<SmallProject[] | null>(null);
   const [minisOpen, setMinisOpen] = useState(() => localStorage.getItem('koan.minis') !== '0');
@@ -38,8 +44,27 @@ export default function App() {
     };
   }, []);
 
-  // scroll focus (docs/focus-ui-spec.md §2): identity 0, projects 1, tools 2, stream 3
-  const { refs, lit } = useFocusZone(4);
+  useEffect(() => {
+    const onHash = () => {
+      setNoteSlug(parseNoteHash());
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
+  const note = noteSlug
+    ? items.find((i) => i.id === `post-${noteSlug}` || i.id === noteSlug) ?? null
+    : null;
+
+  useEffect(() => {
+    document.title = note?.title ? `${note.title} · KOAN` : 'KOAN';
+  }, [note?.title]);
+
+  // scroll focus + stack (docs/focus-ui-spec.md): identity 0, projects 1,
+  // tools 2, stream 3; dep re-arms measurement when the tools zone mounts
+  // late or folds
+  const { refs, lit } = useFocusZone(4, `${minis?.length ?? -1}:${minisOpen}`);
   const zone = (i: number, base = '') => ({
     className: `${base} zone ${lit === i ? 'lit' : 'dim'}`.trim(),
     ref: (el: HTMLElement | null) => {
@@ -47,19 +72,42 @@ export default function App() {
     },
   });
 
+  // a note's own page: same background, same identity, one note, full
+  if (noteSlug) {
+    return (
+      <>
+        <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
+        <div className="site note-page">
+          <Header />
+          <main className="note-main">
+            <a className="note-back" href="#/">
+              ← the stream
+            </a>
+            {note ? (
+              <FeedCard item={note} full />
+            ) : (
+              <p className="empty">
+                no such note — <a href="#/">back to the stream</a>
+              </p>
+            )}
+          </main>
+          <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
       <div className="site">
-        {/* stick-and-dock: each hold's padding is the next zone's runway */}
-        <div className="hold hold-first">
+        {/* cumulative stack: zones are siblings, .rw spacers are the runway */}
+        <main>
           <div {...zone(0)}>
             <Header />
           </div>
-        </div>
-        <main>
-          <div className="hold">
-            <section aria-label="main projects" {...zone(1, 'sec')}>
+          <div className="rw" />
+          <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
             <div className="projects">
               {PROJECTS.map((p) => (
@@ -67,9 +115,9 @@ export default function App() {
               ))}
             </div>
           </section>
-          </div>
+          <div className="rw" />
           {minis && (
-            <div className="hold">
+            <>
               <section aria-label="tools in development" {...zone(2, 'sec')}>
               <h2 className="sec-head as-btn">
                 <button
@@ -111,12 +159,11 @@ export default function App() {
                 </div>
               )}
             </section>
-            </div>
+              <div className="rw" />
+            </>
           )}
-          <div className="hold hold-last">
-            <div {...zone(3, 'zone-stream')}>
-              <Feed items={items} />
-            </div>
+          <div {...zone(3, 'zone-stream')}>
+            <Feed items={items} />
           </div>
         </main>
         <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
