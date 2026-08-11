@@ -165,10 +165,10 @@ a {
 }
 
 /* the figlet logotype: pasted over the card edge, breaks free of the glass.
-   speaks in the frame's voice — same grey as the card outlines */
+   speaks in the border's voice — the exact same green */
 .id-ascii {
   font: 700 9px/1.05 var(--mono);
-  color: var(--line2);
+  color: var(--edge);
   margin: -32px 0 0;
   white-space: pre;
   overflow: visible;
@@ -216,56 +216,52 @@ a {
 .lg-grid {
   overflow-y: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2px 4px;
   padding: 8px;
 }
 
-.lg-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  padding: 6px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: var(--panel);
-  text-align: left;
+/* the dock chip: current logotype, the egg's handle */
+.logo-chip {
+  max-width: 180px;
   overflow: hidden;
-  content-visibility: auto;
-  contain-intrinsic-size: auto 96px;
-}
-
-.lg-cell:hover {
-  border-color: var(--line2);
-}
-
-.lg-cell.on {
-  border-color: var(--ok);
-}
-
-.lg-prev {
-  margin: 0;
-  font: 400 4.5px/1.1 var(--mono);
-  color: var(--txt);
-  white-space: pre;
-  max-height: 66px;
-  overflow: hidden;
-}
-
-.lg-prev.td {
-  font-size: 5px;
-  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ok);
 }
 
 .lg-name {
-  font: 400 10px var(--mono);
-  color: var(--muted);
+  font: 400 11px var(--mono);
+  color: var(--txt);
+  text-align: left;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.lg-rand {
-  font: 700 22px var(--mono);
+.lg-name:hover {
+  border-color: var(--edge-hi);
   color: var(--txt-hi);
+  background: var(--panel2);
+}
+
+.lg-name.on {
+  border-color: var(--edge);
+  color: var(--txt-hi);
+}
+
+.lg-sect {
+  grid-column: 1 / -1;
+  font: 400 10px var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--dim);
+  padding: 8px 8px 2px;
+  border-top: 1px solid var(--line);
+  margin-top: 4px;
 }
 
 .lg-load {
@@ -781,16 +777,20 @@ a {
   transition: border-color 0.15s;
 }
 
-/* ── single-line CP437 frames (the BBS outline, user round 2026-08-11) ──
-   real ┌─┐│└┘ glyphs tiled as border-image; grey baked into the SVG
-   (data URIs can't read vars — keep in step with --line2) */
+/* ── the phosphor edge (user round 2026-08-11: borders lead, logo follows;
+   ascii frames tried and reverted) — documented extension of the contract */
+:root {
+  --edge: color-mix(in srgb, var(--ok) 45%, transparent);
+  --edge-hi: color-mix(in srgb, var(--ok) 75%, transparent);
+}
+
 .card,
 .id {
-  border-style: solid;
-  border-width: 14px 10px;
-  border-color: transparent;
-  border-radius: 0;
-  border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='42'><g font-family='Consolas,Menlo,monospace' font-size='14' fill='rgba(210,210,220,0.45)'><text x='1' y='11'>┌</text><text x='11' y='11'>─</text><text x='21' y='11'>┐</text><text x='1' y='25'>│</text><text x='21' y='25'>│</text><text x='1' y='39'>└</text><text x='11' y='39'>─</text><text x='21' y='39'>┘</text></g></svg>") 14 10 / 14px 10px round;
+  border-color: var(--edge);
+}
+
+.card:hover {
+  border-color: var(--edge-hi);
 }
 
 .card:hover {

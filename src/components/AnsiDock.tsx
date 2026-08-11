@@ -8,7 +8,14 @@ import type { TransitionKind } from '../ansi/transitions';
 
 const KINDS: (TransitionKind | 'auto')[] = ['auto', 'mosaic', 'wipe'];
 
-export function AnsiDock({ engine }: { engine: AnsiEngine | null }) {
+export function AnsiDock({
+  engine,
+  logoChip,
+}: {
+  engine: AnsiEngine | null;
+  /** KOAN egg: current logotype name, clicking opens the name grid */
+  logoChip?: { name: string; onClick: () => void } | null;
+}) {
   const [idx, setIdx] = useState(0);
   const [kind, setKind] = useState<TransitionKind | 'auto'>('auto');
 
@@ -46,6 +53,18 @@ export function AnsiDock({ engine }: { engine: AnsiEngine | null }) {
           {k}
         </button>
       ))}
+      {logoChip && (
+        <>
+          <span className="dock-sep" />
+          <button
+            className="dock-b logo-chip"
+            onClick={logoChip.onClick}
+            title="the logotype font — click for the grid"
+          >
+            {logoChip.name}
+          </button>
+        </>
+      )}
     </div>
   );
 }

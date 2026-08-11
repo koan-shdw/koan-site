@@ -64,10 +64,13 @@ export default function App() {
     ? items.find((i) => i.id === `post-${noteSlug}` || i.id === noteSlug) ?? null
     : null;
 
-  // logotype: KOAN (caps) summons the picker grid, Esc dismisses; picks
-  // stick, __random draws from FAVORITES each load
+  // logotype (KOAN egg): caps KOAN reveals the dock chip; the chip opens
+  // the name grid; hover previews live, click commits; Esc backs out one
+  // layer (grid, then chip). Picks stick; __random draws from FAVORITES.
   const [logoFont, setLogoFont] = useState(() => localStorage.getItem(LOGO_KEY) ?? drawLogo());
-  const [pickerOpen, setPickerOpen] = useState(false);
+  const [egg, setEgg] = useState(false);
+  const [gridOpen, setGridOpen] = useState(false);
+  const [previewFont, setPreviewFont] = useState<string | null>(null);
   const [tdf, setTdf] = useState<Record<string, TdfRows> | null>(null);
 
   useEffect(() => {
@@ -75,36 +78,45 @@ export default function App() {
     const onKey = (e: KeyboardEvent) => {
       if ((e.target as HTMLElement).closest?.('input, textarea, select')) return;
       if (e.key === 'Escape') {
-        setPickerOpen(false);
+        setGridOpen((open) => {
+          if (!open) setEgg(false);
+          return false;
+        });
+        setPreviewFont(null);
         return;
       }
       if (e.key.length !== 1) return;
       buf = (buf + e.key).slice(-4);
-      if (buf === 'KOAN') setPickerOpen(true);
+      if (buf === 'KOAN') setEgg(true);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
-  // the colored set is 1.9MB — fetched only for the summoned picker or an
-  // active colored logo, never for civilians
+  // the colored set is 1.9MB — fetched once the egg wakes (hover previews
+  // need it) or when a colored logo is active, never for civilians
   useEffect(() => {
-    if (!tdf && (pickerOpen || logoFont.startsWith('td:'))) {
+    if (!tdf && (egg || logoFont.startsWith('td:'))) {
       void import('./assets/logos-tdf.json').then((m) =>
         setTdf(m.default as unknown as Record<string, TdfRows>),
       );
     }
-  }, [pickerOpen, logoFont, tdf]);
+  }, [egg, logoFont, tdf]);
 
   const pickLogo = (f: string) => {
     if (f === '__random') {
       localStorage.removeItem(LOGO_KEY);
       setLogoFont(drawLogo());
-      return;
+    } else {
+      setLogoFont(f);
+      localStorage.setItem(LOGO_KEY, f);
     }
-    setLogoFont(f);
-    localStorage.setItem(LOGO_KEY, f);
+    setPreviewFont(null);
+    setGridOpen(false);
   };
+
+  const shownFont = previewFont ?? logoFont;
+  const chipName = (logoFont.startsWith('td:') ? logoFont.slice(3) : logoFont) || LOGO_DEFAULT;
 
   useEffect(() => {
     document.title = note?.title ? `${note.title} · KOAN` : 'KOAN';
@@ -127,7 +139,7 @@ export default function App() {
       <>
         <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
         <div className="site note-page">
-          <Header font={logoFont} tdf={tdf} />
+          <Header font={shownFont} tdf={tdf} />
           <main className="note-main">
             <a className="note-back" href="#/">
               ← the stream
@@ -155,7 +167,7 @@ export default function App() {
         <div className="site">
           <main>
             <div {...zone(0)}>
-              <Header font={logoFont} tdf={tdf} />
+              <Header font={shownFont} tdf={tdf} />
             </div>
             <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
@@ -217,9 +229,14 @@ export default function App() {
           <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
         </div>
       </div>
-      <AnsiDock engine={engine} />
+      <AnsiDock
+        engine={engine}
+        logoChip={egg ? { name: chipName, onClick: () => setGridOpen((v) => !v) } : null}
+      />
       <SocialDock />
-      {pickerOpen && <LogoPicker current={logoFont} tdf={tdf} onPick={pickLogo} />}
+      {gridOpen && (
+        <LogoPicker current={logoFont} tdf={tdf} onPick={pickLogo} onHover={setPreviewFont} />
+      )}
     </>
   );
 }
