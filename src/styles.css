@@ -874,9 +874,11 @@ a {
 }
 
 /* dim is NEVER opacity — transparency lets the art combine with content,
-   noisier not calmer (user, tweak round 1). depth of field instead */
+   noisier not calmer (user, tweak round 1). depth of field instead.
+   OFF for now: out of sync with the assembly intro (user 2026-08-11) —
+   re-enable by restoring the filter line */
 .zone.dim {
-  filter: brightness(0.6) saturate(0.45) blur(1px);
+  filter: none;
 }
 
 /* assembly intro (tweak round 4): the page is FROZEN while it builds.
