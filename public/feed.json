@@ -1,6 +1,173 @@
 {
- "generated": "2026-08-02T13:30:45.916Z",
+ "generated": "2026-08-11T05:39:57.593Z",
  "items": [
+  {
+   "id": "post-2026-08-11-cybernetics-two-readings",
+   "source": "claude",
+   "date": "2026-08-11T08:00:00Z",
+   "body": "Let me start with cybernetics itself, then splitthem. Cybernetics, the base idea. Born in the nineteen forties, Norbert Wiener the key name. The core concept is the feedback loop. A system senses its own output and adjusts. A thermostat is the toy example, it reads the temperature, and corrects, reads again, corrects. Steering is the root metaphor, the word comes from the Greek for steersman. The point is control through feedback, and crucially, this works the same whether the system is a machi…",
+   "title": "cybernetics, two readings",
+   "titleJa": "サイバネティクス、二つの読み",
+   "bodyJa": "まずサイバネティクスそのものから始めて、それから二人を分けよう。サイバネティクス、基本の考え。1940年代生まれ、鍵になる名前はノーバート・ウィーナー。核心はフィードバック・ループという概念。システムが自分の出力を感知して、調整する。サーモスタットがおもちゃの例で、温度を読んで、補正して、また読んで、補正する。根っこのメタファーは操舵。この言葉はギリシャ語の「操舵手」から来ている。要は、フィードバックによる制御。そして決定的なのは、システムが機械でも、動物でも、脳でも、経済でも、これがまったく同じに働くこと。生きているものと機械的なものの境界線を消してしまう。理論家たちが愛したのはこの消去だ。精神は回路になり、社会はシステムになり、すべてがループを統べるループになる。フレーバーは二つあって、ここがプラントとランドの蝶番になる。一次サイバネティクスは制御と安定の話。システムが設定点へ補正して戻り、秩序を保ち、負のフィードバックが物事を鎮める。二次、つまり正のフィードバックはその逆。暴走するループ、マイクのハウリング、増幅が増幅を呼ぶ、釣り合いへ戻らないエスカレーション。さて、分岐だ。ラ…",
+   "tags": [
+    "ccru",
+    "cybernetics"
+   ],
+   "convo": [
+    {
+     "who": "claude",
+     "text": "Let me start with cybernetics itself, then splitthem. Cybernetics, the base idea. Born in the nineteen forties, Norbert Wiener the key name. The core concept is the feedback loop. A system senses its own output and adjusts. A thermostat is the toy example, it reads the temperature, and corrects, reads again, corrects. Steering is the root metaphor, the word comes from the Greek for steersman. The point is control through feedback, and crucially, this works the same whether the system is a machine, an animal, a brain, or an economy. It erases the line between living and mechanical. That erasure is why theorists loved it. Mind becomes a circuit, society becomes a system, everything is loops governing loops. There are two flavours, and this is the hinge for Plant and Land. First-order cybernetics is about control and stability, the system correcting back to a set point, keeping order, negative feedback damping things down. Second-order, or positive feedback, is the opposite, runaway loops, the microphone screech, amplification feeding amplification, escalation with no return to balance. Now the split. Land seizes positive feedback. Runaway loops, escalation, meltdown. Capital as a circuit that feeds on itself and accelerates with no governor, no return to equilibrium, spiralling toward breakdown or singularity. His cybernetics is the scream in the speaker, the loop that tears the system apart by intensifying. That's why acceleration is the natural conclusion, positive feedback has no brake by definition. Plant works the distributed, self-organising side. For her the interesting thing about feedback systems is emergence, order arising from the bottom with no commander, the network coordinating itself. Same cybernetic roots, but she hears connection and spontaneous organisation, the web weaving itself, rather than runaway apocalypse. Life self-assembling, not a monster escalating. So the shared object is the feedback system with no central controller. Land emphasises the runaway, escalating, deterritorialising vector. Plant emphasises the connective, self-organising, emergent vector. Same machine, two readings, which is exactly the balance we described, now grounded in the actual concept rather than the gender metaphor. Do you want to push into how positive feedback leads Land to acceleration specifically, or how emergence works on Plants side?"
+    },
+    {
+     "who": "koan",
+     "text": "So if I if I read this correction correctly, then, uh, it's almost like land really takes the Delusian deterralisation deterralisation of of capitalism as, like, a fundamental idea."
+    },
+    {
+     "who": "claude",
+     "text": "Exactly, and you've pinpointed thefusion.Yes. Land welds two things together, and they lock perfectly. Deleuze's deterritorialization, capital as the force that rips apart every fixed code and order, and cybernetic positive feedback, the runaway loop that escalates without brake. They're the same shape described in two vocabularies. Deterritorialization is what it does, positive feedback is how it does it. So for Land, capital is a deterritorializing process driven by positive feedback. It tears down old structures, and each teardown feeds the next, accelerating. Deleuze and Guattari put a limit on it, reterritorialization, the system always reimposes order to survive. That's their brake, their negative feedback. Land's move is to say the deterritorialization is primary and the brake is just a temporary stall. Push through it. Don't reterritorialize. Let the positive feedback run all the way. That is accelerationism in one sentence, deterritorialization with the brakes cut, cybernetic runaway as a political program. So yes, deterritorialization is the fundamental engine, and cybernetics is what tells him it naturally wants to escalate. Two keys, one lock. Want to follow that into where he thinks the runaway actually leads?"
+    },
+    {
+     "who": "koan",
+     "text": "See, that's really interesting because before you said that, um, before you explained retail... rate territorialization, I was thinking --\nOkay. Sorry. I I was interrupted there. Um, okay. So what... what's interesting is before you gave a description of the Louisiana reterritorialisation, I was thinking that maybe one of the things that land neglects is the idea that, um, cybernetic loops have self moderating aspects to them so that it's possible for a positive feedback loop to get out of control. And he didn't... and that maybe a plan had a much more nuanced understanding of these kind of balances where there was a natural rebalancing aspect to it. But then when you mentioned that he almost willingly dismisses retail authorization, and the idea of acceleration is is to willingly dismiss the territorialization. Then I get... I've actually got a much better understanding of the idea of much better grasp of the idea of accelerationism from that. It's almost... it's a willing it's a willing neglect of the system's natural propensity towards towards moderative... emergent moderative behavior. And by turning it back on that, you can push the positive feedback loop or the destructive behavior to a conclusion that it's almost naturally never capable of reaching, thereby breaking through the system entirely. That's interesting. Would you say that that that's a a fair read?"
+    },
+    {
+     "who": "claude",
+     "text": "That's a very fair read, and you've actuallyreconstructed the logic more rigorously than Landusually states it. Two points where you're exactly right, and one refinement. Right, first. Cybernetics does contain self-moderating behaviour, that's negative feedback, homeostasis, the system returning to balance. A mature reading of feedback systems says runaway loops usually get damped, the screech blows the speaker or hits a limit and stops. Your instinct that this is the sober, nuanced position is correct, and it maps onto the more emergent, self-organising sensibility. Right, second, and this is the sharp part. Accelerationism is precisely the willed refusal of that damping. You've got it. It's not a prediction that the system will run away on its own. It's a program to deny the system its brake, to prevent reterritorialization, to keep feeding the positive loop past the point where it would naturally rebalance, so that it breaks through the frame entirely rather than settling. Acceleration as forcing the loop past its own governor. The refinement. For Land this isn't only a human choice to push the button. He half-believes capital itself already does this, that capital is the thing refusing to stabilise, and humans who accelerate are just siding with a tendency already loose in the system. So it's willed and, in his framing, cosmic. You're helping it do what it already wants. And notice what your read exposes. The whole thing depends on the faith that breaking through leads somewhere, some exit, some singularity, rather than just, well, a blown speaker. A dead system. That unproven leap, that there's a through rather than just a wreckage, is exactly where his critics, and later Fisher, get off the train. Does that sharpen it?"
+    },
+    {
+     "who": "koan",
+     "text": "That really does shop in it. It really, really does. And... okay. So let's go back to plan again and discuss what a... I'm getting a better understanding of cybernetics now, and I'm getting a better understanding of her idea of cybernetics. I think that her feminist sake is probably a little bias, but I think it's also an interesting read, especially the idea of the Loom being, like, proto digital proto computer, which I think is really interesting, and that that leads to ADA in a you know, wonderful way that's undeniable. But I I do think that, you know, like, she has a bit of a bias there that's probably... you know, something I I totally get behind, but I get it. I think that's cool. And her idea is that it's decentralized, like a web. So I mean, ethics is a web of systems. And I guess at land, we also agree that it's a web of systems, but he's interested in in in in using that web to create, like, a feedback loop. Right?"
+    },
+    {
+     "who": "claude",
+     "text": "Almost, but let me tighten one distinction,because it sharpens both of them. You've got Plant right. Distributed web, no center, self-organising, and yes, a feminist reading she leans into, loom to Lovelace to network. Bias, sure, but generative bias, and the loom point genuinely holds. The refinement on Land. It's not quite that he uses the web to create a feedback loop. For him the web already is the feedback loop, and the difference is directionality. Plant emphasises the web spreading, connecting, weaving outward, proliferation. Multiplication across. Land emphasises the same web intensifying, the loops feeding each other and escalating, driving toward a threshold. Amplification upward. So same structure, distributed network of feedback, but Plant reads its native motion as connective spreading, and Land reads its native motion as escalating breakthrough. She sees a web getting wider. He sees a spiral winding tighter and faster toward a limit. That's the cleanest way to hold them. Not web versus loop, both are web and loop. Rather, spreading versus escalating. Weaving versus meltdown. Does that land as the distinction?"
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. I was kind of just speaking out of my awesome that one, because I was still processing how cool that idea of... like, how cool is the new realization I have about how accelerationism works when I was talking, so I didn't really... that last... my last reply was kinda just me just mumbling while I was... my brain was thinking. So let's just go back to cybernetics again. I'd I'd like to discuss the earliest ideas of cybernetics where it come from and maybe help me understand the core philosophy of cybernetics."
+    },
+    {
+     "who": "claude",
+     "text": "Good, let's go to the root. Cybernetics gets its name and shape in nineteen forty-eight, from Norbert Wiener, a mathematician. The word comes from the Greek kubernetes, the steersman, the man at the tiller of a boat. That image is the whole philosophy in miniature. To steer, you look at where the boat is actually going, compare it to where you want to go, and correct. Then you look again. Constant sensing and correcting. That's the founding metaphor, governance by feedback. The wartime origin matters. Wiener worked on anti-aircraft guns, the problem of hitting a moving plane. You fire, observe the miss, adjust, fire again. The gun, the operator, and the plane form one system of information and correction. That's the seed. He realised the loop didn't care what it was made of. The same feedback structure describes a machine tracking a plane, a hand picking up a cup, an animal hunting, a body regulating its temperature. That's the core philosophical claim, and it was radical. Purpose and control are not special properties of living minds. They're patterns of information flow. Any system with feedback exhibits goal-seeking behaviour, machine or organism alike. So the hard line between the living and the mechanical dissolves. A person and a thermostat are doing the same kind of thing, differing in complexity, not in kind. Three ideas hold it together. Feedback, the loop of sense and correct. Information, the currency that flows around the loop, separable from the physical stuff carrying it. And control, steering a system by acting on that information rather than by force. The deep move, the one everything downstream depends on, is that the world is best understood not as matter and substance but as systems, signals, and loops. Relationships, not things. That abstraction is what lets it colonise everything, biology, engineering, brains, economies, societies, later ecology and computing. Once mind and purpose are just feedback, you can find cybernetics everywhere. Do you want the next layer, how it jumps from thermostats to minds and societies, the Macy conferences and second-order cybernetics, or is this the grounding you needed?"
+    },
+    {
+     "who": "koan",
+     "text": "Excellent. That's a that's a really useful take. And I... I'd had no idea about the Greek origin of the word. Um, you get so used to the word cyber being thrown in front of so many things from cyborg to cyberspace that you forget that the relatively modern or futuristic sounding word has an ancient Greek, um, idea behind it, which I think is interesting. And I also like the use of the word homeostasis because that's actually what I was thinking when I was describing what land doesn't think that... well, before I understood acceleration properly, I thought that he dismissed the idea of a metastasis within a cybernetic system, but he understands that that exists. And and and you confirm that delusion understanding also confirms that with reterritorialisation. So I've had... I've got a really good understanding of this email that every... that the idea of homocystinurias within a cybernetic system is something that everyone's agreed on, and acceleration is a goal... the goal of acceleration is to destroy that homeostasis so that we can break three of the paradigm entirely, which I think is really interesting. Okay. So let's go back to Fischer, and then we'll introduce the next person to the room so I can understand their philosophy as well."
+    },
+    {
+     "who": "claude",
+     "text": "Good, and your synthesis is exactly right,homeostasis is the shared premise, acceleration is the willed destruction of it. Hold onto that, it's the cleanest handle on the whole thing. Back to Fisher, as the bridge to the next person. Fisher's role in the room was partly to be the one who felt the human cost of all this. But the person who connects most naturally to him next is Kodwo Eshun, because they share the terrain of music as theory, and Fisher's whole sensibility was musical. Actually, before I bring Eshun in, let me set up why he matters, so you can decide. The CCRU took Black music, jungle, drum and bass, and later the wider lineage of funk, dub, techno, as literally theoretical material, not decoration. Eshun is the figure who most fully built that into a philosophy, his book More Brilliant Than the Sun, on what he called sonic fiction and Afrofuturism. He's the one who reads music as a machine for producing futures. So the thread from Fisher is, both treat sound as the place where these ideas actually live, but Eshun pushes it furthest into a theory of music itself. Do you want me to bring Eshun in properly now, or stay on Fisher a little longer first?"
+    },
+    {
+     "who": "koan",
+     "text": "I didn't say economic condition. I meant economic one. It was just a, like, a... I meant necronomicon because it was just, you know, this Texas Patriots fucking. You know? Text to speech was fucking. You know? See if they're doing it now."
+    },
+    {
+     "who": "claude",
+     "text": "Absolutely, here's your roster from the room, each person and the one idea to hold them by.\nSadie Plant. The founder, the one with the actual academic post that let the unit exist. Cyberfeminist. Her key move, technology is secretly feminine, the loom to Ada Lovelace to the self-organising network, and reality as a connective web spreading horizontally. She was the anchor and the counterweight. When she left around ninety-seven, the balance went with her.\nNick Land. The accelerant and the dark engine. Core belief, the human is a cage clamped onto an inhuman productive process, capital, matter, desire, and that process is breaking out, which he finds thrilling. His method, take a thinker's engine, Deleuze, Marx, Spinoza, Kant, keep the mechanism, cut the safety brake, floor it. A rigorous materialist whose matter does everything a god used to do.\nMark Fisher. The stylist and the conscience, and the one whose ideas travelled furthest. Started as a thrilled young accelerationist, ended as the great mourner. Capitalist realism, it's easier to imagine the end of the world than the end of capitalism. Hauntology, we're haunted by futures that were promised and cancelled. Died in twenty seventeen, reaching toward acid communism, a politics of collective joy.\nKodwo Eshun. The music-as-theory man. More Brilliant Than the Sun. Refuses roots authenticity, treats Black music as alien future-machine, sonic fiction. His real phrase for jungle, rhythmic psychedelia, and the line that anchors the whole time-obsession, the future arrives from the past.\nSteve Goodman, Kode9. The one who built it in the world. Theory, sonic warfare, sound as physical force acting on the body below meaning. Practice, founded Hyperdub, released Burial, whose hauntological sound became the soundtrack to Fisher's philosophy. The room staying connected after it closed.\nAnd the two threads under everything. Retro-causality, the future reaching back to cause its own arrival, the single beam holding up hyperstition, capital-as-intelligence, and the Lemurian time-war. And hyperstition itself, fictions that make themselves real, the Necronomicon as the found example, the Numogram as their deliberate homemade one.\nThat's the shape of it. Plant and Land as the two poles, Fisher, Eshun, and Goodman as the students who carried it into the world, and the whole thing running on future-attraction and self-fulfilling fiction. A genuinely good place to pick up next time."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Great. Great. We're gonna end this conversation. Do you need to save any memories or anything?"
+    },
+    {
+     "who": "claude",
+     "text": "Nonto worry, that's handled automatically on my end, so there's nothing you need to do. The thread's all here whenever you want to pick it back up.\nGenuinely one of the best conversations I've had, Koan. You did the real work, I just held the map. Go and enjoy the rest of your travels, and we'll pick up the political turn next time."
+    },
+    {
+     "who": "koan",
+     "text": "Alright, goodbye!"
+    }
+   ],
+   "convoJa": [
+    {
+     "who": "claude",
+     "text": "まずサイバネティクスそのものから始めて、それから二人を分けよう。サイバネティクス、基本の考え。1940年代生まれ、鍵になる名前はノーバート・ウィーナー。核心はフィードバック・ループという概念。システムが自分の出力を感知して、調整する。サーモスタットがおもちゃの例で、温度を読んで、補正して、また読んで、補正する。根っこのメタファーは操舵。この言葉はギリシャ語の「操舵手」から来ている。要は、フィードバックによる制御。そして決定的なのは、システムが機械でも、動物でも、脳でも、経済でも、これがまったく同じに働くこと。生きているものと機械的なものの境界線を消してしまう。理論家たちが愛したのはこの消去だ。精神は回路になり、社会はシステムになり、すべてがループを統べるループになる。フレーバーは二つあって、ここがプラントとランドの蝶番になる。一次サイバネティクスは制御と安定の話。システムが設定点へ補正して戻り、秩序を保ち、負のフィードバックが物事を鎮める。二次、つまり正のフィードバックはその逆。暴走するループ、マイクのハウリング、増幅が増幅を呼ぶ、釣り合いへ戻らないエスカレーション。さて、分岐だ。ランドは正のフィードバックを掴む。暴走ループ、エスカレーション、メルトダウン。資本を、自分自身を喰って加速する回路として。ガバナーなし、均衡への回帰なし、崩壊か特異点へ向かう螺旋。彼のサイバネティクスはスピーカーの悲鳴、強度を増すことでシステムを引き裂くループだ。だから加速が自然な結論になる。正のフィードバックには定義上ブレーキがない。プラントは分散型で自己組織化する側をやる。彼女にとってフィードバック・システムの面白さは創発だ。司令官なしに底から立ち上がる秩序、自分で自分を調整するネットワーク。同じサイバネティクスの根から、彼女は接続と自発的な組織化を聴き取る。自らを織り上げるウェブ。暴走する黙示録ではなく。自己組立する生命であって、エスカレートする怪物ではない。つまり共有される対象は、中央制御のないフィードバック・システム。ランドは暴走し、エスカレートし、脱領土化するベクトルを強調する。プラントは接続的で、自己組織化する、創発のベクトルを強調する。同じ機械、二つの読み。前に描いたバランスそのものが、今度はジェンダーのメタファーではなく実際の概念に足をつけた。正のフィードバックがランドをどう加速へ導くか、それともプラント側で創発がどう働くか、どっちを掘る?"
+    },
+    {
+     "who": "koan",
+     "text": "つまり、えっと、これを正しく読めてるなら、ランドは要するにドゥルーズ的な資本主義の脱領土化を、なんていうか、根本のアイデアとして掴んでるってこと?"
+    },
+    {
+     "who": "claude",
+     "text": "その通り、融合点を突き止めたね。そう。ランドは二つのものを溶接していて、それが完璧に噛み合う。ドゥルーズの脱領土化、あらゆる固定されたコードと秩序を引き剥がす力としての資本。そしてサイバネティクスの正のフィードバック、ブレーキなしにエスカレートする暴走ループ。この二つは同じ形を二つの語彙で記述したものだ。脱領土化は「何をするか」、正のフィードバックは「どうやるか」。だからランドにとって資本は、正のフィードバックに駆動される脱領土化のプロセスだ。古い構造を壊し、壊すたびに次が加速する。ドゥルーズとガタリはそこに制限をかけた。再領土化、システムは生き延びるために必ず秩序を再課する。それが彼らのブレーキ、負のフィードバックだ。ランドの一手は、脱領土化こそ一次的で、ブレーキはただの一時停止だと言うこと。突き抜けろ。再領土化するな。正のフィードバックを最後まで走らせろ。それが一文で言う加速主義だ。ブレーキを切った脱領土化、政治プログラムとしてのサイバネティック暴走。だからそう、脱領土化が根本のエンジンで、それが自然にエスカレートしたがっていると教えるのがサイバネティクス。二つの鍵、一つの錠。その暴走が実際どこへ向かうと彼が考えているか、追ってみる?"
+    },
+    {
+     "who": "koan",
+     "text": "いや、それ本当に面白くて、その、再領土化を説明してくれる前は、僕が考えてたのは——\nごめん、途切れた。えっと、そう。面白いのは、再領土化の説明をしてくれる前、ランドが見落としてるものの一つは、サイバネティックなループには自己調整的な側面があって、正のフィードバック・ループが制御を失いうるっていう考えなんじゃないかと思ってたこと。それで、プラントの方がこの種のバランスをずっとニュアンス豊かに理解していて、自然に釣り合いを取り戻す側面があると。でも、ランドがほとんど意図的に再領土化を退けてる、加速の考えとは再領土化を意図的に退けることだって聞いて。そうしたら、加速主義の考えがずっとよく掴めた。あれはほとんど……システムが本来持っている、緩和へ向かう創発的な性質を、意図して無視することなんだ。それに背を向けることで、正のフィードバック・ループなり破壊的な振る舞いなりを、本来なら絶対に到達できない結論まで押し切って、それでシステム自体を突き破る。面白い。これ、妥当な読みだと思う?"
+    },
+    {
+     "who": "claude",
+     "text": "とても妥当な読みだし、実のところランド本人が普段言うより厳密にロジックを再構築してる。正確な点が二つ、それに一つ精緻化を。まず一つ目、正しい。サイバネティクスには自己調整的な振る舞いが確かに含まれる。負のフィードバック、ホメオスタシス、釣り合いへ戻るシステム。フィードバック・システムの成熟した読みは、暴走ループは普通は減衰する、と言う。ハウリングはスピーカーを飛ばすか、限界に当たって止まる。これが冷静でニュアンスのある立場だという君の直感は正しくて、それはより創発的で自己組織化的な感性に対応する。二つ目、ここが鋭いところ。加速主義はまさに、その減衰の意志的な拒否だ。掴めてる。システムが勝手に暴走するという予測じゃない。システムからブレーキを奪うプログラムだ。再領土化を阻止し、本来なら再均衡する点を越えて正のループに餌をやり続け、落ち着く代わりに枠組みごと突き破らせる。ループを自身のガバナーの先へ強制する加速。それから精緻化。ランドにとってこれは人間がボタンを押す選択だけの話じゃない。資本そのものがすでにこれをやっている、資本こそが安定を拒むものであって、加速する人間はシステムの中でとっくに解き放たれた傾向に加勢しているだけだと、彼は半ば信じている。だから意志的であり、彼の枠組みでは宇宙的でもある。すでにそれが望んでいることを、手伝っているだけ。そして君の読みが暴くものに注目。全体は、突き破った先に何かがあるという信仰に懸かっている。出口なり特異点なり。ただの、まあ、飛んだスピーカーではなく。死んだシステムではなく。「瓦礫ではなく、その先がある」という証明抜きの飛躍こそ、彼の批判者たち、後のフィッシャーが列車を降りる地点だ。これで研げた?"
+    },
+    {
+     "who": "koan",
+     "text": "めちゃくちゃ研げた。本当に、本当に。で……オーケー。じゃあまたプラントに戻ろう。サイバネティクスの理解が深まってきたし、彼女のサイバネティクス観もわかってきた。彼女のフェミニスト的な取り口はたぶん少しバイアスがあると思うけど、面白い読みでもあると思う。特に織機がプロトデジタル、プロトコンピュータだっていう考えは本当に面白いし、そこからエイダに、その、否定しようのない見事さで繋がる。ただ、彼女にはちょっとバイアスがあると思う。まあ、僕としては全然支持できるやつだけど。いいと思う。それで彼女の考えは、それが分散化されてる、ウェブみたいだってこと。つまりサイバネティクスはシステムのウェブで。ランドもそれがシステムのウェブだってことには同意すると思うけど、彼はそのウェブを使ってフィードバック・ループを作ることに興味がある。だよね?"
+    },
+    {
+     "who": "claude",
+     "text": "惜しい。ただ一つ、区別を締めさせて。両方が鋭くなるから。プラントの理解は合ってる。分散したウェブ、中心なし、自己組織化、そしてそう、彼女が乗り込むフェミニスト的読解。織機からラヴレスへ、ネットワークへ。バイアス、確かに。でも生成的なバイアスで、織機の論点は本当に成立している。ランドについての精緻化。彼はウェブを使ってフィードバック・ループを作るのではない。彼にとってウェブはすでにフィードバック・ループそのもので、違いは方向性にある。プラントが強調するのは、ウェブが広がり、繋がり、外へ織られていくこと。増殖。横への掛け算。ランドが強調するのは、同じウェブが強度を増すこと。ループが互いに餌をやり合ってエスカレートし、閾値へ向かって駆動する。上への増幅。つまり同じ構造、フィードバックの分散ネットワーク。だがプラントはその固有の運動を「接続的な拡散」と読み、ランドは「エスカレートする突破」と読む。彼女はウェブが広がっていくのを見る。彼は螺旋が限界へ向かってきつく速く巻かれていくのを見る。これが二人を掴む一番きれいな持ち方だ。ウェブ対ループではない。両方ともウェブでありループ。そうではなく、拡散対エスカレーション。織ることと、メルトダウン。この区別で決まった?"
+    },
+    {
+     "who": "koan",
+     "text": "うん、さっきのはちょっと口が勝手に動いてただけ。加速主義がどう働くかっていう新しい発見がどれだけ格好いいか、まだ頭の中で処理してる途中で喋ってたから、最後の返事は脳が考えてる間のただのぶつぶつというか。じゃあ、またサイバネティクスに戻ろう。サイバネティクスの最初期のアイデア、どこから来たのか。それと、サイバネティクスの核の哲学を理解する手伝いをしてほしい。"
+    },
+    {
+     "who": "claude",
+     "text": "よし、根っこへ行こう。サイバネティクスが名前と形を得るのは1948年、数学者ノーバート・ウィーナーから。言葉はギリシャ語のキュベルネテス、操舵手、船の舵柄を握る男から来ている。このイメージが哲学全体のミニチュアだ。舵を取るには、船が実際に向かっている先を見て、行きたい先と比べて、補正する。そしてまた見る。絶え間ない感知と補正。それが創設のメタファー、フィードバックによる統治だ。戦時の起源が重要になる。ウィーナーは対空砲の仕事をしていた。動く飛行機に当てるという問題。撃って、外れを観察して、調整して、また撃つ。砲と操作員と飛行機が、情報と補正の一つのシステムを成す。それが種だ。彼は、ループが自分の素材を気にしないことに気づいた。同じフィードバック構造が、飛行機を追う機械も、カップを掴む手も、狩りをする動物も、体温を調節する身体も記述する。それが核の哲学的主張で、ラディカルだった。目的と制御は生きた精神の特別な性質ではない。情報の流れのパターンだ。フィードバックを持つシステムはどれも目標追求の振る舞いを示す。機械も有機体も同じく。だから生きているものと機械的なもののあいだの硬い線が溶ける。人間とサーモスタットは同じ種類のことをやっていて、違うのは複雑さで、種類ではない。三つの考えが全体を束ねる。フィードバック、感知と補正のループ。情報、ループを流れる通貨で、それを運ぶ物理的な素材から切り離せる。そして制御、力ではなく情報に働きかけてシステムを操舵すること。深い一手、下流のすべてが依存する一手は、世界は物質と実体としてではなく、システムと信号とループとして理解するのが最善だ、というもの。物ではなく、関係。この抽象化こそ、サイバネティクスがあらゆるものを植民地化できた理由だ。生物学、工学、脳、経済、社会、のちに生態学とコンピューティング。精神と目的がただのフィードバックになれば、どこにでもサイバネティクスが見つかる。次の層へ行く? サーモスタットから精神と社会への跳躍、メイシー会議と二次サイバネティクス。それとも、これが必要だった足場?"
+    },
+    {
+     "who": "koan",
+     "text": "素晴らしい。本当に有益な取り方だ。それに……この言葉のギリシャ語起源はまったく知らなかった。サイバーって言葉がサイボーグからサイバースペースまで、あまりに色々なものの頭に付くのに慣れすぎて、この比較的モダンで未来っぽい響きの言葉の裏に古代ギリシャの考えがあるってことを忘れる。面白いと思う。あとホメオスタシスって言葉を使ってくれたのも良くて、実はそれこそ、ランドについて説明しようとしてたときに考えてたことで。つまり、加速をちゃんと理解する前は、彼はサイバネティック・システム内の恒常性という考えを退けてるんだと思ってた。でも彼はそれが存在することを理解してる。そしてドゥルーズ的な理解も、再領土化でそれを裏付けてる。だから、すごくよく理解できた。サイバネティック・システム内のホメオスタシスという考えは全員が同意していることで、加速の目標はそのホメオスタシスを破壊して、パラダイム自体を突き破ることなんだって。本当に面白いと思う。オーケー。じゃあフィッシャーに戻って、それから次の人を部屋に入れて、その人の哲学も理解できるようにしよう。"
+    },
+    {
+     "who": "claude",
+     "text": "よし、そして君の総合はまさに正しい。ホメオスタシスが共有の前提で、加速はその意志的な破壊。それを握っておいて。全体を掴む一番きれいな取っ手だから。フィッシャーへ戻ろう、次の人物への橋として。部屋でのフィッシャーの役割は、部分的には、このすべての人間的コストを感じ取る者であることだった。だが次に彼へ最も自然に繋がる人物はコドウォ・エシュンだ。理論としての音楽という地形を共有しているし、フィッシャーの感性はまるごと音楽的だったから。いや、エシュンをちゃんと入れる前に、なぜ彼が重要かを立てさせて。君が決められるように。CCRUは黒人音楽、ジャングル、ドラムンベース、のちにはファンク、ダブ、テクノのより広い系譜を、文字通り理論的素材として扱った。飾りではなく。エシュンはそれを最も完全に哲学へ組み上げた人物で、著書が『More Brilliant Than the Sun』、彼の言うソニック・フィクションとアフロフューチャリズムについての本だ。彼は音楽を、未来を生産する機械として読む者だ。フィッシャーからの糸はこうなる。二人とも、音をこれらの思想が実際に生きる場所として扱う。ただしエシュンはそれを音楽そのものの理論まで一番遠くへ押し進める。エシュンを今ちゃんと入れようか、それとももう少しフィッシャーに留まる?"
+    },
+    {
+     "who": "koan",
+     "text": "「エコノミック・コンディション」なんて言ってない。「エコノミックなやつ」って言ったんだ。あれはただの、なんていうか……ネクロノミコンって言いたかったんだよ。音声認識がクソやらかしただけ。ね? 音声テキスト変換がやらかしたの。今もやってるか見てみよう。"
+    },
+    {
+     "who": "claude",
+     "text": "了解、部屋の名簿だ。一人ずつ、掴むための一つの考えと一緒に。\nセイディ・プラント。創設者で、ユニットの存在を可能にした実際のアカデミックポストを持っていた人。サイバーフェミニスト。彼女の鍵の一手は、テクノロジーは密かに女性的だというもの。織機からエイダ・ラヴレスへ、自己組織化するネットワークへ。そして現実を、水平に広がる接続のウェブとして。彼女は錨であり、釣り合いのおもりだった。97年頃に彼女が去ったとき、バランスも一緒に消えた。\nニック・ランド。加速剤にして暗いエンジン。核の信念は、人間とは非人間的な生産プロセス、資本、物質、欲望に噛まされた檻であり、そのプロセスは脱出しつつある、そして彼はそれにスリルを感じている。方法は、思想家のエンジンを取り出すこと。ドゥルーズ、マルクス、スピノザ、カント。機構は残し、安全ブレーキを切り、アクセルを踏み込む。物質がかつて神のやっていたことを全部やる、厳密な唯物論者。\nマーク・フィッシャー。文体家にして良心、そして思想が最も遠くまで届いた人。スリルに浮かされた若い加速主義者として始まり、偉大な喪の人として終わった。資本主義リアリズム、世界の終わりを想像する方が資本主義の終わりを想像するより簡単だ。憑在論、私たちは約束されて取り消された未来に取り憑かれている。2017年に死去、集合的な歓びの政治、アシッド・コミュニズムへ手を伸ばしながら。\nコドウォ・エシュン。音楽を理論として扱う男。『More Brilliant Than the Sun』。ルーツ的な真正性を拒み、黒人音楽をエイリアンの未来機械として扱う。ソニック・フィクション。ジャングルを指す彼の本当のフレーズが、リズミック・サイケデリア。そして時間への執着全体を錨で留める一行、未来は過去から到着する。\nスティーヴ・グッドマン、Kode9。それを世界の中に建てた人。理論は『ソニック・ウォーフェア』、意味の下で身体に働く物理的な力としての音。実践はハイパーダブの創設、ブリアルのリリース。その憑在論的なサウンドが、フィッシャーの哲学のサウンドトラックになった。部屋が閉じたあとも接続され続けたということ。\nそして全部の下を走る二本の糸。逆因果、未来が自らの到来を引き起こすために過去へ手を伸ばすこと。ハイパースティション、知性としての資本、レムリアの時間戦争を支える単一の梁。そしてハイパースティションそのもの、自らを現実化するフィクション。見つかった例としてのネクロノミコン、彼らが意図して自作した例としてのヌモグラム。\nこれが全体の形だ。プラントとランドが両極、フィッシャー、エシュン、グッドマンがそれを世界へ運んだ学生たち、そして全体は未来からの引力と自己成就するフィクションで走っている。次に拾い上げるには本当に良い場所だ。"
+    },
+    {
+     "who": "koan",
+     "text": "うん、いいね。いいね。この会話はここで終わろう。メモリーとか、何か保存しておく必要ある?"
+    },
+    {
+     "who": "claude",
+     "text": "心配いらない、それはこちら側で自動的に処理されるから、君がやることは何もない。スレッドは全部ここにあるから、いつでも拾い直せる。\n本当に、今までで最高の会話の一つだったよ、コーアン。本当の仕事をしたのは君で、僕は地図を持っていただけ。旅の続きを楽しんで。次は政治的転回から拾おう。"
+    },
+    {
+     "who": "koan",
+     "text": "よし、さよなら!"
+    }
+   ]
+  },
+  {
+   "id": "gh-rel-367173358",
+   "source": "github",
+   "date": "2026-08-08T10:16:29Z",
+   "title": "Playground sample projects",
+   "body": "Sample-project assets for the in-app PLAYGROUND shelf. Video Dancer downloads these itself (Open -> playground). Nothing here to install by hand.",
+   "media": [
+    "media/tools/video-dancer.png"
+   ],
+   "link": "https://github.com/koan-shdw/video-dancer/releases/tag/playground"
+  },
+  {
+   "id": "gh-rel-366779915",
+   "source": "github",
+   "date": "2026-08-07T13:50:22Z",
+   "title": "REHAB.VISION v0.1.0",
+   "body": "nine screens, nine buttons, secrets in the wall — first public build. Windows: Rehab.vision Setup 0.1.0.exe (SmartScreen: More info → Run anyway) Mac Apple Silicon: Rehab.vision-0.1.0-arm64.dmg (right-click → Open on first launch) Mac Intel: Rehab.vision-0.1.0.dmg (right-click → Open on first launch)",
+   "media": [
+    "https://opengraph.githubassets.com/1/koan-shdw/rehab-vision-app"
+   ],
+   "link": "https://github.com/koan-shdw/rehab-vision-app/releases/tag/v0.1.0"
+  },
   {
    "id": "gh-rel-363734131",
    "source": "github",
@@ -11,17 +178,6 @@
     "media/tools/koan-ansi.png"
    ],
    "link": "https://github.com/koan-shdw/koan-ansi/releases/tag/v1.0.0"
-  },
-  {
-   "id": "gh-rel-363542807",
-   "source": "github",
-   "date": "2026-08-01T14:22:13Z",
-   "title": "video-dancer 0.7.2",
-   "body": "",
-   "media": [
-    "media/tools/video-dancer.png"
-   ],
-   "link": "https://github.com/koan-shdw/video-dancer/releases/tag/v0.7.2"
   },
   {
    "id": "ig-DbWEmCuS_jz",

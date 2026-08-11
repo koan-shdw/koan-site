@@ -9,6 +9,7 @@ import { AnsiDock } from './components/AnsiDock';
 import { SocialDock } from './components/SocialDock';
 import { MOCK_FEED, PROJECTS } from './mock/feed';
 import { loadFeed, loadProjects } from './lib/loadFeed';
+import { useFocusZone } from './lib/useFocusZone';
 import type { FeedItem, SmallProject } from './types';
 
 export default function App() {
@@ -37,13 +38,24 @@ export default function App() {
     };
   }, []);
 
+  // scroll focus (docs/focus-ui-spec.md §2): identity 0, projects 1, tools 2, stream 3
+  const { refs, lit } = useFocusZone(4);
+  const zone = (i: number, base = '') => ({
+    className: `${base} zone ${lit === i ? 'lit' : 'dim'}`.trim(),
+    ref: (el: HTMLElement | null) => {
+      refs.current[i] = el;
+    },
+  });
+
   return (
     <>
       <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
       <div className="site">
-        <Header />
+        <div {...zone(0)}>
+          <Header />
+        </div>
         <main>
-          <section className="sec" aria-label="main projects">
+          <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
             <div className="projects">
               {PROJECTS.map((p) => (
@@ -52,7 +64,7 @@ export default function App() {
             </div>
           </section>
           {minis && (
-            <section className="sec" aria-label="tools in development">
+            <section aria-label="tools in development" {...zone(2, 'sec')}>
               <h2 className="sec-head as-btn">
                 <button
                   className="sec-toggle"
@@ -94,7 +106,9 @@ export default function App() {
               )}
             </section>
           )}
-          <Feed items={items} />
+          <div {...zone(3)}>
+            <Feed items={items} />
+          </div>
         </main>
         <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
       </div>

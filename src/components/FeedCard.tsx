@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { FeedItem } from '../types';
+import type { ConvoTurn, FeedItem } from '../types';
 import { Icon } from './icons';
 
 // The one shared card (spec §3.3) — every source renders through this, only
@@ -13,6 +13,22 @@ const SOURCE_NAME: Record<FeedItem['source'], string> = {
   claude: 'notes', // internal id stays 'claude' (feed.json contract); the reader sees notes
 };
 
+// format: convo — the body is a transcript; position is the speaker,
+// koan left, claude right, no labels (docs/convo-notes-spec.md)
+function Bubbles({ turns }: { turns: ConvoTurn[] }) {
+  return (
+    <div className="turns">
+      {turns.map((t, i) => (
+        <p key={i} className={`turn ${t.who}`}>
+          {t.text}
+        </p>
+      ))}
+    </div>
+  );
+}
+
+const CONVO_CLAMP = 8; // turns shown before 'more' in feed/lane modes
+
 export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolean }) {
   const [expanded, setExpanded] = useState(false);
   const [overflows, setOverflows] = useState(false);
@@ -22,6 +38,21 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   const hasJa = Boolean(item.bodyJa);
   const title = ja && item.titleJa ? item.titleJa : item.title;
   const body = ja && item.bodyJa ? item.bodyJa : item.body;
+  const convo = ja && item.convoJa ? item.convoJa : item.convo;
+
+  // whole card is the click target (docs/focus-ui-spec.md §4): out to the
+  // source where one exists; notes/convos toggle expansion. Inner links and
+  // buttons keep priority.
+  const onCard = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('a, button')) return;
+    if (item.link) window.open(item.link, '_blank', 'noopener');
+    else setExpanded((v) => !v);
+  };
+  const cardHint = item.link
+    ? `click = open on ${SOURCE_NAME[item.source]}`
+    : expanded
+      ? 'click = fold it back'
+      : 'click = read the whole thing';
 
   // Clamp detection must track layout width (view modes reflow cards).
   // Lives above the tile branch: hooks must run on every render path.
@@ -43,7 +74,11 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
     const hasMedia = Boolean(item.media?.length);
     const big = !hasMedia && body.length < 130;
     return (
-      <article className={`card tile src-${item.source} ${hasMedia ? 'tm' : 'tt'}`}>
+      <article
+        className={`card tile src-${item.source} ${convo ? 'convo tt' : hasMedia ? 'tm' : 'tt'} ${expanded ? 'open' : ''}`}
+        onClick={onCard}
+        title={cardHint}
+      >
         {hasMedia && <img className="tile-img" src={item.media![0]} alt="" loading="lazy" />}
         {hasMedia && <div className="tile-scrim" />}
         <div className="tile-top">
@@ -64,7 +99,11 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         </div>
         <div className="tile-main">
           {title && <h3 className="tile-title">{title}</h3>}
-          {!hasMedia && <p className={`tile-body ${big ? 'big' : ''}`}>{body}</p>}
+          {convo ? (
+            <Bubbles turns={expanded ? convo : convo.slice(0, 6)} />
+          ) : (
+            !hasMedia && <p className={`tile-body ${big ? 'big' : ''}`}>{body}</p>
+          )}
         </div>
         {(item.tags?.length || item.link) && (
           <div className="tile-foot">
@@ -96,7 +135,7 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
   const hasMedia = Boolean(item.media?.length);
   const big = !hasMedia && body.length < 130;
   return (
-    <article className={`card post src-${item.source}`}>
+    <article className={`card post src-${item.source}`} onClick={onCard} title={cardHint}>
       <div className="card-top">
         <span className="src-name">
           <Icon name={item.source} size={14} />
@@ -123,7 +162,23 @@ export function FeedCard({ item, tile = false }: { item: FeedItem; tile?: boolea
         )}
       </div>
 
-      {hasMedia ? (
+      {convo ? (
+        <>
+          <div className="convo-post">
+            {title && <h3 className="post-sq-title">{title}</h3>}
+            <Bubbles turns={expanded ? convo : convo.slice(0, CONVO_CLAMP)} />
+          </div>
+          {convo.length > CONVO_CLAMP && (
+            <button
+              className="card-more"
+              onClick={() => setExpanded((v) => !v)}
+              title={expanded ? 'collapse' : 'read the whole thing'}
+            >
+              {expanded ? 'less ▴' : 'more ▾'}
+            </button>
+          )}
+        </>
+      ) : hasMedia ? (
         <>
           <div className="post-media">
             {item.link ? (

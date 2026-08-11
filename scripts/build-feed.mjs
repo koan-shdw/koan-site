@@ -187,6 +187,24 @@ async function buildProjects() {
 }
 
 // ---- koan-posts ------------------------------------------------------------
+// format: convo — blank lines separate turns, speakers strictly alternate
+// from `first`; single newlines stay inside a turn (docs/convo-notes-spec.md).
+// The app footer and doubled paragraphs are transcription noise, stripped
+// here so post files stay verbatim to what the voice app produced.
+function parseConvo(text, first) {
+  const blocks = [];
+  for (const b of text.split(/\r?\n[ \t]*\r?\n+/)) {
+    const t = b.trim();
+    if (!t || /^Claude is AI and can make mistakes/i.test(t)) continue;
+    if (t === blocks[blocks.length - 1]) continue; // voice app double-emit
+    blocks.push(t);
+  }
+  return blocks.map((text, i) => ({
+    who: (i % 2 === 0) === (first === 'claude') ? 'claude' : 'koan',
+    text,
+  }));
+}
+
 function parsePost(name, raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!m) return null;
@@ -210,6 +228,17 @@ function parsePost(name, raw) {
   const list = (v) => v.split(',').map((t) => t.trim()).filter(Boolean);
   if (meta.tags) item.tags = list(meta.tags);
   if (meta.media) item.media = list(meta.media);
+  if ((meta.format ?? '').toLowerCase() === 'convo') {
+    const first = (meta.first ?? '').toLowerCase() === 'claude' ? 'claude' : 'koan';
+    item.convo = parseConvo(en ?? '', first);
+    item.body = truncate(item.convo.map((t) => t.text).join(' '));
+    if (ja) {
+      item.convoJa = parseConvo(ja, first);
+      item.bodyJa = truncate(item.convoJa.map((t) => t.text).join(' '));
+    } else {
+      console.error(`post ${name}: convo without a ja section (every note ships EN+JA)`);
+    }
+  }
   return item;
 }
 

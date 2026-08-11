@@ -16,6 +16,12 @@ export interface SmallProject {
   img?: string;
 }
 
+/** One transcript turn (format: convo posts) — position is the speaker. */
+export interface ConvoTurn {
+  who: 'koan' | 'claude';
+  text: string;
+}
+
 export interface FeedItem {
   id: string;
   source: FeedSource;
@@ -27,6 +33,10 @@ export interface FeedItem {
   /** Japanese body — claude posts only (spec §6: every post carries a JA version) */
   bodyJa?: string;
   titleJa?: string;
+  /** transcript turns — format: convo posts only; body then holds a preview
+      (docs/convo-notes-spec.md) */
+  convo?: ConvoTurn[];
+  convoJa?: ConvoTurn[];
   /** absolute URLs (backend) or bundled assets (mock) */
   media?: string[];
   /** out to the original post where one exists */
