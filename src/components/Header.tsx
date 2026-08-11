@@ -2,7 +2,16 @@
 // role, one primary contact action (the email, top-right corner), socials
 // along the bottom. Contact lives HERE and only here; feed pills are filters,
 // never contact. Behind it all, the art typer.
+//
+// The KOAN logotype is figlet ASCII pasted over the card edge. Picker phase:
+// every TAAG font in a dropdown (user hand-selects, choice persists) — the
+// winner gets baked in and the dropdown stripped.
+import { useState } from 'react';
 import { Icon } from './icons';
+import LOGOS from '../assets/logos.json';
+
+const LOGO_KEY = 'koan.logoFont';
+const LOGO_DEFAULT = 'ANSI Shadow';
 
 export const EMAIL = 'alex@shdw.gallery';
 
@@ -15,6 +24,14 @@ export const SOCIALS = [
 ];
 
 export function Header() {
+  const [font, setFont] = useState(() => {
+    const saved = localStorage.getItem(LOGO_KEY);
+    return saved && saved in LOGOS ? saved : LOGO_DEFAULT;
+  });
+  const pick = (f: string) => {
+    setFont(f);
+    localStorage.setItem(LOGO_KEY, f);
+  };
   return (
     <header className="id">
       <div className="id-in">
@@ -22,7 +39,22 @@ export function Header() {
           <Icon name="mail" size={14} />
           {EMAIL}
         </a>
-        <h1 className="id-name">KOAN</h1>
+        <h1 className="id-name sr-only">KOAN</h1>
+        <pre className="id-ascii" aria-hidden="true">
+          {(LOGOS as Record<string, string>)[font]}
+        </pre>
+        <select
+          className="logo-pick"
+          value={font}
+          onChange={(e) => pick(e.target.value)}
+          title="pick the logotype font — your choice sticks"
+        >
+          {Object.keys(LOGOS).map((f) => (
+            <option key={f} value={f}>
+              {f}
+            </option>
+          ))}
+        </select>
         <div className="id-real">Alexander Mitchell</div>
         <div className="id-title">ART PRODUCER</div>
         <nav className="id-social" aria-label="social links">

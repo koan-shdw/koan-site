@@ -154,6 +154,41 @@ a {
   position: relative; /* anchor for the email pill */
 }
 
+/* semantics without pixels — the visual logotype is the ascii */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* the figlet logotype: pasted over the card edge, breaks free of the glass */
+.id-ascii {
+  font: 700 9px/1.05 var(--mono);
+  color: var(--txt-hi);
+  margin: -32px 0 0;
+  white-space: pre;
+  overflow: visible;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); /* over art — sanctioned scrim */
+}
+
+/* picker phase only — dies when the font is chosen */
+.logo-pick {
+  display: block;
+  margin: 6px 0 0;
+  font: 400 11px var(--mono);
+  color: var(--txt);
+  background: var(--field);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 3px 6px;
+  max-width: 220px;
+}
+
 .id-name {
   font: 700 30px var(--mono);
   letter-spacing: 0.3em;
