@@ -879,36 +879,40 @@ a {
   filter: brightness(0.6) saturate(0.45) blur(1px);
 }
 
-/* soft snap: zones pull to center and hold; the stream snaps to its start
-   then scrolls free (docs/focus-ui-spec.md §2) */
-html {
-  scroll-snap-type: y proximity;
+/* stick-and-dock (tweak round 2): a zone pins at --stack-top inside its
+   hold; the hold's bottom padding is the runway the next section climbs.
+   runway spent = docked = the pair scrolls as one, stacked like normal.
+   THE two dials: */
+:root {
+  --stack-top: 12px; /* where a pinned section rests */
+  --stack-gap: 24vh; /* runway between sections — bigger = longer hold */
+}
+
+/* runway must be CONTENT, not padding — sticky travel is confined to the
+   containing block's content box (padding gave zero travel, cost a round) */
+.hold::after {
+  content: '';
+  display: block;
+  height: var(--stack-gap);
+}
+
+.hold-first {
+  padding-top: 22vh; /* the page opens with air, card sits low */
+}
+
+.hold-last::after {
+  content: none;
 }
 
 .zone {
-  scroll-snap-align: center;
+  position: sticky;
+  top: var(--stack-top);
 }
 
+/* the stream never holds — it's longer than the screen and people scroll
+   it the moment they see it. it docks and runs free */
 .zone.zone-stream {
-  scroll-snap-align: start;
-  scroll-margin-top: 8px;
-}
-
-/* the page opens with air: identity centered in 70vh */
-.site > .zone:first-child {
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* short sections hold their moment — real space between zones */
-main > .zone {
-  margin-bottom: 16vh;
-}
-
-main > .zone:last-child {
-  margin-bottom: 0;
+  position: static;
 }
 
 /* the lit zone speaks phosphor: --ok per contract, never the accent.

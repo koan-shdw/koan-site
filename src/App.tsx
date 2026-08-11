@@ -51,11 +51,15 @@ export default function App() {
     <>
       <AnsiBackground arts={LIBRARY} onEngine={setEngine} />
       <div className="site">
-        <div {...zone(0)}>
-          <Header />
+        {/* stick-and-dock: each hold's padding is the next zone's runway */}
+        <div className="hold hold-first">
+          <div {...zone(0)}>
+            <Header />
+          </div>
         </div>
         <main>
-          <section aria-label="main projects" {...zone(1, 'sec')}>
+          <div className="hold">
+            <section aria-label="main projects" {...zone(1, 'sec')}>
             <h2 className="sec-head">main projects</h2>
             <div className="projects">
               {PROJECTS.map((p) => (
@@ -63,8 +67,10 @@ export default function App() {
               ))}
             </div>
           </section>
+          </div>
           {minis && (
-            <section aria-label="tools in development" {...zone(2, 'sec')}>
+            <div className="hold">
+              <section aria-label="tools in development" {...zone(2, 'sec')}>
               <h2 className="sec-head as-btn">
                 <button
                   className="sec-toggle"
@@ -105,9 +111,12 @@ export default function App() {
                 </div>
               )}
             </section>
+            </div>
           )}
-          <div {...zone(3, 'zone-stream')}>
-            <Feed items={items} />
+          <div className="hold hold-last">
+            <div {...zone(3, 'zone-stream')}>
+              <Feed items={items} />
+            </div>
           </div>
         </main>
         <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>
