@@ -1,6 +1,17 @@
 {
- "generated": "2026-08-11T09:01:22.561Z",
+ "generated": "2026-08-12T12:35:15.235Z",
  "items": [
+  {
+   "id": "gh-rel-369046559",
+   "source": "github",
+   "date": "2026-08-12T06:59:17Z",
+   "title": "KOAN.img 2.0.0-beta.4",
+   "body": "SEARCH V2 — three brains, independent dials Every image in your index is now understood three ways: what it means (SigLIP 2), how it looks (DINOv2 — framing, texture, style), and the classic CLIP search (V1, unchanged). Engine toggle in PICK — V1 CLIP / V2 SIGLIP, switch per search Concept / Look / Color dials on V2 — all independent, no more semantic-vs-colour seesaw. Turning one up never turns another down Dial fairness is calibrated against your real index, not guessed V2 search is also *fas…",
+   "media": [
+    "media/tools/KOAN-IMG.png"
+   ],
+   "link": "https://github.com/koan-shdw/KOAN-IMG/releases/tag/v2.0.0-beta.4"
+  },
   {
    "id": "gh-rel-368379248",
    "source": "github",
@@ -1384,17 +1395,6 @@
     "media/ig/DbSkS9sSgB7.jpg"
    ],
    "link": "https://www.instagram.com/p/DbSkS9sSgB7/"
-  },
-  {
-   "id": "gh-rel-349955081",
-   "source": "github",
-   "date": "2026-07-07T00:21:48Z",
-   "title": "KOAN.img 2.0.0-beta.3",
-   "body": "Windows installer (unsigned beta). On first launch SmartScreen warns: click More info then Run anyway. The app downloads its AI runtime (~2.7 GB) once on first run. Requires an NVIDIA CUDA GPU.",
-   "media": [
-    "media/tools/KOAN-IMG.png"
-   ],
-   "link": "https://github.com/koan-shdw/KOAN-IMG/releases/tag/v2.0.0-beta.3"
   },
   {
    "id": "ig-DaGwLJoymbR",
