@@ -47,10 +47,10 @@ jobs:
         run: |
           git config user.name "koan-feed"
           git config user.email "actions@users.noreply.github.com"
-          git add public/feed.json
+          git add public/feed.json public/projects.json
           if ! git diff --cached --quiet; then
             git commit -m "feed: refresh"
-            git pull --rebase origin main
+            git pull --rebase --autostash origin main
             git push
           fi
 
