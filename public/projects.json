@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-12T12:35:15.231Z",
+ "generated": "2026-08-12T13:51:05.831Z",
  "projects": [
   {
    "id": "KOAN-IMG",
    "name": "KOAN-IMG",
    "desc": "AI image curation tool. Search your own archive by meaning.",
    "url": "https://github.com/koan-shdw/KOAN-IMG",
-   "tag": "v2.0.0-beta.4",
-   "date": "2026-08-12T06:59:17Z",
+   "tag": "v2.0.0-beta.5",
+   "date": "2026-08-12T13:35:32Z",
    "img": "media/tools/KOAN-IMG.png"
   },
   {
