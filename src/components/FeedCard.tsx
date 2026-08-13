@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ConvoTurn, FeedItem } from '../types';
 import { Icon } from './icons';
+import { ShareChip } from './ShareChip';
 
 // The one shared card (spec §3.3) — every source renders through this, only
 // the layout container around it changes (§4).
@@ -62,11 +63,12 @@ export function FeedCard({
       ? 'click = fold it back'
       : 'click = read the whole thing';
 
-  // notes have no external home — they link to their own page instead
-  const pageHref =
-    !full && !item.link && item.source === 'claude'
-      ? `#/note/${item.id.replace(/^post-/, '')}`
-      : null;
+  // notes have no external home — they link to their own page instead.
+  // In-app nav stays on the hash (instant); the canonical /note/<slug>/ URL
+  // travels via the share chip only (docs/note-share-pages-spec.md §3, §6)
+  const noteSlug =
+    !item.link && item.source === 'claude' ? item.id.replace(/^post-/, '') : null;
+  const pageHref = !full && noteSlug ? `#/note/${noteSlug}` : null;
 
   // Clamp detection must track layout width (view modes reflow cards).
   // Lives above the tile branch: hooks must run on every render path.
@@ -246,7 +248,7 @@ export function FeedCard({
         </>
       )}
 
-      {(item.tags?.length || item.link || pageHref) && (
+      {(item.tags?.length || item.link || pageHref || (expanded && !full && noteSlug)) && (
         <div className="card-foot">
           {item.tags?.map((t) => (
             <span key={t} className="tag">
@@ -263,6 +265,7 @@ export function FeedCard({
               page ↗
             </a>
           )}
+          {expanded && !full && noteSlug && <ShareChip slug={noteSlug} />}
         </div>
       )}
     </article>

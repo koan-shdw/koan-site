@@ -1144,6 +1144,45 @@ main {
   color: var(--txt-hi);
 }
 
+/* back-link left, share chip right — one row above the note */
+.note-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.note-bar .note-back {
+  margin-bottom: 0;
+}
+
+.note-bar,
+.card-foot {
+  --_chip-push: auto;
+}
+
+.share-chip {
+  margin-left: var(--_chip-push);
+  font: 400 11px var(--mono);
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid var(--line2);
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.share-chip:hover {
+  color: var(--txt-hi);
+  border-color: var(--line2);
+}
+
+.share-chip.ok {
+  color: var(--ok);
+  border-color: var(--ok);
+}
+
 /* ── convo posts (format: convo — transcript as back and forth) ─────── */
 
 /* .turns, not .convo — 'convo' is the tile's modifier class; the wrapper

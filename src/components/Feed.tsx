@@ -48,13 +48,17 @@ export function Feed({ items }: { items: FeedItem[] }) {
     return c;
   }, [sorted]);
 
+  // a source earns its pill and lane by having items — an empty platform is
+  // invisible, not dimmed (quiet-git-spec.md §6)
+  const present = useMemo(() => SOURCES.filter((s) => counts[s.id] > 0), [counts]);
+
   const lanes = useMemo(
     () =>
-      SOURCES.filter((s) => !filter || s.id === filter).map((s) => ({
+      present.filter((s) => !filter || s.id === filter).map((s) => ({
         ...s,
         items: sorted.filter((i) => i.source === s.id),
       })),
-    [sorted, filter],
+    [sorted, filter, present],
   );
 
   return (
@@ -70,10 +74,10 @@ export function Feed({ items }: { items: FeedItem[] }) {
             all
             {sorted.length > 0 && <span className="pill-n">{sorted.length}</span>}
           </button>
-          {SOURCES.map((s) => (
+          {present.map((s) => (
             <button
               key={s.id}
-              className={`pill ${filter === s.id ? 'on' : ''} ${counts[s.id] ? '' : 'dim'}`}
+              className={`pill ${filter === s.id ? 'on' : ''}`}
               onClick={() => setFilter((f) => (f === s.id ? null : s.id))}
               title={filter === s.id ? 'back to all' : `only ${s.label}`}
             >

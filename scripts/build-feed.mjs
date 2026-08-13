@@ -61,9 +61,11 @@ function repoImage(fullName) {
     : `https://opengraph.githubassets.com/1/${fullName}`;
 }
 
-// ---- github: releases only -------------------------------------------------
+// ---- github: releases only, opted in ---------------------------------------
 // The feed shows finished work, not process: releases, never pushes or repo
-// creations (user decision 2026-08-02).
+// creations (user decision 2026-08-02). And only releases whose body carries
+// the [feed] marker — git is silent unless deliberately sent to the stream
+// (quiet-git-spec.md, user decision 2026-08-13).
 async function githubItems() {
   let events = [];
   try {
@@ -78,6 +80,7 @@ async function githubItems() {
     const repo = ev.repo?.name ?? '';
     const short = repo.split('/')[1] ?? repo;
     const r = ev.payload.release;
+    if (!/\[feed\]/i.test(r.body ?? '')) continue;
     items.push({
       id: `gh-rel-${r.id}`,
       source: 'github',
@@ -89,9 +92,11 @@ async function githubItems() {
         const bareVersion = /^v?\d[\d.\-a-z]*$/i.test(nm);
         return nm && !bareVersion ? nm : `${short} ${nm || r.tag_name}`;
       })(),
-      body: truncate(stripMd(r.body)),
+      body: truncate(stripMd((r.body ?? '').replace(/\[feed\]/gi, ''))),
       media: [repoImage(repo)],
       link: r.html_url,
+      // survives the retro purge below; entry through the [feed] gate proves intent
+      fed: true,
     });
   }
   return items;
@@ -271,10 +276,14 @@ async function postItems() {
 }
 
 // ---- merge + write ---------------------------------------------------------
-// legacy purge: push/new-repo items no longer belong in the feed. The
-// no-change guard compares against the RAW file so a purge alone still writes.
+// legacy purge: push/new-repo items no longer belong in the feed, and neither
+// do releases that never went through the [feed] gate (fed flag,
+// quiet-git-spec.md §4). The no-change guard compares against the RAW file so
+// a purge alone still writes.
 const prevRaw = existsSync(OUT) ? (JSON.parse(readFileSync(OUT, 'utf8')).items ?? []) : [];
-const prev = prevRaw.filter((it) => !/^gh-(push|new)-/.test(it.id));
+const prev = prevRaw.filter(
+  (it) => !/^gh-(push|new)-/.test(it.id) && !(/^gh-rel-/.test(it.id) && it.fed !== true),
+);
 const fresh = [...(await postItems()), ...(await githubItems()), ...(await youtubeItems())];
 await buildProjects();
 const byId = new Map();

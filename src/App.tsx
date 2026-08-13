@@ -9,6 +9,7 @@ import type { TdfRows } from './components/logo';
 import { ProjectCard } from './components/ProjectCard';
 import { Feed } from './components/Feed';
 import { FeedCard } from './components/FeedCard';
+import { ShareChip } from './components/ShareChip';
 import { AnsiDock } from './components/AnsiDock';
 import { SocialDock } from './components/SocialDock';
 import { MOCK_FEED, PROJECTS } from './mock/feed';
@@ -29,8 +30,12 @@ const drawLogo = () => FAVORITES[Math.floor(Math.random() * FAVORITES.length)];
 
 export default function App() {
   const [engine, setEngine] = useState<AnsiEngine | null>(null);
-  // mock renders instantly; the real feed swaps in when feed.json answers
+  // mock renders instantly; the real feed swaps in when feed.json answers.
+  // feedLoaded gates the note page's not-found state: a shared link must show
+  // loading, never "no such note", while the real feed is still in flight
+  // (docs/note-share-pages-spec.md §6)
   const [items, setItems] = useState<FeedItem[]>(MOCK_FEED);
+  const [feedLoaded, setFeedLoaded] = useState(false);
   const [noteSlug, setNoteSlug] = useState<string | null>(parseNoteHash);
   // finished public repos (>=1 release) — section hidden until data exists
   const [minis, setMinis] = useState<SmallProject[] | null>(null);
@@ -44,7 +49,9 @@ export default function App() {
   useEffect(() => {
     let live = true;
     void loadFeed().then((f) => {
-      if (live && f) setItems(f);
+      if (!live) return;
+      if (f) setItems(f);
+      setFeedLoaded(true);
     });
     void loadProjects().then((p) => {
       if (live && p) setMinis(p);
@@ -146,15 +153,20 @@ export default function App() {
         <div className="site note-page">
           <Header font={shownFont} tdf={tdf} />
           <main className="note-main">
-            <a className="note-back" href="#/">
-              ← the stream
-            </a>
+            <div className="note-bar">
+              <a className="note-back" href="#/">
+                ← the stream
+              </a>
+              {note && <ShareChip slug={noteSlug} />}
+            </div>
             {note ? (
               <FeedCard item={note} full />
-            ) : (
+            ) : feedLoaded ? (
               <p className="empty">
                 no such note — <a href="#/">back to the stream</a>
               </p>
+            ) : (
+              <p className="empty">loading…</p>
             )}
           </main>
           <footer className="foot">KOAN · 2026 · original ANSI art, own engine</footer>

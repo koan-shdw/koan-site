@@ -42,6 +42,9 @@ export interface FeedItem {
   /** out to the original post where one exists */
   link?: string;
   tags?: string[];
+  /** github releases only: passed the [feed] opt-in gate; unmarked releases are
+      purged on every refresh (docs/quiet-git-spec.md §3-4) */
+  fed?: boolean;
 }
 
 export interface Project {

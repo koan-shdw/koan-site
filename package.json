@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node scripts/prerender-notes.mjs",
     "preview": "vite preview",
     "art:sources": "node tools/gen-placeholders.mjs",
     "art:convert": "node tools/img2ansi.mjs tools/samples/sunset-grid.png --id sunset-grid --title \"SUNSET.GRID\" --cols 120 -o src/library/sunset-grid.json && node tools/img2ansi.mjs tools/samples/ionwave.png --id ionwave --title \"IONWAVE\" --cols 120 -o src/library/ionwave.json",
