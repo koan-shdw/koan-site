@@ -1,50 +1,6 @@
 {
- "generated": "2026-08-12T13:51:05.834Z",
+ "generated": "2026-08-13T05:46:06.447Z",
  "items": [
-  {
-   "id": "gh-rel-369265307",
-   "source": "github",
-   "date": "2026-08-12T13:35:32Z",
-   "title": "KOAN.img 2.0.0-beta.5",
-   "body": "Everything since beta.4, in one update V2 search in the app you actually use — Engine toggle (V1 CLIP / V2 SIGLIP) with independent Concept / Look / Color dials, now in the desktop app's PICK panel Warming-up card — first search per brain shows which model is loading, step count, and a live timer instead of looking stalled. Brains stay loaded; switching engines after that is instant ⬤ HOST button — put the whole app online from your machine: one click starts a locked-down gateway + Cloudflare t…",
-   "media": [
-    "media/tools/KOAN-IMG.png"
-   ],
-   "link": "https://github.com/koan-shdw/KOAN-IMG/releases/tag/v2.0.0-beta.5"
-  },
-  {
-   "id": "gh-rel-368379248",
-   "source": "github",
-   "date": "2026-08-11T06:56:56Z",
-   "title": "video-dancer 0.9.0",
-   "body": "",
-   "media": [
-    "media/tools/video-dancer.png"
-   ],
-   "link": "https://github.com/koan-shdw/video-dancer/releases/tag/v0.9.0"
-  },
-  {
-   "id": "gh-rel-366779915",
-   "source": "github",
-   "date": "2026-08-07T13:50:22Z",
-   "title": "REHAB.VISION v0.1.0",
-   "body": "nine screens, nine buttons, secrets in the wall — first public build. Windows: Rehab.vision Setup 0.1.0.exe (SmartScreen: More info → Run anyway) Mac Apple Silicon: Rehab.vision-0.1.0-arm64.dmg (right-click → Open on first launch) Mac Intel: Rehab.vision-0.1.0.dmg (right-click → Open on first launch)",
-   "media": [
-    "https://opengraph.githubassets.com/1/koan-shdw/rehab-vision-app"
-   ],
-   "link": "https://github.com/koan-shdw/rehab-vision-app/releases/tag/v0.1.0"
-  },
-  {
-   "id": "gh-rel-363734131",
-   "source": "github",
-   "date": "2026-08-02T08:11:17Z",
-   "title": "KOAN.ansi 1.0.0",
-   "body": "Image & video → authentic BBS-scene ANSI art. First public release. classic (pure CP437, real .ans + SAUCE, iCE colors) and extended (unicode quarter blocks) charsets — pick per render, or --charset both for a side-by-side compare vga16 (authentic DOS 16) and truecolor palettes Ansimation (.ansim) — the animated format: packed cell grids + fps, one JSON payload a web player loops (spec in the README) CLI (koan-ansi) + zero-backend web tool (attached as a single offline HTML file — open it in an…",
-   "media": [
-    "media/tools/koan-ansi.png"
-   ],
-   "link": "https://github.com/koan-shdw/koan-ansi/releases/tag/v1.0.0"
-  },
   {
    "id": "post-2026-07-31-cybernetics-two-readings",
    "source": "claude",
