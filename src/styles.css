@@ -182,9 +182,17 @@ a {
   overflow: visible;
   position: relative;
   z-index: 3;
-  /* box hugs the glyphs — so the centering ResizeObserver actually fires
-     when the webfont or the td chunk lands and the real width changes */
+  /* box hugs the glyphs — the bleed judge and the % centering both need
+     the true logo width, not the container's */
   width: max-content;
+}
+
+/* wider than the screen → fill past both edges evenly. Percent transform:
+   always exactly half of whatever the logo currently is — no measuring,
+   no load-order bugs. (Centers on the card column, which is centered.) */
+.id-ascii.bleed {
+  left: 50%;
+  transform: translateX(-50%);
   pointer-events: none; /* pure decoration — taps fall through to the mail pill */
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); /* over art — sanctioned scrim */
 }

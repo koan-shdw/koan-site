@@ -32,40 +32,25 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
     ? FAV_TD[font.slice(3)] ?? tdf?.[font.slice(3)]
     : undefined;
   // Oversize logos keep their size and their overlap — but a logo wider than
-  // the screen bleeds off BOTH edges evenly instead of dumping the whole
+  // the screen fills off BOTH edges evenly instead of dumping the whole
   // overhang off the right (user rule 2026-08-20). Fits → untouched.
   //
-  // Measure-once is not enough on phones: the mono webfont and the 1.9MB td
-  // chunk land AFTER first paint, changing the logo's real width. So re-center
-  // on every rendered-size change (ResizeObserver) and once fonts settle.
+  // The script only answers yes/no (wider than the screen?); the even fill is
+  // pure CSS (.bleed → left 50% / translateX(-50%)), so it stays exact no
+  // matter when fonts or the td chunk land — percentages track the glyphs.
   const asciiRef = useRef<HTMLPreElement>(null);
   useLayoutEffect(() => {
     const el = asciiRef.current;
     if (!el) return;
-    let raf = 0;
-    const center = () => {
-      el.style.marginLeft = '';
-      const w = el.scrollWidth;
-      const vw = document.documentElement.clientWidth;
-      // document-space left (scrollX guards against a mid-measure pan)
-      const left = el.getBoundingClientRect().left + window.scrollX;
-      if (w > vw) el.style.marginLeft = `${(vw - w) / 2 - left}px`;
-    };
-    // coalesce observer bursts to one layout pass, and never run center()
-    // inside the RO callback itself (its own margin write would loop)
-    const queue = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(center);
-    };
-    center();
-    const ro = new ResizeObserver(queue);
-    ro.observe(el); // width: max-content — the box tracks the glyphs
-    window.addEventListener('resize', queue);
-    document.fonts?.ready.then(queue);
+    const judge = () =>
+      el.classList.toggle('bleed', el.offsetWidth > document.documentElement.clientWidth);
+    judge();
+    const ro = new ResizeObserver(judge); // width: max-content — the box tracks the glyphs
+    ro.observe(el);
+    window.addEventListener('resize', judge);
     return () => {
-      cancelAnimationFrame(raf);
       ro.disconnect();
-      window.removeEventListener('resize', queue);
+      window.removeEventListener('resize', judge);
     };
   }, [font, tdf]);
   const figlet =
