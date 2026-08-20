@@ -58,6 +58,8 @@ body {
   background: var(--bg);
   color: var(--txt);
   font-family: var(--sans);
+  /* oversize logos bleed past the viewport — crop the spill, never pan */
+  overflow-x: clip;
 }
 
 ::selection {
