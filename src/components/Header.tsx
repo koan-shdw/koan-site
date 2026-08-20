@@ -42,7 +42,9 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
       el.style.marginLeft = '';
       const w = el.scrollWidth;
       const vw = document.documentElement.clientWidth;
-      if (w > vw) el.style.marginLeft = `${(vw - w) / 2 - el.getBoundingClientRect().left}px`;
+      // document-space left (scrollX guards against a mid-measure pan)
+      const left = el.getBoundingClientRect().left + window.scrollX;
+      if (w > vw) el.style.marginLeft = `${(vw - w) / 2 - left}px`;
     };
     center();
     window.addEventListener('resize', center);

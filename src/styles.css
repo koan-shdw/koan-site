@@ -53,12 +53,18 @@ body,
   height: 100%;
 }
 
+/* oversize logos bleed past the viewport — crop the spill, never pan.
+   Must live on html AND body: iOS ignores it on body alone and lets the
+   wide logo stretch the layout viewport (= sideways pan + broken vw math) */
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background: var(--bg);
   color: var(--txt);
   font-family: var(--sans);
-  /* oversize logos bleed past the viewport — crop the spill, never pan */
   overflow-x: clip;
 }
 
@@ -176,6 +182,7 @@ a {
   overflow: visible;
   position: relative;
   z-index: 3;
+  pointer-events: none; /* pure decoration — taps fall through to the mail pill */
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); /* over art — sanctioned scrim */
 }
 
@@ -300,8 +307,9 @@ a {
 
 .id-mail {
   position: absolute;
-  top: 0;
+  top: -6px; /* rides a touch high so an oversize logotype never swallows it */
   right: 0;
+  z-index: 4; /* above the ascii (3) — always readable, always tappable */
   display: inline-flex;
   align-items: center;
   gap: 7px;
