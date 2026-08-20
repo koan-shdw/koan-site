@@ -6,7 +6,6 @@
 // The KOAN logotype is ASCII pasted over the card edge — figlet in the frame
 // grey, TheDraw in true DOS color. Selection state lives in App (the KOAN
 // egg opens the picker grid by the ANSI controller).
-import { useLayoutEffect, useRef } from 'react';
 import { Icon } from './icons';
 import { TdfLine, type TdfRows } from './logo';
 import LOGOS from '../assets/logos.json';
@@ -31,29 +30,6 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
   const tdRows = font.startsWith('td:')
     ? FAV_TD[font.slice(3)] ?? tdf?.[font.slice(3)]
     : undefined;
-  // Oversize logos keep their size and their overlap — but a logo wider than
-  // the screen fills off BOTH edges evenly instead of dumping the whole
-  // overhang off the right (user rule 2026-08-20). Fits → untouched.
-  //
-  // The script only answers yes/no (wider than the screen?); the even fill is
-  // pure CSS (.bleed → left 50% / translateX(-50%)), so it stays exact no
-  // matter when fonts or the td chunk land — percentages track the glyphs.
-  const asciiRef = useRef<HTMLPreElement>(null);
-  useLayoutEffect(() => {
-    const el = asciiRef.current;
-    if (!el) return;
-    const judge = () =>
-      el.classList.toggle('bleed', el.offsetWidth > document.documentElement.clientWidth);
-    judge();
-    const ro = new ResizeObserver(judge); // width: max-content — the box tracks the glyphs
-    ro.observe(el);
-    window.addEventListener('resize', judge);
-    document.fonts?.ready.then(judge); // belt + braces for late webfont metrics
-    return () => {
-      ro.disconnect();
-      window.removeEventListener('resize', judge);
-    };
-  }, [font, tdf]);
   const figlet =
     !font.startsWith('td:') && font in LOGOS
       ? (LOGOS as Record<string, string>)[font]
@@ -66,17 +42,19 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
           {EMAIL}
         </a>
         <h1 className="id-name sr-only">KOAN</h1>
-        {tdRows ? (
-          <pre ref={asciiRef} className="id-ascii td" aria-hidden="true">
-            {tdRows.map((r, i) => (
-              <TdfLine key={i} row={r} />
-            ))}
-          </pre>
-        ) : (
-          <pre ref={asciiRef} className="id-ascii" aria-hidden="true">
-            {figlet}
-          </pre>
-        )}
+        <div className="id-logo">
+          {tdRows ? (
+            <pre className="id-ascii td" aria-hidden="true">
+              {tdRows.map((r, i) => (
+                <TdfLine key={i} row={r} />
+              ))}
+            </pre>
+          ) : (
+            <pre className="id-ascii" aria-hidden="true">
+              {figlet}
+            </pre>
+          )}
+        </div>
         <div className="id-real">Alexander Mitchell</div>
         <div className="id-title">ART PRODUCER</div>
         <div className="id-foot">

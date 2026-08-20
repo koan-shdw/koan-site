@@ -173,27 +173,27 @@ a {
   white-space: nowrap;
 }
 
-/* the figlet logotype: pasted over the card edge, breaks free of the glass.
-   speaks in the border's voice — the exact same green */
+/* the logo row: one flex line whose whole job is the fit rule (user rule
+   2026-08-20, pure CSS — no script, nothing to mistime). Logo fits → the
+   auto margin eats the spare room and holds it hard left. Logo wider than
+   the row → auto margins go to zero (flex spec) and the centering takes
+   over: overflow spills past BOTH edges evenly, cropped by the html clip. */
+.id-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: -32px; /* pasted over the card edge, breaks free of the glass */
+}
+
+/* the figlet logotype — speaks in the border's voice, the exact same green */
 .id-ascii {
   font: 700 9px/1.05 var(--mono);
   color: var(--edge);
-  margin: -32px 0 0;
+  margin: 0 auto 0 0; /* the left-hold half of the fit rule */
   white-space: pre;
   overflow: visible;
   position: relative;
   z-index: 3;
-  /* box hugs the glyphs — the bleed judge and the % centering both need
-     the true logo width, not the container's */
-  width: max-content;
-}
-
-/* wider than the screen → fill past both edges evenly. Percent transform:
-   always exactly half of whatever the logo currently is — no measuring,
-   no load-order bugs. (Centers on the card column, which is centered.) */
-.id-ascii.bleed {
-  left: 50%;
-  transform: translateX(-50%);
+  width: max-content; /* box hugs the glyphs — the true logo width */
   pointer-events: none; /* pure decoration — taps fall through to the mail pill */
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.7); /* over art — sanctioned scrim */
 }
