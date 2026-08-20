@@ -150,6 +150,7 @@ const PROJECT_DESC = {
   'video-dancer': 'Desktop AI video generation creative suite.',
   'koan-ansi': 'Small ANSI art generator. Image and video in, BBS art out.',
   'KOAN-IMG': 'AI image curation tool. Search your own archive by meaning.',
+  'sprite-dancer': 'AI sprite generator. One character in, a full moveset out.',
 };
 
 async function buildProjects() {
