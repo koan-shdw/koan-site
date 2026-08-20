@@ -6,6 +6,7 @@
 // The KOAN logotype is ASCII pasted over the card edge — figlet in the frame
 // grey, TheDraw in true DOS color. Selection state lives in App (the KOAN
 // egg opens the picker grid by the ANSI controller).
+import { useLayoutEffect, useRef } from 'react';
 import { Icon } from './icons';
 import { TdfLine, type TdfRows } from './logo';
 import LOGOS from '../assets/logos.json';
@@ -30,6 +31,23 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
   const tdRows = font.startsWith('td:')
     ? FAV_TD[font.slice(3)] ?? tdf?.[font.slice(3)]
     : undefined;
+  // Oversize logos keep their size and their overlap — but a logo wider than
+  // the screen bleeds off BOTH edges evenly instead of dumping the whole
+  // overhang off the right (user rule 2026-08-20). Fits → untouched.
+  const asciiRef = useRef<HTMLPreElement>(null);
+  useLayoutEffect(() => {
+    const el = asciiRef.current;
+    if (!el) return;
+    const center = () => {
+      el.style.marginLeft = '';
+      const w = el.scrollWidth;
+      const vw = document.documentElement.clientWidth;
+      if (w > vw) el.style.marginLeft = `${(vw - w) / 2 - el.getBoundingClientRect().left}px`;
+    };
+    center();
+    window.addEventListener('resize', center);
+    return () => window.removeEventListener('resize', center);
+  }, [font, tdf]);
   const figlet =
     !font.startsWith('td:') && font in LOGOS
       ? (LOGOS as Record<string, string>)[font]
@@ -43,13 +61,13 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
         </a>
         <h1 className="id-name sr-only">KOAN</h1>
         {tdRows ? (
-          <pre className="id-ascii td" aria-hidden="true">
+          <pre ref={asciiRef} className="id-ascii td" aria-hidden="true">
             {tdRows.map((r, i) => (
               <TdfLine key={i} row={r} />
             ))}
           </pre>
         ) : (
-          <pre className="id-ascii" aria-hidden="true">
+          <pre ref={asciiRef} className="id-ascii" aria-hidden="true">
             {figlet}
           </pre>
         )}
