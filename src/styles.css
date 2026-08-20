@@ -57,6 +57,7 @@ body,
    Must live on html AND body: iOS ignores it on body alone and lets the
    wide logo stretch the layout viewport (= sideways pan + broken vw math) */
 html {
+  overflow-x: hidden; /* fallback for WebKit without `clip` support */
   overflow-x: clip;
 }
 

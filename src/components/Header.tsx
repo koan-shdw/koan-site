@@ -48,6 +48,7 @@ export function Header({ font, tdf }: { font: string; tdf: Record<string, TdfRow
     const ro = new ResizeObserver(judge); // width: max-content — the box tracks the glyphs
     ro.observe(el);
     window.addEventListener('resize', judge);
+    document.fonts?.ready.then(judge); // belt + braces for late webfont metrics
     return () => {
       ro.disconnect();
       window.removeEventListener('resize', judge);
