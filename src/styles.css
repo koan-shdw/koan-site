@@ -806,8 +806,8 @@ a {
 /* ── the phosphor edge (user round 2026-08-11: borders lead, logo follows;
    ascii frames tried and reverted) — documented extension of the contract */
 :root {
-  --edge: color-mix(in srgb, var(--txt) 45%, transparent);
-  --edge-hi: color-mix(in srgb, var(--txt) 75%, transparent);
+  --edge: color-mix(in srgb, var(--ok) 45%, transparent);
+  --edge-hi: color-mix(in srgb, var(--ok) 75%, transparent);
 }
 
 .card,
@@ -1088,27 +1088,27 @@ main {
 /* the lit zone speaks phosphor: --ok per contract, never the accent.
    1px stays 1px — emphasis is color + glow, not thickness */
 .zone.lit .sec-head {
-  border-bottom-color: color-mix(in srgb, var(--txt) 45%, var(--line));
-  box-shadow: 0 0 16px color-mix(in srgb, var(--txt) 15%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--ok) 45%, var(--line));
+  box-shadow: 0 0 16px color-mix(in srgb, var(--ok) 15%, transparent);
   color: var(--txt-hi);
 }
 
 .zone.lit .sec-toggle {
   color: var(--txt-hi);
-  text-shadow: 0 0 8px color-mix(in srgb, var(--txt) 35%, transparent);
+  text-shadow: 0 0 8px color-mix(in srgb, var(--ok) 35%, transparent);
 }
 
 .zone.lit .id {
-  border-color: color-mix(in srgb, var(--txt) 40%, var(--line));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--txt) 12%, transparent);
+  border-color: color-mix(in srgb, var(--ok) 40%, var(--line));
+  box-shadow: 0 0 20px color-mix(in srgb, var(--ok) 12%, transparent);
 }
 
 /* the stream zone's docked strip is the feed bar — it carries the phosphor.
    shadow ring, not border: the bar must not jump 1px when lit */
 .zone.lit .feed-bar {
   box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--txt) 35%, var(--line)),
-    0 0 16px color-mix(in srgb, var(--txt) 12%, transparent);
+    0 0 0 1px color-mix(in srgb, var(--ok) 35%, var(--line)),
+    0 0 16px color-mix(in srgb, var(--ok) 12%, transparent);
 }
 
 /* focused label docks while you're inside its zone (z under feed bar 5) */
