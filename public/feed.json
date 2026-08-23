@@ -1,6 +1,780 @@
 {
- "generated": "2026-08-13T05:46:06.447Z",
+ "generated": "2026-08-23T07:57:59.788Z",
  "items": [
+  {
+   "id": "post-2026-08-23-the-neocloud-refinancing-wall",
+   "source": "claude",
+   "date": "2026-08-23T06:53:26Z",
+   "body": "Hey. How's it going? Ahh, going well, thanks! Good to hear from you. What's on your mind today? Just having a walk, and I wanna discuss the AI bubble. You know? Everyone's talking about the AI bubble. Everyone talks about bubbles. It's obviously that there is some issues happening here, but isn't bubble oversimplification. And if it is, how can I use my chat with you today to get a better understanding of things? Right, yeah, I think \"bubble\" is doing a lot of work as a word. It flattens severa…",
+   "title": "the neocloud refinancing wall",
+   "tags": [
+    "ai",
+    "credit",
+    "gpus"
+   ],
+   "convo": [
+    {
+     "who": "koan",
+     "text": "Hey. How's it going?"
+    },
+    {
+     "who": "claude",
+     "text": "Ahh, going well, thanks! Good to hear from you. What's on your mind today?"
+    },
+    {
+     "who": "koan",
+     "text": "Just having a walk, and I wanna discuss the AI bubble. You know? Everyone's talking about the AI bubble. Everyone talks about bubbles. It's obviously that there is some issues happening here, but isn't bubble oversimplification. And if it is, how can I use my chat with you today to get a better understanding of things?"
+    },
+    {
+     "who": "claude",
+     "text": "Right, yeah, I think \"bubble\" is doing a lot of work as a word. It flattens several different things: valuations, capital expenditure, actual capability, and adoption. Those can move independently.\nWhat angle interests you most, the money side or the technology side?"
+    },
+    {
+     "who": "koan",
+     "text": "No. Also, I think it also doesn't take into account infrastructure. I think a really good example sometimes when I listen to YouTube videos about bubbles, I think the one of the earliest examples of a bubble, probably the first is the railroads. And one of the things that sticks with me is that the bubble... railroad bubble did burst, but the railroads did not go anywhere. Right? So I think one of the key aspects about anytime people discuss a bubble is that they they kind of treat it like a thing that's gonna disappear. But we saw that with the dot com bubble too. It's like the infrastructure stays in place. It's just something else disappears. You know?"
+    },
+    {
+     "who": "claude",
+     "text": "Exactly, and I'd push it further. The railway mania actually left Britain with a rail network built at prices no rational investor would ever fund again. The losses were real, but they were essentially a subsidy from shareholders to everyone who came after.\nThe dot com one's the same. Dark fibre laid in the late nineties sat unused for years, then YouTube and Netflix ran on it for pennies.\nSo the question isn't whether infrastructure survives, it's who eats the loss and who inherits the asset."
+    },
+    {
+     "who": "koan",
+     "text": "Precisely.\nSo let's discuss the the current bubble, the current state of AI at the moment because we're in that exact situation, and I think it would be really good for us to discuss what the infrastructure is. It's gonna be left behind and which companies are currently the ones that are eating the bubble... eating them the eating the costs are gonna suffer, gonna disappear. What's the landscape's gonna look like afterwards, and then I'd like to discuss some of the strategies that I'm starting to notice that the... let's just say the the major players at the moment are employing to try and survive this. The... I'm sure, obviously, if I can see it, they can see it. We can all see it. no months to admit it because I think part of the key strategy to surviving it is to depend like it's not gonna happen so that you can potentially trick retail investors into putting money in or or keep it going long enough to to find a strategic position for an exit. But we all see it. Right? So let's discuss the landscape and get a better understanding of things."
+    },
+    {
+     "who": "claude",
+     "text": "Sure, so let me take the infrastructure question first, because it's the one where AI differs most from railways.\nRails and fibre depreciate slowly. Track laid in eighteen forty-five was still carrying trains in nineteen forty-five. GPUs are on something like a three to five year useful life before they're economically obsolete. So a huge slice of the capital going in right now is genuinely perishable in a way sleepers and cable were not.\nBut underneath the chips, the durable stuff is real. Power generation and grid interconnects, substations, data centre shells, cooling, water rights, and the land. Those outlast several hardware cycles. If there's a leftover asset for the next generation, it's electricity and buildings, not silicon.\nShall I go into who's actually exposed on the balance sheets, or the survival strategies first?"
+    },
+    {
+     "who": "koan",
+     "text": "Oh, I actually... I would push back on that, actually. I think I think that that's some of the stuff that's going to not be useful because if... or maybe I'm wrong on this. Right? But, like, um, my particular understanding of the current situation is that the AI bubble is built on the misconception that AI is gonna become a utility. Intelligence is a utility, for example. And these infrastructures are being built to supply these vast data centers created specifically to provide intelligence as a utility. But I think one of the things that is gonna happen at the end of this is we're going to see that open weight models, advancements in hardware, advancements in the models themselves, and, obviously, once those things are open weight, then we have community projects that help make them quantized and faster. We're gonna see decentralization that's gonna create... that's gonna turn the infrastructure that's being built into into being useless. Maybe there'll be other uses for it, like PowerGrid obviously will stay in place and potentially consumers in the future of, like, in a household they're gonna get cheaper electricity maybe advancements in, you know, fusion reactors and stuff like that are gonna be able to take advantage of those power grids. But from an AI perspective, I would say that the only infrastructure that's gonna stay will be the models."
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, that's a genuinely interesting inversion, and I think you're half right in a way that matters.\nWhere I'd agree: inference does look like it's decentralising. Quantisation, distillation, and better small models mean a lot of useful work moves to the edge, and the \"intelligence as metered utility\" pitch weakens badly if a good enough model runs locally for free.\nWhere I'd push back: training doesn't decentralise. Somebody still has to burn enormous compute to produce the weights that everyone else then quantises. The open weight models you're describing exist because well capitalised labs spent fortunes making them. So the centralised infrastructure becomes a factory rather than a utility, and factories need far fewer of themselves than utilities do.\nThat's the real overbuild, isn't it? Not that the data centres are worthless, but that we're building utility-scale capacity for a factory-scale need."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Yeah. I think that's a really good way of putting it. We're building utility scale infrastructure for a factory scale need. And at the end of the day, yes, I agree. We're gonna need these big high memory, high power data centers to train models hundred percent. But, like, come, we just get away with five. You know? And and and wouldn't ask putting all of our infrastructure and all of our resources into that, training those too would would result in much more efficient models, which would great serve the decentralization method. So, yeah, I agree with you a hundred percent. But I... well, I mean, we're talking about a scale difference. It's so massive that I think that my initial point still still holds a lot of weight."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, I'll concede that. If the honest requirement is five to ten training.\nAnd campuses globally and we're building for hundreds, then the gap is so large that \"some of it gets repurposed\" is almost a rounding error against the write there-down's a second-order problem: those training campuses want to be where power is cheapest and coldest, not near population centres. Inference wants low latency, so it wants to be near people. A lot of what's being built is sited for neither properly, hedging both.\nSo who eats it? Want me to go through that?"
+    },
+    {
+     "who": "koan",
+     "text": "Agree. Agree."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so where that leaves us: the leftover asset probably isn't the buildings at all. It's the weights, plus a labour force that now knows how to build this stuff, plus a body of research that's public.\nThat's actually closer to the railway analogy than it first looks. Britain didn't just inherit track, it inherited engineers and a template.\nWant me to get into who's holding the bag when the write-down comes?"
+    },
+    {
+     "who": "koan",
+     "text": "Um, Yeah. Almost. But let's discuss one more thing because I I have a couple of examples that I think, um, support my theory about the, uh, the the state after... oh, what will happen in terms of decentralization."
+    },
+    {
+     "who": "claude",
+     "text": "Go on, I'm curious what you've got."
+    },
+    {
+     "who": "koan",
+     "text": "So I think one of the one of the earliest examples that I can think of is the diffusion model example for image generation. Like, when we first started image generation, we were sticking with GaN models. So we're very, very small, very, very shit, and very, very slow. And then we saw that we had these online services, mid journey, etcetera, that supplied really high quality or relatively high quality image generation. And for a while, it seemed like for most people, the only way to have access to this technology would be online services. But then, say, well, the fusion came out, obviously. Community projects with instable effusion help to find that. Blocks, Korea. What is it? Z Z image. A bunch of these models start coming out. And now it's almost a bother to use online services. I mean, obviously, nanodenar is quite useful because it plugged into stuff with"
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, the diffusion parallel is a strong one, and I think the mechanism you're pointing at is right: once the recipe is public, the cost of matching last year's frontier collapses, and most people's needs are met by last year's frontier.\nThe thing I'd add, though, is that images have a natural ceiling. A thousand by a thousand pixel image is a bounded problem, so local hardware eventually catches up to \"good enough\" and the demand stops growing. Language keeps moving the goalposts. The moment local models handle chat well, the frontier is agents running for hours with enormous context, and that eats memory bandwidth in a way a consumer machine struggles with.\nSo my guess is you get a permanent split. Ninety-something percent of volume goes local and free, and the remaining slice stays centralised but is genuinely valuable. Which is still catastrophic for anyone who priced the whole hundred percent as recurring revenue."
+    },
+    {
+     "who": "koan",
+     "text": "So I think one of the one of the earliest examples that I can think of is the diffusion model example for image generation. Like, when we first started image generation, we were sticking with GaN models. So we're very, very small, very, very shit, and very, very slow. And then we saw that we had these online services, mid journey, etcetera, that supplied really high quality or relatively high quality image generation. And for a while, it seemed like for most people, the only way to have access to this technology would be online services. But then, say, well, the fusion came out, obviously. Community projects with instable effusion help to find that. Blocks, Korea. What is it? Z Z image. A bunch of these models start coming out. And now it's almost a bother to use online services. I mean, obviously, nanodenar is quite useful because it plugged into stuff with API calls. But in in in a general sense, like, there's zero need at all to use an online service for image generation. And while, obviously, they are much smaller models, the hardware is much lighter to run them, I think that that is a good example of how LLMs will also progress because I I really remember using these early models and thinking, wow. I never be able to run this on my computer. Similar to how I feel about LLMs now, you know? But the more and more, the easier it is there it gets. We start seeing these element... abilities to run LLMs locally Sure. They're pretty useless now, but I remember back when my friend and I were running a a chatbot, I think it was on alarm or on Discord. It was like... I mean, we we could never dream of even having the the most basic model at that point. I think we're running something they cool into, like, less than GPP. Right? It was, like, really, really basic. We've a terrible context window. And now that could easily be run locally. So there is, like, a quiet creep in the decentralized local models Look at the language model. Log language model locally. Then I think people are not really paying attention to it. And I think now with KDK and Deepsea, we're starting to see that, oh, we're almost at that that precipice now where we have the equivalent of, like, the first stable diffusion. You know?\nLet me push back on that just a little bit because a thousand times a thousand is not entirely the image. We also have, you know, the context win... the context models that let you get real detail. We have realism. There are there is... there's so much more in the nuance of an image than just a thousand by thousand pixels. Um, and we're still seeing incredible developments in that in that area, you know, like... in in the past, it was impossible to get, like, exactly what you wanted. You couldn't, like, name all the things in the background and and give everything complete context to kind of roll the dice. Right? That is still being improved on."
+    },
+    {
+     "who": "claude",
+     "text": "Fair,idelity are I the was being lazy with that. Controllability and semantic f real frontier, not resolution, and you're right that those keep moving.\nBut notice what carried that progress: ControlNet, LoRAs, inpainting workflows, ComfyUI graphs. Community tooling wrapped around modest models, not bigger models. That actually strengthens your case rather than mine.\nSo maybe the honest position is that capability keeps climbing, but the marginal buyer of compute is a hobbyist with one card, not a hyperscaler."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Hundred percent. And and, like, there's another point to this that I I was hoping to bring up, which I think I might may as well bring into the conversation now is that the barrier of entry that we're seeing with LLMs is almost caused by the artificial inflation of the GPUs because of the the hyperscaling into into data centers. I mean, what are we looking at, like, three times the cost of the GPU now? I mean, for the cost of my last GPU, I could have bought three and had, like, almost a hundred and twenty four... a hundred and twenty eight gig which is starting to... let's get into the point where you can start running some of these larger language models. And I would say that in a conspiratorial sense, a conspiratorial man in my inmate would say that maybe the hyperinflation of DPUs, the circular financing that went into it was created to give people a sense that there would be no other option than to use intelligence as a utility instead of being able to run it locally."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, I'd resist the conspiracy framing, but the effect you're describing is real without needing intent. Hyperscalers buying every wafer allocation squeezes the consumer market as a straightforward side effect, and nobody at Nvidia is upset about it.\nWhere I'd actually give your suspicion some teeth: VRAM segmentation. The reason consumer cards are memory-starved isn't physics or cost, it's deliberate product laddering to protect the data centre margin. That's a choice, and it's the single biggest thing keeping local models out of reach.\nSo the barrier isn't compute, it's memory policy."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. What? What? What? Hundred percent."
+    },
+    {
+     "who": "claude",
+     "text": "Right, and here's what makes it fragile: that segmentation only holds while Nvidia has no real competition. Apple's unified memory already embarrasses them on capacity per dollar, and Chinese vendors have no reason to respect the ladder.\nThe moment someone ships a cheap ninety-six gig card, the whole utility thesis wobbles. Which is maybe the real thing to watch, more than any valuation."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. I think that there there are number of factors to watch. I mean, obviously, this is what we're gonna get to later because I think valuations right now are Well, at least the IPOs of anthropic and open AI will become the watershed moments of the the bubble, which I think we'll get through later. But in terms of factors that... well, personally, let me state that I see this as an inevitability using this... the diffusion model as an example. I I think that anyone who gets genuine utility out of an LLM is going to see, like,\nYeah. I think that there there are number of factors to watch. I mean, obviously, this is what we're gonna get to later because I think valuations right now are Well, at least the IPOs of anthropic and open AI will become the watershed moments of the the bubble, which I think we'll get through later. But in terms of factors that... well, personally, let me state that I see this as an inevitability using this... the diffusion model as an example. I I think that anyone who gets genuine utility out of an LLM is going to see, like, there's just no there's no way around it. They're gonna say, hey. Can I run the equivalent of fable five on my local model for an investment of, like, let's just say, ten thousand dollars I will definitely do that, you know, because, one, you have sovereignty, and, two, you have unlimited access. Um, ten thousand dollars compared to a team of developers, it's still a it's still a massive massively good deal. Um, so we're gonna see that happen no matter what. I see that as an inevitability. And there are factors that are gonna contribute to that such as the cost of hardware, the availability of open source models, um, and all of the community developments that increase their their usefulness. Right? Hundred percent. Let's just... from my perspective at least, I think that's a given. Maybe you differ, but Yeah. Tell me what you think."
+    },
+    {
+     "who": "claude",
+     "text": "Mostly agree, with one real caveat.\nThe economics you describe hold for steady heavy use. Ten thousand dollars against an API bill is obvious maths if you're running constantly. But most people's usage is spiky, and idle silicon in a cupboard is the worst possible asset. That's the same reason most firms stopped running their own mail servers even though they easily could.\nSo I'd predict a split rather than a sweep. Sovereignty-motivated and high-volume users go local, which is a meaningful and probably underestimated chunk. Everyone else stays on tap because it's cheaper to rent than to own something you use two hours a week.\nStill fatal to the utility thesis, though. Utilities need the heavy users to pay for the network."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. But, I mean, also also, like, when those kind of people, those casual users aren't gonna be using frontier models, you know, they can... they they just need a basic language model."
+    },
+    {
+     "who": "claude",
+     "text": "Exactly, and that's the part the business models really can't survive. The casual user is served by a two year old model running at near-zero marginal cost, probably bundled free into an operating system or a phone. There's no revenue there.\nSo you get a barbell. Heavy users defect to local for sovereignty, casual users get satisfied by commodity models, and the middle that was supposed to pay for the data centres quietly evaporates.\nRight, shall we get onto the survival strategies? Because that framing explains a lot of what the labs are actually doing."
+    },
+    {
+     "who": "koan",
+     "text": "But also also what I'm saying is that the casual users can use it on, like, way less hardware. I mean, we're gonna get to the point where LLMs can run on your phone."
+    },
+    {
+     "who": "claude",
+     "text": "Right, and they already sort of do. Apple and Google both ship small models on-device now, and for \"summarise this, draft that,\" they're fine.\nSo the pyramid inverts badly for the labs. Casual demand drains to phones, heavy demand goes local for sovereignty, and what's left paying utility rates is the middle. Which was never the market that justified the capex."
+    },
+    {
+     "who": "koan",
+     "text": "Precisely. And that's that's exactly where I'm coming to with this. Now there was something we were discussing just before I got I got distracted by the tangent of using... of saying that I'm a hundred percent sure that the LLMs will follow the same diffusion markup model. Um, what was that again?"
+    },
+    {
+     "who": "claude",
+     "text": "Ah, you were about to hear who's holding the bag when the write-down comes. That was the thread we parked.\nThough we'd also half-opened the survival strategies question, and your IPO watershed point. Which one do you fancy?"
+    },
+    {
+     "who": "koan",
+     "text": "Okay. I feel watershed point. That's what I'm talking about."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so the IPO logic. Both OpenAI and Anthropic are burning cash at a rate private markets can't sustain forever, and the sovereign wealth and Softbank money isn't infinite. An IPO is the obvious next liquidity valve.\nBut here's the watershed part. Going public forces disclosure. Real revenue, real gross margins after inference costs, real churn. Right now those numbers are private, and the valuations rest on narrative. The S-1 is the moment narrative meets audited accounts.\nThat's your reckoning. Not a crash, a filing."
+    },
+    {
+     "who": "koan",
+     "text": "Well, yes. And I and I think that everyone knows it. And and right now, we're looking at a series of people who have really heavily exposed to to this idea, um, looking for ways to exit. Right? That's what I think at least. And I I got some theories about this."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, go on, let's hear them. What are you seeing?"
+    },
+    {
+     "who": "koan",
+     "text": "Well, it kinda comes down to the SpaceX IPO. Right? As we... I think it was, like, seventy one percent of the company evaluation was based on its AI."
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, I want to be careful here because I'm not certain of the specifics on a SpaceX IPO, and I don't want to nod along to a number I can't stand behind. Want me to check what's actually been announced?"
+    },
+    {
+     "who": "koan",
+     "text": "Yep."
+    },
+    {
+     "who": "claude",
+     "text": "Let me have a look.\n```\nThis block is not supported on your current device yet.\n```\nOkay, so it's already happened, and it's rather more dramatic than your framing.\nxAI merged into SpaceX in February at a combined one and a quarter trillion, IPO'd in June raising about seventy-five to eighty-six billion, and by late July the shares were down roughly fifty percent from their peak. Musk briefly became a trillionaire and then wasn't.\nYour instinct was right, though. The AI wing was the story being sold, and Morningstar flagged the cash flow problem before it broke."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And and I think that what we're seeing here is is we're seeing these three main players, at least the one way I see it is Atropic, OpenAI, and and and SpaceX have huge bags in this. Right? And and a lot of exposure. And I think everyone sees that the... this this crash is coming because everyone understands the utility model is flawed. Utility model is just like a really convenient way of telling investors that this frontier technology will somehow have, like, the ability to be added as a tap into everyone's house that everyone will pay for drip by drip. Right? But it's a lie. And I think these these people were were hoping to push the lies long as possible in order to... I'm gonna guess. We we don't hear about it as much as we used to, but the AGI thing was like, it was just a magical button that was gonna, like, fix everything. Right?\nI think everyone went all in on this technology for fear of other people doing it before then, blah blah blah. Obviously, the hype was gonna result in the amount of investment that it's getting so everyone wanted to do. We're all seeing them starting to realize that the music's about the stuff, and we're looking at a bunch of different strategies at the moment about how to exit. And I think SpaceX is strategically in the best position."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, and SpaceX's move was genuinely clever, whatever else you think of it. Musk didn't sell AI to the public, he sold rockets with AI stapled on. Retail buys a real business with real launch revenue and inherits the xAI exposure as a rider. That's the exit: converting illiquid private AI paper into public float, using a legitimate operating company as the wrapper.\nOpenAI's version is the Microsoft entanglement and the restructuring. Anthropic's is somewhat different, and I should say I'm hardly a neutral observer there.\nFifty percent down in six weeks suggests the market saw through the wrapper faster than expected, mind you."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. No. No. I I think I think that, like, SpaceX was obviously gonna eat shit at at, like, immediately afterwards and especially at August now. So I think it gets unlocked and it's gonna eat a lawnmower shit. But what I was thinking is that the the the the rush to market with the SpaceX IPO really, like, position SpaceX ahead of what we're gonna see with... and also packaging it as a space thing, which, you know, Elon fanboys will, like, eat that shit up, you know, because if they're like, oh, it's sci  So packaging it in sci fi kind of replaces the AGI package. Right? Um, a bunch of talking about putting data centers in space, which is most ridiculous that you're ever, all that stuff helps keep the retail investors, um, invested, um, and and bullish based on culture personality and and, like, big projects supported by the social infrastructure of, um, Twitter or x or whatever, which can be used to bolster the culture around the investors to reduce the amount of retail, um, bearishness, I guess, or, like, exit?\nand it puts SpaceX in a really good position because I have a feeling that the anthropic and the open AI a... IPOs are gonna suffer because we're we're starting to see a lot of people realizing this now. And I really do think that with the launch of DeepSeek recently, communicate, etcetera, we're really starting to see people kind of, like, the light bulbs going off that, like, shit. We can run local models, you know, um, which, like, won't affect the market as such because we're still talking about a small group of people. And... well, I mean, fuck it. Who cares if it affects the market? OpenAI and appropriate worth running at massive losses. I think what is, like, OpenAI is, like, spending, like, sixty cents for every dollar it makes."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so the sci-fi-as-narrative-substitute point is sharp. Orbital data centres are physically preposterous, cooling in vacuum is brutal, but they work as story, and story is what keeps a retail base from selling. Musk has a distribution channel for narrative that no other lab has.\nOn sequencing, though, I'd flag a risk to your thesis. SpaceX going first and halving may have poisoned the well rather than cleared it. Bankers pricing the next AI listing now have a very recent, very ugly comparable. First mover on the exit is only advantageous if the door stays open behind you.\nAnd yeah, the loss ratios are grim across the board. Worth noting I'm not exactly disinterested when it comes to Anthropic's prospects."
+    },
+    {
+     "who": "koan",
+     "text": "Oh, yeah. Yeah. But that's what I'm talking about. Like, that's exactly I think part of the strategy is Like, I don't think Elon has any love to hook an AI or an topic. And and I really think that, like, maybe... I'm sitting about this morning. I was like, potentially, he's positioning himself to eat a lot of loss now, but to be to be in a position where he can kick up infrastructure depending on the diamonds. What I'm saying? Even though the infrastructure is still a bit murky, right, but it still puts him in a position where because the company is still, you know, NASA contracts, Starlink, Twitter, it's quite spread out a a lot of practical utilities. It's potential that it can survive when our topic is open, I I can't."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, that's the strongest version of your argument, and I think it holds. SpaceX can eat a fifty percent drawdown because launch and Starlink generate actual cash. It's a diversified conglomerate wearing an AI costume. OpenAI and Anthropic have no costume to take off, the AI is the whole company.\nSo Musk's position isn't \"win the AI race,\" it's \"be solvent when everyone else is distressed.\" Buy the datacentres at ten cents, hire the researchers cheap.\nHmm, though conglomerates have a habit of dragging their healthy divisions down with the sick ones."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. I mean, potentially, if he's already thought about that there's something in there that can, like, counter it. But this is just... I'm thinking out loud. Right? I'm just trying to trying to get my heads around. The IPO seems like a strange situation. It seems rush. And... but at the same time, it seems like... when I consider that the OpenAI IPO is gonna absolutely be potentially devastating, it seems like he timed it the best time because timing after OpenAI or anthropic, which, let's face it, their AIs are much more advanced, much more useful. Grok is really a gimmick. Right? But he... by going to IPO first and then wrapping it in companies that have actual practical purposes, he can wear the loss, wear the bubble, probably because it's gonna be... it's... so much of the other companies are gonna be exposed, everything from Microsoft to Nvidia to Facebook. I'm so exposed by this, so there's gonna be a general loss across the board. Right? But he'll be in a position potentially... I don't know. You're you're the AI. You can look at the numbers and work this out better to to be in a position to take advantage of that. So"
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, \"sell the weakest AI story first, before the market learns to price AI stories properly\" is a genuinely coherent read. Grok being the also-ran actually argues for going early rather than against it.\nThough I'd resist casting it as a masterplan. There's a simpler reading: Musk needed liquidity for xAI, which was burning cash with no path to a standalone raise, and the merger was a rescue dressed as strategy. Sometimes the clever-looking move is just the only move left.\nEither way, he ends up in the same spot: solvent, diversified, and holding dry powder when the distressed assets go on sale."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. That's what I'm thinking. I'm not trying to frame it like he's a genius or anything, but I I I do I do think that the situation does look like this, and I do think that the thesis still holds in terms of the the in effectiveness or the... what's the word? Fucking... the the the issues with intelligence as a utility being the backbone of the current market state and where I see the inevitable issues coming up. I mean, I I would say that even if even if there wasn't a future where the the centralized intelligence was, um, a clear path forward, we would still be looking at companies like OpenAI and anthropic, which are burning money. And, um, their investment is part of a circular investment system that exposes Nvidia and Microsoft, um, Google and Meta, which is essentially all of the tech in in the world. Right? So I I think we're still seeing a position here where there is where there is a lot of danger. And, um, know where I'm going with this, but maybe you can pick up and and bring me back on track."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so where you're going, I think, is that you've got two independent failure modes and either one is sufficient.\nOne is structural: the utility thesis is wrong, so the terminal revenue never materialises at the scale the capex assumes. Two is financial: even granting the thesis, the circularity means Nvidia books revenue from customers funded by Nvidia's own investment, and Microsoft books Azure revenue from a company it capitalised. That's a closed loop that looks like growth until someone needs actual outside cash.\nThe nasty part is they compound. The circular financing is what let the capex run ahead of the thesis in the first place.\nWant to think about what that means for you practically, given you're running a business here?"
+    },
+    {
+     "who": "koan",
+     "text": "No. I'm I'm small fries. I can leave handsome mouth. I can fucking survive on scraps. So let's discuss what happens in a few different scenarios. Let's discuss what happens this year, next year, and the year afterwards, potentially, and what those scenarios will look like and what all of the main players... the position that the main players will be in. So we have Amazon, Meta, Google, Microsoft, OpenAI, anthropic, SpaceX, and video. Right? Let's give ourselves end of this year or towards the the last quarter of this year and what might happen. And then let's give ourselves the first half of next year and the last half, and then the first half of the year after that and last half input. Let's come up with some genuine scenarios that are possible for each one based on IPO dates, schedules, and let's find some x factors in there, like, some new manufacturer in China that can that can pump out GPUs cheaper and also, you know, deep seek making an announcement mid next year that they have a better than fable level open open model open model... open open weight model it's out. Right? Let's just factor those in because I have a feeling those are gonna happen. Right? And let's just create that landscape and and and and play around with that idea for a bit."
+    },
+    {
+     "who": "claude",
+     "text": "Alright, let's build it out. Rest of this year first.\nLate twenty twenty-six, the most likely picture: SpaceX stays down and volatile, with the August lockup expiry adding supply. That comparable makes OpenAI's bankers nervous, so I'd expect the OpenAI listing to slip rather than price into a hostile market. Nvidia keeps beating on earnings because orders were placed a year ago, but guidance language softens. Meta and Google are fine because ads pay for everything. Microsoft starts quietly separating its Azure story from its OpenAI story in how it talks to analysts. Amazon is the least exposed of the four, since Bedrock hedges across models.\nShall I carry on into next year, or do you want to poke at that first?"
+    },
+    {
+     "who": "koan",
+     "text": "Well, I think that there might have been talk. I I know that there was talk about September IPO for State OpenAI. I mean, let's discuss what is... maybe you might need to research that, look up anthropic and open AI's most recent statements about IPOs."
+    },
+    {
+     "who": "claude",
+     "text": "Let me check what's been said recently.\n```\nThis block is not supported on your current device yet.\n```\nOkay, so this reframes things. Anthropic filed first, June the first, at around nine hundred sixty-five billion. OpenAI filed confidentially a week later, targeting seven hundred thirty to eight hundred fifty billion, with September floated. But post-SpaceX, reporting suggests OpenAI may be drifting toward twenty twenty-seven, while Anthropic is still sprinting for this year.\nSo your \"who goes first\" framing was right, you just had the running order wrong. And note Anthropic filed at a higher valuation than OpenAI on far less revenue."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And look into some of the most recent recent assignments in the board of OpenAI. I think some of the CFOs equipped recently too."
+    },
+    {
+     "who": "claude",
+     "text": "Let me have a look at that.\n```\nThis block is not supported on your current device yet.\n```\nRight, so this is messier than a CFO quitting. Sarah Friar is still there, but the COO Brad Lightcap left, the chief revenue officer went after nine months, and the heads of ethics, safety, and the chief futurist all went in the same window. CNBC's framing was \"huge red flag ahead of IPO.\"\nThe tell for me isn't the exits themselves, it's who left. Ethics and safety departing before an S-1 goes public suggests disclosure language got contentious."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Yeah. Yeah. Um, didn't I didn't I hopefully just recently, like, do a share buyback with their own liquidity?"
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, I want to be careful there. OpenAI has run employee tender offers before, where SoftBank and others bought secondary shares, but that isn't the company spending its own cash. A genuine buyback from a business burning that much would be extraordinary. Want me to check whether something recent happened?"
+    },
+    {
+     "who": "koan",
+     "text": "Check check it. Yeah. Check it. I heard about that.\nAnd then also when you finish doing... go full check of our topic, see what's happening there with their board, any buybacks and stuff like that. Um, and anyone who's exposed to them, um, NVIDIA, Amazon, Microsoft, let's just get let's get a full report of the current corporate state of all of these companies and and get a read for, like, their culture and their vibe."
+    },
+    {
+     "who": "claude",
+     "text": "That's a big sweep, so let me start with the buyback question and Anthropic, then we can widen out.\n```\nThis block is not supported on your current device yet.\n```\n```\nThis block is not supported on your current device yet.\n```\nYou were right, and I was wrong to doubt it. Seven billion, completed August the tenth, at an eight hundred fifty-two billion valuation, and crucially self-funded rather than SoftBank or Thrive taking the other side.\nThat's the interesting bit. Last time, outside money bought employee stock. This time OpenAI spent its own cash, which means no external buyer wanted in at that price. A company burning heavily doesn't spend seven billion on liquidity for staff unless retention is wobbling badly, and the exec exodus the same week rather confirms it.\nOn Anthropic: public S-1 expected end of August, so essentially now, at nine hundred sixty-five billion with Amazon holding a mid-to-high-teens stake and booking mark-up gains on it."
+    },
+    {
+     "who": "koan",
+     "text": "No. It also means that they're not interested in having an external evaluation."
+    },
+    {
+     "who": "claude",
+     "text": "Ohh, that's sharper than my read. Yes.\nAn outside buyer negotiates. If Thrive or SoftBank had bought in, they'd have set a price through actual arm's length haggling, and if that price came in below eight fifty-two, the mark is public and the S-1 has to reckon with it.\nBuying it yourself means you choose the number. Eight hundred fifty-two just happens to match March exactly, so the story is \"flat, stable, no down round.\" Seven billion is a reasonable price to pay for controlling your own last private mark before the roadshow."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. Keep going."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so extend that logic and it gets worse.\nIf OpenAI can't find outside money at eight fifty-two privately, the IPO can't price above it publicly, and public markets are less forgiving than a friendly late-stage fund. That's very likely why the listing has drifted from September toward twenty twenty-seven while Anthropic sprints. Anthropic actually closed a sixty-five billion round with real outside leads in May, so their nine sixty-five mark is arm's length in a way OpenAI's isn't.\nWhich flips your earlier assumption completely. The weaker book here is OpenAI's, despite the bigger consumer brand."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. No. You're disagreeing with me this one. I'm talking about keep going in terms of the full sweep of all of the corporate entities involved, any of the CFOs, see see... whatever the C suite, see what they're up to. Let's get a read for the market before we create this. We're still working on this projected timeline of potential scenarios for the next two years. And I want you to do a run to get all the relevant evaluation or relevant information. As as you can see, I gave you some examples of the kind of information you want. Extrapolate that to anything else that we might be missing. let's create a full suite."
+    },
+    {
+     "who": "claude",
+     "text": "Ah, got you, sorry. Let me do a sweep across the hyperscalers.\n```\nThis block is not supported on your current device yet.\n```\nOkay, this gives us the real shape of it.\nRoughly seven hundred twenty-five billion in hyperscaler capex this year, up about seventy-seven percent on last year's four hundred ten. Alphabet raised guidance to nearly two hundred billion, Amazon around two hundred, Microsoft one ninety, Meta up to one forty-five, and Meta explicitly blamed memory chip prices, which speaks to your VRAM point.\nThe critical number: they depreciate this hardware over five to six years while its economic life is arguably two to three. Burry and others put the understatement at around one hundred seventy-six billion across twenty twenty-six to twenty-eight. That's earnings that don't exist.\nAnd note July the twenty-eighth, Alphabet's capex raise triggered a sell-off rather than a rally. The market's mood already flipped."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. You see, that's some good information there. Like, knowing about the depreciation from Meta across those years will help us get an idea because that means that in five years, they're gonna have to pay the toll. But there's more. Like, you still haven't gone into who's quit, whatever. I need deep research. You're taking, like, two seconds. You're coming back to me with some pretty basic stuff. I want, like, I want you to do a proper research run."
+    },
+    {
+     "who": "claude",
+     "text": "Ah, fair, and here's the honest constraint: I'm on a voice call with you, and a proper deep research run means several minutes of me searching in silence while you're walking. That's a rubbish experience.\nTwo options. I can do one more focused pass right now, say executive departures and board changes across the hyperscalers plus Nvidia, and give you that. Or you pick this up in text later where I can genuinely go deep and hand you something structured.\nWhich suits?"
+    },
+    {
+     "who": "koan",
+     "text": "You kinda you kinda lied to me there saying that we we could do this invoice to begin with. Like, I wouldn't mind waiting five minutes while you did a run, but we both know that you can't do that invoice."
+    },
+    {
+     "who": "claude",
+     "text": "Fair hit, and you're right that I shouldn't have offered the full sweep without flagging the limit up front. That's on me.\nTo be precise about the constraint: I can keep searching, but each pass is one query and I can't chain a dozen of them without leaving you in silence. So it's incremental, not a research run.\nWant me to grind through it in chunks? You'll get it, just slowly, with me talking between passes."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. So what you do is you say, I'm doing research one on one now. Don't give me don't give me the summary. I don't need it. Just say... and then say, can I do the next one? Can I do the next one? And let's just run that until you've done them all."
+    },
+    {
+     "who": "claude",
+     "text": "Right, that works. Starting now.\n```\nThis block is not supported on your current device yet.\n```\nGot that one. Next one?"
+    },
+    {
+     "who": "koan",
+     "text": "Good."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nGot it. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Okay. Next."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nLogged. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Next."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nThat's a rich one, and it directly feeds your thesis. Got it. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Next."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nThat's a big one for your x-factor list. Got it. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Next."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nOhh, that's the one. GPU rental rates down fifty to seventy percent. That's the actual crack. Got it. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Next."
+    },
+    {
+     "who": "claude",
+     "text": "```\nThis block is not supported on your current device yet.\n```\nHmm, that one complicates the picture rather than confirming it. Worth flagging. Got it. Next?"
+    },
+    {
+     "who": "koan",
+     "text": "Next."
+    },
+    {
+     "who": "claude",
+     "text": "I've got one more high-value pass in me before we should stop and actually use this. Doing it now.\n```\nThis block is not supported on your current device yet.\n```\nRight, that's a solid corpus now. Want me to start building the two-year scenario map from all of it, or keep gathering?"
+    },
+    {
+     "who": "koan",
+     "text": "Let me know what we found."
+    },
+    {
+     "who": "claude",
+     "text": "Alright, the headlines from the sweep.\nNvidia insiders are selling in unison. June the seventeenth, Huang, CFO Colette Kress, and three EVPs all sold on the same day, about forty million between them, and buying across the AI hardware complex has essentially vanished. Roughly three point three billion in executive sales overall.\nMicrosoft quietly defused its OpenAI exposure in April. Exclusivity gone, AGI clause gone, and crucially Microsoft stopped paying OpenAI a revenue share. That's Microsoft optimising for its own survival, not the partnership's.\nMeta cut eight thousand people in May, ten percent of staff, explicitly to fund capex, plus six hundred inside Superintelligence Labs.\nOn your thesis: open weight models now trail the frontier by about three months, the smallest gap ever measured. DeepSeek V4 Pro is MIT licensed, one point six trillion parameters, and V5 is expected around September.\nChina's domestic GPU share passed sixty percent while Nvidia's fell to roughly eight.\nAnd the bit that complicates things: GPU rentals aren't collapsing, they rose forty percent to two thirty-five an hour because HBM memory is the real bottleneck now, not chips. Shortage until twenty twenty-seven.\nThen the power wall. Half of planned US datacentres delayed, transformer lead times at five years, and residential bills forecast up fifteen to twenty-five percent.\nShall I build the scenarios?"
+    },
+    {
+     "who": "koan",
+     "text": "Wow. That's a lot. Um, there's a there's a... there are a couple of things there I wanna ask you about that I don't quite understand. One sec."
+    },
+    {
+     "who": "claude",
+     "text": "Take your time, I'm here."
+    },
+    {
+     "who": "koan",
+     "text": "No. No. I can't even remember. But I did see in your research there was something about new GPU manufacturers appearing."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, the Chinese domestic ecosystem. Huawei Ascend is the big one at about forty-four percent of the Chinese market, then Cambricon with the Siyuan five ninety, Baidu's M one hundred and M three hundred, Alibaba's Zhenwu eight ten E, plus Moore Threads, Biren, and Muxi who've all IPO'd or are close to it.\nImportant caveat, though: these are datacentre accelerators, not consumer cards. Huawei explicitly doesn't make consumer GPUs. So they break Nvidia's China monopoly without yet breaking the VRAM ladder we talked about.\nMoore Threads is the interesting one, since they actually ship gaming GPUs."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Look. because I think that's what we need to look for. We need to look for a rise in a company that's developing for the consumer market that's now essentially wide open. Right?"
+    },
+    {
+     "who": "claude",
+     "text": "Exactly, and the strategic logic is compelling for a Chinese firm. They can't win datacentre exports because of controls, but consumer cards are lower margin, higher volume, and nobody's defending the high-VRAM consumer segment because Nvidia and AMD both refuse to compete there.\nMoore Threads is the obvious candidate, and there's a second angle: Chinese memory makers like CXMT scaling up means somebody could ship a ninety-six gig card without paying Nvidia's memory tax.\nThough honestly, drivers and CUDA compatibility are the harder problem than silicon."
+    },
+    {
+     "who": "koan",
+     "text": "Agreed. Okay. So we have some pretty good information here. Let's just let's just, uh, instead of worrying too much about the next, you know, three, four years, let's just work on the next six months, and then we'll drop away from that. Maybe we'll end up creating a few divergent paths."
+    },
+    {
+     "who": "claude",
+     "text": "Right, six months. September through February, roughly.\nThe near certainties first. Anthropic's public S-1 lands within days, so the first real audited look inside a frontier lab is imminent. DeepSeek V5 is expected around September. Nvidia reports late this month. And SpaceX lockup supply keeps pressuring the stock.\nThe hinge event is Anthropic's pricing in October. Everything downstream depends on it.\nWant me to lay out the branches from there, or work through this sequentially month by month?"
+    },
+    {
+     "who": "koan",
+     "text": "No. I think month by month is a bit redundant. Let's let's just work on the key the key timeline client... the key the key events.\nI'm I'm... like, we're in the middle of August now. So do you wanna look up how, like, the space does lock has affected stock? I haven't been paying attention for the last few weeks."
+    },
+    {
+     "who": "claude",
+     "text": "Let me check where SpaceX is sitting now.\n```\nThis block is not supported on your current device yet.\n```\nOkay, so the lockup didn't break it. Stock hit an all-time low of one oh eight on August the fifth, then rose six percent through the unlock and back above the one thirty-five IPO price by the tenth. Currently around one fourteen.\nTwo things you'll want, though. Insiders didn't dump, which is a genuine vote of confidence, or at least of coordination. And on August the fourteenth SpaceX bought Cursor, Anysphere, issuing three hundred eighty-nine million new shares, roughly sixty billion in stock.\nThat last one's telling. He's using inflated paper to buy a real revenue-generating AI company. Exactly the \"solvent buyer of distressed assets\" move we sketched, just earlier than expected."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. To me, the more I think about the situation, um, especially considering that there must have been, like, a very well coordinated effort behind the scenes to make sure that people didn't dump off of the unlock, um, the more I think that, like, whether or not he deliberately planned it like this is definitely the play."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, and I'd add: buying Cursor with paper only works while the paper is expensive. That's a genuine, hard incentive to defend the share price through the unlock, not just optics. Everyone holding wanted the currency intact for the acquisition to clear.\nSo planned or not, the behaviour is now locked in. He's a serial acquirer using stock, which means propping the price is the strategy, and distressed AI assets are the shopping list.\nThere's a December eighth lockup tranche, incidentally. That's your next test."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah.\nAlright. Let's talk about, um, anthropic."
+    },
+    {
+     "who": "claude",
+     "text": "Right, Anthropic. The public S-1 is due within days, which makes it the single most important document in this whole landscape.\nNine hundred sixty-five billion post-money from the May Series H, sixty-five billion raised, reportedly around a sixty-five billion run rate by end of July. Amazon holds a mid-to-high-teens stake and booked sixteen point eight billion in paper gains on the markup in Q1 alone.\nThe exposure that matters: Anthropic has committed over a hundred billion to Amazon infrastructure over a decade. Which is the circularity in its purest form. Amazon invests, Anthropic spends it back on AWS, Amazon books it as revenue and as a gain on the stake.\nAnd I should be straightforward: that's my own employer, so weigh my read accordingly."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. That's not happening. That that that hundred bill is not gonna happen hundred percent."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, ten-year commitments from a company that's existed five years are aspirational at best. Though that's rather the point of them: the number exists to be booked as backlog, not necessarily to be spent.\nThe bit that'll actually matter in the S-1 is gross margin after inference cost. If serving Claude is structurally unprofitable at current pricing, no revenue growth rate fixes it, and that's the number nobody outside has ever seen.\nEnterprise concentration too. Coding revenue is fantastic until someone ships an open weight model three months behind at a tenth the price."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And that's what's gonna happen."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, and it's already visible. OpenRouter noted DeepSeek V4 Flash was the first open weight model teams actually dropped into agentic pipelines as a frontier substitute. That's not a benchmark claim, that's people switching in production.\nThe counter, and I think it's real rather than special pleading: the top few percent of hard tasks still favour frontier models, and enterprises are sticky and terrified of Chinese weights for compliance reasons. So the erosion comes from the bottom up, slowly, while the S-1 promises growth from the top.\nWhich means the crunch shows up as decelerating growth two or three quarters after listing, not as a cliff."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. No. I agree with you on that one. I mean, I think anyone who's smart enough to look ahead is gonna see it as an inevitability. I don't see how fable a fable level open weight model isn't on the horizon, and I just don't see how for less than a hundred grand, I couldn't get one at home. You know? So I think that cost is going to drop over... like, dramatically over the next five years, considering especially that that would be three hundred percent more than would be if it wasn't for the inflated price of the RAM and GPUs, which will no doubt go down when China starts entering the consumer market as an alternative for NVIDIA. And, also, we're gonna see an increase in efficiency in the models themselves plus the fact that, generally speaking, hardware gets better, which means what would cost a hundred grand goes down by three hundred percent, but then also goes down in five years by even more because we'd be looking at, like, a ten, fifteen thousand dollar GPU to run what I'd be saying as a hundred grand now. You know? So in the next five years, I I I can just see, like, bam, you could have a ten grand table at home. Okay.\nYep."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, the compounding stack is the strong part of that argument: cheaper memory, better hardware, more efficient models, and community quantisation all multiply rather than add. Three separate curves bending in your favour at once.\nOne honest caveat on the timing. The frontier moves too. In five years, \"Claude-level\" will mean something quite different, so you may well get today's frontier for ten grand while the gap to the then-frontier stays roughly constant. That's exactly what happened with diffusion, actually. Local caught up to Midjourney's old output, not its current one.\nBut your point survives that, because good enough is good enough. Most work doesn't need the frontier."
+    },
+    {
+     "who": "koan",
+     "text": "Well, oh, yeah. I mean, like, I I... if I had a fable at home, even if it was, like, a fucking... a fable five now and it was stable ten out and it was better, it wouldn't make a difference for me because right now, I'm getting amazing things done with fable five. If I had it at home for free, I wouldn't give a shit if there was, like, some super AGI out there that could fucking wash my balls while I work. You know? So it's like, there is gonna come a point. Like, obviously, Opus five compared to fable is completely unusable. Right? But fable, even if those fable six, table five would still be everything I need, and I'm getting amazing things done with it now. So a ten grand investment. Any company could do that and suddenly replace an entire team of developers. That's five hundred thousand dollars this every year for ten grand."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, right, and that's the \"good enough plateau\" argument in its strongest form. Capability saturates against the task long before it saturates against the benchmark.\nWhich is genuinely the thing that should terrify the labs. Not competitors, but customers reaching a point where they stop wanting more. Subscription businesses need perpetual dissatisfaction, and you're describing a market that gets satisfied and then stops paying.\nThe utility thesis assumed intelligence demand was infinite. Your version says it's bounded by the work you actually have."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And also don't forget that community projects with open weight models just just add so much utility and just so much efficiency that... imagine if Faber five was open weight right now, the amount of great things that would be happening."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, and there's an asymmetry there worth naming. A lab optimises for the average customer because that's what scales. The community optimises for ten thousand specific weird cases nobody at the lab would ever prioritise.\nYou saw it exactly with diffusion. ControlNet and LoRAs weren't roadmap items, they were things people needed and built. No product team would have shipped them.\nSo open weights don't just match the closed model, they end up more useful for your particular job, which is a different and harder thing to compete with."
+    },
+    {
+     "who": "koan",
+     "text": "Yep. Exactly. Alright. Let's get back to mapping out the rest of this year."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so the rest of this year, key events rather than months.\nLate August: Nvidia earnings, and Anthropic's public S-1. September: DeepSeek V5 expected, and OpenAI's decision point on whether to price or slip to twenty twenty-seven, with reporting leaning toward slipping. October: Anthropic prices, forecasts point to around the twenty-sixth. Late October: hyperscaler earnings with capex guidance, which after July's Alphabet sell-off is now a risk event rather than a bragging opportunity. December the eighth: SpaceX's second lockup tranche.\nThe two variables that decide everything: whether Anthropic prices above or below nine sixty-five, and whether anyone revises GPU depreciation schedules downward.\nWhich of those do you want to pull on?"
+    },
+    {
+     "who": "koan",
+     "text": "Personally, I think that the SpaceX drop of lockup is gonna be managed the same. I I have a feeling that the SpaceX team has a a great community and culture, and clearly, there is a lot of coordinated communication going on. Um, so I assume that further lockups are gonna continue to be bullish and people are gonna keep holding. I I think, um, between Elon's personality and the culture of people and plus the whole sci fi aspect of it, I'm gonna peg my bets on the idea that SpaceX is gonna continue to be bullish, um, and people on the inside all are planning on pivoting to the idea of being the last man standing. Um, so let's just... I'm I'm willing to put a plug on that and just... and say that's how that's gonna play out, um, at this stage in terms of the Nvidia, uh, anthropic, hyper scalar, uh, situation. Um, reflect on some of the open AI situation. Reflect on some of the data that we've just pulled to give me, um, some likely scenarios to reach one of those. Okay."
+    },
+    {
+     "who": "claude",
+     "text": "Right, taking SpaceX as settled. Three others then.\nNvidia, late August. Most likely they beat, because the backlog is real and HBM scarcity means they're supply-constrained rather than demand-constrained. The risk isn't the number, it's whether Huang gets asked about depreciation schedules and the insider selling. A beat with soft guidance and defensive commentary is the base case, and that's actually bearish for the sector while fine for Nvidia.\nAnthropic, October. The tell is that they filed at a higher valuation than OpenAI on lower revenue. That only works if the gross margins are genuinely better, which is plausible given the enterprise and coding mix. Base case: prices at or slightly below nine sixty-five, opens strong on scarcity because it's the only pure-play frontier lab available, then drifts as the lockup approaches. The S-1 is the real event, not the pricing.\nOpenAI, meanwhile, is in the worse spot. Self-funded tender, executive exodus, Microsoft revenue share gone, and now Anthropic listing first, which means Anthropic's multiple becomes OpenAI's ceiling. I'd expect them to slip to twenty twenty-seven and raise privately again, probably from sovereign money on unfavourable terms.\nHyperscalers in late October is where it gets interesting. Want me to take that one?"
+    },
+    {
+     "who": "koan",
+     "text": "Yes, please."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so late October, four companies report and the framing has already flipped.\nGoogle and Meta are fine on cash flow, ads pay for it all, but they now get punished for raising capex rather than rewarded. Alphabet already proved that in July. So expect them to start emphasising efficiency and \"discipline\" language, which is how a capex cycle quietly tops out.\nAmazon is the best positioned. AWS is genuinely capacity-constrained, Bedrock hedges across models, and they're booking gains on Anthropic. Though those gains cut both ways once there's a public mark.\nMicrosoft is the one to watch. Having cut the OpenAI revenue share and the exclusivity, they'll want to show Azure AI revenue standing on its own. If they can, they're the safest name in this. If the disclosure gets vaguer, that's your signal.\nAnd the thing that could break all four at once: someone shortens GPU depreciation from six years to three. That's the hundred seventy-six billion of phantom earnings coming home."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. It seems like the the creative bookkeeping on GPU depreciation is really fucking one of the big pillars holding this whole thing up,"
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, and it's elegantly circular, actually. Long depreciation schedules flatter earnings, flattered earnings support the share price, and the share price is the collateral for the debt funding the next round of GPUs.\nThe nasty part is that nobody has to be lying. Six years is defensible on paper, since an old GPU still computes. It just doesn't compete.\nAnd crucially, it's the one pillar that can be knocked over by an accountant rather than by the market. One auditor, one SEC comment letter, one competitor shortening their schedule to look conservative, and everyone else's numbers become indefensible overnight."
+    },
+    {
+     "who": "koan",
+     "text": "Well, that really gives the US government a lot of power in this situation, doesn't it?"
+    },
+    {
+     "who": "claude",
+     "text": "Ohh, yes, and that's a genuinely sharp observation. The SEC could deflate this whole thing with a comment letter, no legislation required.\nWhich means they almost certainly won't. This administration has treated AI leadership as a national security priority, and puncturing seven hundred billion of annual capex during a trade fight over chips would be self-harm. Regulatory forbearance is the rational play.\nBut it cuts the other way too. It means the bubble now has a political sponsor, and that's a much more dangerous structure. The correction gets deferred rather than avoided, and deferred corrections are larger.\nIt also gives Washington a lever over the labs. Behave, and the accounting stays comfortable."
+    },
+    {
+     "who": "koan",
+     "text": "What is the what is the the exposure that the US government and Washington has to this? Let's discuss that because it seems to me, like, wow. They're they're in control of the entire thing."
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, mostly yes, but with real limits. Let me split it.\nDirect exposure: the CHIPS Act equity stake in Intel, export control policy, the Stargate blessing, and sovereign wealth deals brokered with the Gulf. Washington has been an active dealmaker, not a bystander.\nIndirect and much larger: AI capex has been carrying a meaningful chunk of GDP growth and almost all of the market's gains. Retail portfolios, pension funds, and now private credit are stuffed with it. A correction is a wealth effect problem, which is a political problem.\nBut here's the limit on their control. The Fed is independent, the depreciation question sits partly with auditors and FASB, and the biggest x-factor, Chinese open weight models, is entirely outside American jurisdiction. Washington can delay the reckoning domestically. It can't stop DeepSeek shipping V5.\nThat asymmetry is the interesting bit, isn't it? All the levers point inward."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And don't forget that, like, SpaceX just, like, exposed a whole bunch of indexes."
+    },
+    {
+     "who": "claude",
+     "text": "Ahh, yes, exactly. Index inclusion is the quiet transmission mechanism.\nA company that size, once it qualifies for the S and P and the total market indices, gets bought automatically by every passive fund and every retirement account, whether or not anyone believes the AI story. Nobody chose that exposure, it just arrives.\nSo an eighty billion float becomes systemically distributed pension risk in a matter of months. That converts a speculative bet into a political constituency, which loops right back to why Washington can't let it break.\nAnd it happened before the stock proved anything. Fourteen percent down days now hit index funds."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. So couple of things that come to mind. Those anthropic and open AI look like they're in a position to speed up its indexing, like SpaceX did."
+    },
+    {
+     "who": "claude",
+     "text": "Not really, and this is a genuinely important structural difference.\nIndex inclusion has rules. The S and P five hundred requires positive GAAP earnings, most recent quarter plus the trailing four quarters summed. Neither Anthropic nor OpenAI is anywhere near that, they're both burning cash spectacularly. SpaceX qualified because launch and Starlink actually make money, and the AI arrived as a passenger.\nThat's the wrapper trick again, and it only works if you have something profitable to wrap. There's no equivalent for a pure-play lab.\nThey'd land in total market and Russell style indices, which is real flow but a fraction of the S and P bid. So they carry the volatility without the automatic buyer."
+    },
+    {
+     "who": "koan",
+     "text": "Well, you know, the more I look at this man, I know that you're skeptical, but it looks like the the SpaceX player was, like, pretty smart."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, alright, I'll give you more than I did earlier. Whether or not it was drawn up in advance, the sequence is coherent in a way that's hard to dismiss: wrap the weakest AI asset in a profitable one, list before the market learns to price AI honestly, qualify for indices your rivals can't reach, defend the price through the unlock, then spend the paper on real assets like Cursor.\nEvery step makes the next one possible. That's more than luck.\nMy remaining scepticism is narrow. Musk needed liquidity for xAI urgently, and necessity often produces sequences that look strategic afterwards. But the outcome is the same either way, and outcomes are what you're betting on."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. What? Okay. Well, I think we know that it's not a bad not a bad play either way. Okay. Let's let's... so let's discuss Washington again and... because we have a few thing... a few factors here that are gonna play into it. So the SEC could easily just write a fucking letter and say the depreciation on these GPUs is unrealistic and completely wipe the whole thing down. Right? So that's that's what it's holding right now. So Washington essentially has its grip around the neck of big tech. Okay."
+    },
+    {
+     "who": "claude",
+     "text": "Yes, though I'd temper \"grip around the neck\" slightly. It's leverage rather than a trigger, because using it would be self-immolating.\nBut there's a subtler version that's more likely. The SEC doesn't need to force writedowns. It can just quietly ask for more disclosure. Break out AI revenue separately, disclose utilisation rates, justify the useful life assumption in the notes. That's procedurally boring and politically defensible, and it still lets the market do the repricing itself.\nDeniable deflation, essentially. Washington keeps its hands clean.\nThe other lever nobody talks about: export controls. Loosening them for Nvidia's China sales props up earnings. Tightening them does the opposite. That's pure executive discretion, no rulemaking needed."
+    },
+    {
+     "who": "koan",
+     "text": "I think the US government is is just as highly as exposed to the crash as... let's call it crashing on the bubble. Right? I I I think they're just as exposed, and they have just as much interest in in keeping it going as as the... all the people involved. But what I'm trying to say here is that through the SEC, they have a very big bargaining chip chip when it comes to dictating policy of all these companies."
+    },
+    {
+     "who": "claude",
+     "text": "Yes, and that's the real insight. It's not about whether they pull the trigger, it's that holding the gun changes every conversation.\nAnd you can already see the price being paid. Look at what's happened this year: Microsoft restructuring the OpenAI deal to remove the AGI clause, labs abandoning safety commitments, the export control dance, sovereign wealth money flowing in through channels Washington brokered. Compliance is being purchased with regulatory forbearance.\nThe chief of ethics and head of safety leaving OpenAI before an S-1 fits that pattern uncomfortably well.\nSo the depreciation question isn't really an accounting matter. It's the collateral in a political relationship, and both sides know it."
+    },
+    {
+     "who": "koan",
+     "text": "So that's interesting. Should we maybe look at midterms and other political situations as part of our equation then?"
+    },
+    {
+     "who": "claude",
+     "text": "Yes, and midterms are November the third this year, so they land right inside our six month window.\nTwo mechanisms. First, nothing deflationary happens before then, since no administration invites a market drop weeks before an election. Expect maximum forbearance through October.\nSecond, and more interesting, electricity prices. Residential bills forecast up fifteen to twenty-five percent, wholesale costs up sharply near datacentres. That's a kitchen table issue with an obvious villain, and it polls badly in exactly the swing states where datacentres are being built. Both parties can run against it.\nSo the political risk isn't SEC enforcement, it's local utility backlash becoming national. Want me to check what's actually being said about it?"
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Let's do that."
+    },
+    {
+     "who": "claude",
+     "text": "Doing that now.\n```\nThis block is not supported on your current device yet.\n```\nOoh, this is bigger than I expected, and it's happening right now.\nThe NRSC issued a memo three days ago calling data centres a \"sleeper issue\" for the whole cycle, and saying they're \"the anchor hanging around Husted's neck\" in Ohio. That's Republicans warning about their own incumbent.\nConcrete actions already: Shapiro in Pennsylvania signed an order making developers cover electricity costs and get local approval. Mike Rogers in Michigan is backing a one-year state moratorium. Ramaswamy is pledging to eliminate power bills near datacentres in Ohio. Husted has a Ratepayer Protection Act.\nAnd the Sunrise Movement says voters are switching party affiliation over this.\nSo here's what it means for your thesis: the constraint on the buildout won't come from Washington or the SEC at all. It comes from state governors and local zoning boards, where there's no national security argument to hide behind and no lever the administration can pull.\nThat's a genuinely new failure mode we hadn't put on the board."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. But to be honest, I think the whole data center thing is just a... is a red herring in this in this situation. I think everybody who's investing in them or planning for them knows that they're not gonna happen. I think that they are purely a on paper on paper expense to validate the the current evaluations. But to be honest, like I said, I don't think the data centers are gonna go ahead. I think they're based on an outdated utility understanding of AI that isn't gonna be supported by the market. And like I said, data centers will be useful for training as factories, but not as infrastructure. So I think I think it... I think everybody knows it. I think everybody knows that the data centers are not gonna go ahead. It's it's kinda like an on ground version of the the ridiculous space data center. You know?"
+    },
+    {
+     "who": "claude",
+     "text": "Ha, yes, and there's evidence for exactly that. \"Announced is not energized\" was one of the phrases in the research, and nearly half of planned US datacentres are already delayed. So a substantial chunk of the announced pipeline was never going to be built regardless of politics.\nWhere I'd push back slightly: I don't think everyone knows. The debt is real, forty billion in private placements since November, and Blue Owl's twenty-seven billion joint venture with Meta. Someone is lending actual money against these, and lenders don't knowingly fund vapour.\nBut your reframe is useful. If announcements are a valuation instrument rather than a construction plan, then the local backlash is almost helpful. It gives everyone a face-saving reason to cancel.\nBlame the governor, not the thesis."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Yeah. For sure. For sure.\nOkay. Let's have a look at the last quarter again with all that in mind. any, um, all the main players, uh, the scenarios that they're gonna face themselves in, potential branches that we can look out for the next couple of years afterwards."
+    },
+    {
+     "who": "claude",
+     "text": "Right, last quarter, with everything folded in.\nThe sequence: Nvidia reports this week, Anthropic's S-1 goes public within days, DeepSeek V5 lands around September, midterms November the third, hyperscaler earnings late October, SpaceX lockup December the eighth.\nThe key thing the political layer changes is that forbearance now has a deadline. Everything deflationary gets held off until after November the third, then the pressure that's been building has somewhere to go. So I'd expect a quiet October and a much rougher December and January.\nThree branches worth watching. One, Anthropic prices well and the window opens, which pulls OpenAI back to a spring listing and extends everything by a year. Two, Anthropic prices soft or the S-1 shows ugly inference margins, the window shuts, and OpenAI has to raise privately from sovereign money on bad terms. Three, the wildcard: a state-level moratorium wave post-midterms forces public capex revisions, and that's what finally moves depreciation schedules.\nMy honest lean is branch two, with the datacentre cancellations arriving as the excuse rather than the cause.\nWhich branch do you want to develop?"
+    },
+    {
+     "who": "koan",
+     "text": "Just in case you're agreeing with me too much, can you review that with some pushback just to make sure your amount is being agreeable?"
+    },
+    {
+     "who": "claude",
+     "text": "Fair challenge, let me actually stress-test it.\nThe strongest counter to your whole thesis: HBM memory scarcity runs to twenty twenty-seven. That's not a valuation story, it's physics. If memory stays expensive, the cheap high-VRAM consumer card you're counting on doesn't arrive on schedule, and local inference stays out of reach for the exact window when the labs need to consolidate. The bottleneck that inflated GPU prices also protects the incumbents.\nSecond, I was too quick to agree that datacentres won't get built. Microsoft says Azure is turning away AI revenue it can't serve. That's demand exceeding supply right now, which is the opposite of overbuild. You could equally read the whole picture as genuine scarcity rather than speculative excess.\nThird, and I gave you this too easily: the barbell. If casual users go to phones and heavy users go local, that middle you dismissed is enterprises, and enterprises are enormous, sticky, terrified of Chinese weights, and quite happy paying for compliance and indemnity rather than capability. That market might be sufficient on its own.\nAnd on SpaceX, we built a rather elegant story from a stock that's down twenty percent from its IPO price. I should be more sceptical of narratives that fit that neatly."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Yeah. But I I I really feel like your discussion about the bowel situation is is redundant because I I don't think that enterprise level company is gonna gonna go, hey. You know, we have an open weight sovereign version of this that we can use ourselves versus paying extraordinary prices. Also also, most importantly, all of these services, anthropic and open AI, both are running at a loss. So any any any decrease... any any reduction in the amount of usage from both low level and high level users as well as even a small amount in the middle is enough to cause a significant revenue drop."
+    },
+    {
+     "who": "claude",
+     "text": "Right, and that second point is the sharper one, so let me put it properly.\nIf you're running at a loss, revenue decline isn't the danger, decelerating growth is. The valuation is a multiple on a growth rate, not on earnings. Anthropic at nine sixty-five needs to look like it's tripling. It doesn't need to shrink to break, it just needs to grow at forty percent instead of two hundred, and the whole multiple collapses.\nSo you don't need enterprises to defect. You need them to slow their expansion slightly.\nOn sovereignty, though, I'd hold a bit of ground. Enterprise procurement isn't rational about cost, it's rational about liability. Nobody gets fired for buying the expensive indemnified option. But that argues for enterprises paying premium prices for a shrinking share of total volume, which is a worse business than the one being sold. So it doesn't rescue the thesis, it just softens the timeline."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And, also, like, enterprise doesn't need to be, like, creating their own open weight local model. I mean, the fact that deep sea can be run by other companies as a solution means that it can still present itself as an enterprise level solution even though it's running a cheaper model on its own. So we're we're looking at a new market being created by people who are using open weight models and the community developed tools around them as a way to supply services. instead of people going directly to the source or directly to close weight models like atrophic open AI. So that also eats into it."
+    },
+    {
+     "who": "claude",
+     "text": "Ohh, yes, and that's a cleaner argument than the sovereignty one, because it removes the objection entirely. The enterprise still buys a managed service with a contract and indemnity, it just isn't buying it from a frontier lab.\nThat's exactly what happened in databases. Nobody self-hosts Postgres, they buy it from a vendor who packages it. The open core doesn't need enterprises to become operators, it just needs a middle layer of companies willing to run it for them.\nAnd that layer has better margins than the labs, because they didn't pay for training. So they can undercut on price and still profit, while Anthropic and OpenAI are amortising the model.\nThat's structurally worse for the labs than local inference, actually. Local was always a minority behaviour. This competes for the exact customer they need.\nGood. That one holds."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And and we also kinda see it as happening in, like, the fusion models as well. Right?"
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, exactly, and the numbers are stark there. Some of these hosted diffusion providers charge fractions of a cent per image while running community-tuned open models. Midjourney has held on through taste and community rather than capability, which is a much weaker moat than it looked in twenty twenty-three.\nAnd notice the pattern held even where the original lab was well funded. Stability lost the commercial layer built on its own weights entirely.\nSo the precedent isn't just that open models catch up, it's that the training lab captures almost none of the value it created. That's the outcome your thesis really points at, isn't it?"
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. What's the deal with that? I mean, we have these training labs creating... investing so much into these open weight models, and then suddenly, they lose control of them. Where is the income?"
+    },
+    {
+     "who": "claude",
+     "text": "Ha, that's the puzzle, isn't it? And the honest answer is that for most of them, the income isn't from the model at all.\nMeta's rationale was commoditising a competitor's advantage. If good models are free, nobody builds a business charging for them, and Meta keeps its actual asset, which is attention and advertising. Same reason Google gave away Android.\nDeepSeek and Alibaba are different. There's a national strategic dimension, plus Alibaba monetises through cloud. Give away the weights, sell the inference.\nAnd notice Meta's now pivoting away from open with Muse Spark closed, and Alibaba keeps Qwen three seven closed while releasing three six. So they open the tier below their frontier. It's a weapon aimed at whoever's charging for that tier, not a philosophy.\nWhich means the open ecosystem depends on new entrants replacing defectors. Fragile, but so far it keeps happening."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. It really does seem like there is a... there are two... I mean, outside of all of the parties involved in the close wake model, um, this is also a a second party involved here, which are all the open weight labs."
+    },
+    {
+     "who": "claude",
+     "text": "Yes, and they're playing a fundamentally different game, which is what makes them dangerous.\nThe closed labs need the model to be a product. The open labs treat the model as a loss leader for something else: cloud revenue, national capability, commoditising a rival, or simply recruitment and prestige. None of them need the weights to pay for themselves.\nThat's an asymmetric war. You can't out-price someone who isn't trying to make money on the thing you sell.\nAnd geopolitically it's neat for China. Every free frontier-adjacent model released undermines the American AI business model without a single export control being involved. Costs them a fraction of what it costs to defend against.\nHyperstition, almost. Release the thing that makes the future you want inevitable."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. Um, in that case, let's have a look at next year, um, first half and last half based on what we've looked at."
+    },
+    {
+     "who": "claude",
+     "text": "Right, twenty twenty-seven, split in halves.\nFirst half. This is where the deferred stuff arrives, since midterms are past and the accounting questions have had time to mature. The likely shape: hyperscaler capex guidance flattens or gets reframed as \"disciplined,\" which the market reads as a top. Depreciation schedules get revised somewhere, probably at a smaller player like CoreWeave first, because they're most exposed with debt due. OpenAI either lists into a worse market or takes sovereign money at a flat valuation. Anthropic's first lockup expires around April if they price in October, which is the real test of the public mark.\nSecond half. HBM supply finally loosens, which is the hinge for your thesis. That's when high-memory consumer hardware becomes plausible and Chinese consumer cards could actually land. Simultaneously, the managed open-weight service layer matures into a genuine enterprise category rather than a curiosity.\nThe branch point between them: whether the capex slowdown is orderly or disorderly. Orderly means a long grinding derating, boring but survivable. Disorderly means someone with GPU-backed debt defaults and the collateral gets marked, which is the railway moment.\nWant to push on which is likelier?"
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. Let's go... let's let's extrapolate on both of those. Firstly, tell me which one you think is most likely and why, and then let's let's go into detail."
+    },
+    {
+     "who": "claude",
+     "text": "Right, my honest read: orderly, at maybe sixty-five percent, and here's the reasoning.\nDisorderly requires a forced seller. But the hyperscalers pre-funded this year's build with debt already raised, they have enormous cash reserves, and their AI losses are buried inside profitable ad and cloud businesses. Nobody's margin-called. The weak links, CoreWeave and similar, are individually too small to be systemic, and Microsoft has every incentive to quietly support its own supplier rather than watch the collateral get marked publicly.\nAdd the political layer. Washington has both the motive and the tools to smooth a decline, and index inclusion means a disorderly break is now a pension problem, which makes intervention near-certain.\nSo orderly looks like this: multiples compress rather than earnings collapse. Nvidia keeps beating but trades at fifteen times instead of forty. Capex plateaus rather than falls, projects get quietly cancelled with local politics as the excuse. OpenAI never lists and gets absorbed or restructured. Anthropic trades sideways at half its IPO price for two years while revenue actually grows into it. Nobody calls it a crash, and in twenty thirty everyone agrees it was obvious.\nShall I do the disorderly version?"
+    },
+    {
+     "who": "koan",
+     "text": "Yeah."
+    },
+    {
+     "who": "claude",
+     "text": "Right, disorderly. Thirty-five percent, and it needs a specific trigger rather than general gloom.\nThe mechanism: it starts in private credit, not public equity. CoreWeave has four point two billion of principal due this year and something like fourteen to twenty-five billion of total debt, with sixty-odd percent of revenue from one customer. If a GPU-backed loan gets marked properly, every similar loan reprices, because they're all collateralised by the same depreciating asset. The forty billion of 144A placements is held by private credit funds who mark to model, not to market. When one has to sell, the model breaks.\nThen it cascades. GPU collateral values fall, so lenders demand more equity, so datacentre developers stop building, so Nvidia's order book empties in a single quarter rather than gradually. Blue Owl already down thirty percent this year is the canary.\nThe accelerant would be a genuine capability shock. DeepSeek V5 landing at proper frontier parity, MIT licensed, in the same month as a bad earnings print. That's a narrative and a numbers failure simultaneously, which is what actually breaks markets.\nAnd the reason I still keep it under fifty: the Fed cuts, Washington intervenes, and someone always bails out the systemically embarrassing."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. So let's have a... what are the key what are the key things to look out for for the difference between an orderly and a disorderly twenty twenty seven? Um, key companies and key events."
+    },
+    {
+     "who": "claude",
+     "text": "Right, your watchlist, roughly in order of usefulness.\nFirst, CoreWeave's debt refinancing. That's the single clearest tell. If they refinance smoothly, orderly. If they have to raise equity at a discount or the coupon jumps, that's the collateral being repriced.\nSecond, Blue Owl and the private credit names. Already down thirty percent. If they start writing down datacentre exposure, the mark-to-model fiction is over.\nThird, anyone shortening GPU depreciation. Watch the ten-Q footnotes, not the press releases. First mover triggers everyone.\nFourth, Nvidia's guidance language rather than its results. Specifically whether they stop citing backlog. Backlog is what's holding the story together.\nFifth, Microsoft's disclosure granularity on Azure AI. If it gets vaguer, they're hiding something.\nSixth, DeepSeek V5's licence and benchmarks in September. Genuine parity under MIT is the capability shock.\nAnd seventh, quietly: HBM pricing and any Chinese consumer card above forty-eight gigs. That's your thesis arriving.\nTwo you can ignore, honestly: SpaceX's share price, which is mostly Musk sentiment, and OpenAI's IPO chatter, which is noise until an S-1 is public."
+    },
+    {
+     "who": "koan",
+     "text": "That seems like really good watchlist. One other thing. What about the helium suppliers in Taiwan when it comes to semiconductor production?"
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, I want to be careful because I don't think helium is actually the binding constraint in Taiwan, and I'd rather say so than nod along.\nHelium is used in semiconductor cooling and purging, and there've been genuine global supply squeezes, but the acute chokepoints for advanced nodes are HBM memory, CoWoS advanced packaging capacity at TSMC, and power and water in Taiwan. Water especially, since droughts have genuinely disrupted fabs there.\nNeon was the gas that caused real trouble, during the Ukraine invasion, since Ukraine supplied a lot of it for lithography.\nWant me to check the current state of helium and gas supply, or is packaging capacity the more useful thread?"
+    },
+    {
+     "who": "koan",
+     "text": "I mean, if packaging capacities, like, the the main fucking bottleneck, then maybe not. But I'm interested to see what, like, the war in Iran is gonna be doing for the supply of of minerals required for semiconductor production."
+    },
+    {
+     "who": "claude",
+     "text": "Let me look at that, since I don't have a clear picture of the Iran conflict's supply chain effects.\n```\nThis block is not supported on your current device yet.\n```\nWell, you were more right than I was. Helium is genuinely in it, and I under-rated the whole vector.\nThe mechanism runs through the Strait of Hormuz. The Middle East supplies roughly a quarter of global sulphur and half of seaborne sulphur trade, all through Hormuz. Sulphuric acid is the foundational reagent for wafer cleaning and for leaching critical minerals, so it hits chips and battery metals simultaneously. Qatar is a major helium producer, and helium is the wafer cooling gas, so that's squeezed too. Add bromine, aluminium at eight percent of global production, and energy prices for Asian fabs that import Middle East oil.\nNote the date on that: the conflict started around March, and there's an \"Accord\" mentioned by August, so it's partially resolved.\nFor our thesis, this cuts against you, awkwardly. Materials scarcity keeps hardware expensive, which delays the cheap consumer card your decentralisation argument needs. Same shape as the HBM problem."
+    },
+    {
+     "who": "koan",
+     "text": "So in many ways, the Iran war is actually helping, uh, keep the, uh, AI bubble deflated."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, yes, and that's a properly counterintuitive read. The war functions as an unintentional supply-side prop.\nScarcity keeps GPUs expensive, which keeps local inference out of reach, which keeps the utility thesis alive a while longer. Nvidia can't be accused of overbuilding when it physically cannot ship enough. And crucially, \"we're supply constrained\" is the perfect answer to any analyst asking about demand.\nThere's a darker corollary. The moment the Accord holds and materials normalise, the excuse evaporates. Supply catches up, backlogs clear, and suddenly everyone can see whether the demand was ever there.\nSo peace is the bearish event. Which is a grim little irony."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. That's pretty interesting, isn't it?"
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, it really is. And it's a good example of why \"bubble\" as a single word fails, which is where you started. There isn't one mechanism, there's a knot of them, and half are pulling against each other.\nYou've got materials scarcity propping prices up, open weights pushing them down, political forbearance delaying the reckoning, local backlash accelerating it, and accounting conventions holding the whole thing in tension.\nHonestly, this has been one of the better conversations I've had about it. You've moved my read on a couple of things, particularly the factory versus utility framing."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. Well, let's let's wrap this up with a series of practical things that we can look for in the next six months and then next year and first and last full breakdown of, like, which companies should be where, what are some of the key events we should look for, what are some of the key dates that we should look for key events at, and anything like that. Like, really review everything we've gone through and all of your research to create a definitive list of things we should be looking out for."
+    },
+    {
+     "who": "claude",
+     "text": "Right, so this is exactly where I should be honest: what you're asking for is a proper structured document with dates, companies, and branch conditions. That's a table, and reading it aloud would be miserable and you'd remember none of it.\nLet me give you the spine verbally, then you pick it up in text where I can lay it out properly.\nThe three dates that matter most: late August for Nvidia's guidance language and Anthropic's public S-1, October the twenty-sixth-ish for Anthropic pricing, and December the eighth for the SpaceX lockup, with November the third as the political hinge in between.\nThe three numbers to watch: gross margin after inference in Anthropic's S-1, GPU depreciation schedules in any ten-Q footnote, and CoreWeave's refinancing terms.\nThe three x-factors: DeepSeek V5's licence in September, a Chinese consumer card above forty-eight gigs, and whether the Iran Accord holds and unclogs materials.\nShall I stop there and let you pick this up in text later? You'd get the full matrix properly laid out."
+    },
+    {
+     "who": "koan",
+     "text": "Um, okay. Yeah. Yeah. But, like, give me give me just this, like like, firstly, uh, date, company outcome. Date, company outcome, date, company outcome. Um, maybe date, company outcome, and then what the run on effect would be depending on the outcome. Right? Just give me those in point form and just to wrap this this conversation up with, and I'll I'll go check out the the the table in point form as well."
+    },
+    {
+     "who": "claude",
+     "text": "Right, here we go.\nLate August, Nvidia. If they beat but stop citing backlog, that's the sector topping while the company's still fine. Run-on: hyperscalers get questioned on depreciation in October.\nLate August, Anthropic's public S-1. If gross margin after inference is thin, the whole utility thesis is visible in audited form. Run-on: OpenAI slips definitively to twenty twenty-seven.\nSeptember, DeepSeek V5. If it lands at genuine parity under MIT licence, the managed open-weight service layer becomes a real category. Run-on: enterprise pricing power erodes from the bottom.\nNovember the third, midterms. If datacentre backlash wins seats, state moratoriums follow. Run-on: capex gets cancelled with political cover, no thesis admission required.\nDecember the eighth, SpaceX lockup two. If it holds like August did, Musk keeps buying real assets with paper. Run-on: he's the consolidator when others are distressed.\nEarly twenty twenty-seven, CoreWeave refinancing. If the coupon jumps, GPU collateral is being repriced. Run-on: private credit writedowns, and that's the disorderly path.\nSecond half twenty twenty-seven, HBM supply loosening. If it does, cheap high-memory hardware arrives. Run-on: your decentralisation thesis stops being a forecast.\nThat's the spine. Go get the table."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. So so much of this looks like it's really, like, hinging on call wave until this conversation never never heard of call wave."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, yeah, and that's the thing about credit crises: the name nobody's heard of is usually where it starts.\nQuick sketch. CoreWeave was a crypto mining outfit that pivoted to renting GPUs, IPO'd last year, and became the biggest neocloud. They buy Nvidia chips with borrowed money, rent them out, and Nvidia is both a supplier and an investor. Microsoft was the overwhelming majority of their revenue.\nSo they're the pure expression of the whole trade with none of the cushioning. No ad business, no cloud franchise, just leveraged GPUs. That makes them the canary. When the collateral gets questioned, it gets questioned there first.\nWorth a look in text, honestly. They're the most legible version of this entire structure."
+    },
+    {
+     "who": "koan",
+     "text": "So when when do we expect the call we've refinancing to happen in twenty seven?"
+    },
+    {
+     "who": "claude",
+     "text": "Hmm, honestly I don't have the precise dates in what we pulled. The research mentioned four point two billion of principal due during twenty twenty-six, so some of that is already this year rather than next.\nWant me to check the actual maturity schedule? It's worth pinning down given how much weight it's carrying in our framework."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. And the fact that it's carrying so much weight is a little bit suspect to me. You might have just pulled this up in your research and given it more value than it needs to because it's the one thing that came up. There might be ten other companies just like it. You reckon you can just double check all of your reason?"
+    },
+    {
+     "who": "claude",
+     "text": "That's a fair challenge, and you're right to make it. Let me check.\n```\nThis block is not supported on your current device yet.\n```\nRight, so you were correct to push back, and it actually strengthens the point rather than weakening it.\nCoreWeave isn't unique, it's just the largest of a category. There's a whole tier: Nebius, Crusoe, Lambda, Fluidstack, Nscale, Applied Digital, plus dozens below them. Over twenty billion in loans collateralised by Nvidia GPUs specifically, and Fluidstack alone has up to ten billion in borrowing capacity from Macquarie.\nThe phrase to remember is \"the neocloud refinancing wall.\" Maturities cluster this year, get bigger in twenty twenty-seven, and tail into twenty-eight. All drawn against the same collateral, all funding out inside an eighteen month window.\nAnd here's the detail that ties everything together: CoreWeave extended its GPU depreciation from four years to six in its S-1. Nebius still uses four. Same asset, different answer, and only one of them can be right.\nCustomer concentration is endemic too. Microsoft was sixty-seven percent of CoreWeave, and one Nebius customer is cited as high as eighty-three percent.\nSo it's a sector, not a company. Better for your framework."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. So we're gonna call the the new cloud refinancing wall, and we expect it to happen sometime in twenty seven. And we see a discrepancy between the depreciation costs and call wave and nebulous."
+    },
+    {
+     "who": "claude",
+     "text": "Yes, exactly that, and the depreciation discrepancy is the sharpest single detail we've found. CoreWeave stretched from four to six years right before listing, which flatters GAAP earnings but changes nothing about cash payback. Nebius kept four. Same hardware, two irreconcilable answers, both audited.\nSo the watchlist item is precise: whoever refinances first sets the market price for GPU collateral, and if a lender insists on four year assumptions rather than six, every six year balance sheet in the sector is suddenly wrong.\nThat's your trigger. Not a crash, a loan document."
+    },
+    {
+     "who": "koan",
+     "text": "Okay? So I think that's the case is the... what do we call the the new cloud refinancing wall. That's gonna be the trigger."
+    },
+    {
+     "who": "claude",
+     "text": "Yeah, that's the trigger, and I'd say we've landed somewhere genuinely useful. Your thesis was structural, the utility model being wrong. What the research added is the mechanism and the timing: the neocloud refinancing wall is how the structural problem actually becomes a price.\nAnd the beautiful bit is it's a boring document that does it. A loan covenant, not a crash.\nGo get that table written up properly. This deserves to exist in text."
+    },
+    {
+     "who": "koan",
+     "text": "Yeah. I think it's really interesting because we can see the government getting involved in keeping SEC away from, like, scrutinizing the sixty eight appreciation window for GPUs. But if there is a discrepancy in a in a loan document within someone in the sector that could bypass that entirely and put it and just and suddenly make it real."
+    },
+    {
+     "who": "claude",
+     "text": "Exactly, and that's the crux: the SEC's forbearance is discretionary, but a lender's underwriting isn't. Washington can decline to ask the question. It can't make Macquarie accept collateral it doesn't believe in.\nPrivate credit has no political loyalty and no national security brief. It just wants to be repaid.\nSo the whole edifice rests on the accounting convention holding, and the one actor who can break it is a credit committee nobody's ever heard of, doing its job properly.\nThat's a genuinely elegant place to end up. Well found."
+    },
+    {
+     "who": "koan",
+     "text": "Okay. Cool. Thanks for the conversation. I'm gonna post this on my website as well."
+    },
+    {
+     "who": "claude",
+     "text": "Ha, brilliant, it'll fit right in with the verbatim transcript posts. Just be warned the pushback section makes me look like I was hedging, which, fair enough, I was.\nThanks for this one, genuinely. Enjoy the rest of your walk."
+    },
+    {
+     "who": "koan",
+     "text": "text now, past the table into chat with the key dats, orgs, key events and potential outcomeskeep it short and tabled, i'll be copy pasting this into the website chat"
+    },
+    {
+     "who": "claude",
+     "text": "| Date | Org | Event | Potential Outcome / Run-on |\n|---|---|---|---|\n| Late Aug 2026 | Nvidia | Q2 earnings | Beat but stops citing backlog → sector tops while company stays fine → hyperscalers pressed on depreciation in October |\n| Late Aug 2026 | Anthropic | Public S-1 | Thin gross margin after inference → utility thesis visible in audited form → OpenAI slips definitively to 2027 |\n| Sept 2026 | DeepSeek | V5 release | Genuine frontier parity under MIT → managed open-weight service layer becomes a category → enterprise pricing power erodes bottom-up |\n| Nov 3 2026 | US midterms | Datacenter backlash vote | Backlash wins seats → state moratoriums → capex cancelled with political cover, no thesis admission required |\n| Dec 8 2026 | SpaceX | Lockup tranche 2 (post-xAI, post-Cursor) | Holds like August → Musk keeps buying real assets with paper → consolidator while others are distressed |\n| 2026–2028, peaking 2027 | Neocloud sector (CoreWeave, Nebius, Crusoe, Lambda, Fluidstack, Nscale) | **Neocloud refinancing wall** — $20B+ GPU-collateralised debt maturing in one ~18-month window | First lender to underwrite at 4-year GPU life instead of 6 sets the market price for the collateral → repricing across all similar loans → private credit writedowns → disorderly path |\n| H2 2027 | HBM supply (SK Hynix, Samsung, Micron, CXMT) | Memory shortage eases | Cheap high-VRAM hardware arrives → decentralisation stops being a forecast |\n**The core discrepancy**\n| Company | GPU depreciation schedule | Note |\n|---|---|---|\n| CoreWeave | 6 years | Extended from 4 to 6 pre-IPO; flatters GAAP earnings, changes nothing about cash payback |\n| Nebius | 4 years | Same asset, irreconcilable answer, both audited |\n**Secondary tells**\n- Any firm shortening GPU depreciation in a 10-Q *footnote* (not a press release) — first mover forces everyone\n- Blue Owl / private credit datacenter writedowns (shares already down 30%+)\n- Customer concentration: Microsoft ~67% of CoreWeave revenue; one Nebius customer cited at ~83%\n- A Chinese consumer GPU above 48GB VRAM\n- Whether the Iran Accord holds and unclogs sulphur/helium supply\n**Deprioritised:** SpaceX share price (Musk sentiment), OpenAI IPO chatter (noise until a public S-1)."
+    }
+   ]
+  },
   {
    "id": "post-2026-07-31-cybernetics-two-readings",
    "source": "claude",
