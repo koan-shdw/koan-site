@@ -1,13 +1,13 @@
 {
- "generated": "2026-08-20T10:18:50.786Z",
+ "generated": "2026-08-25T04:56:34.762Z",
  "projects": [
   {
    "id": "sprite-dancer",
    "name": "sprite-dancer",
    "desc": "AI sprite generator. One character in, a full moveset out.",
    "url": "https://github.com/koan-shdw/sprite-dancer",
-   "tag": "v0.0.1",
-   "date": "2026-08-20T09:00:50Z",
+   "tag": "v0.0.2",
+   "date": "2026-08-25T04:04:20Z",
    "img": "media/tools/sprite-dancer.png"
   },
   {
