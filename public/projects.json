@@ -1,23 +1,23 @@
 {
- "generated": "2026-08-26T13:19:19.001Z",
+ "generated": "2026-08-27T09:55:25.233Z",
  "projects": [
-  {
-   "id": "sprite-dancer",
-   "name": "sprite-dancer",
-   "desc": "AI sprite generator. One character in, a full moveset out.",
-   "url": "https://github.com/koan-shdw/sprite-dancer",
-   "tag": "v0.0.3",
-   "date": "2026-08-26T12:15:05Z",
-   "img": "media/tools/sprite-dancer.png"
-  },
   {
    "id": "video-dancer",
    "name": "video-dancer",
    "desc": "Desktop AI video generation creative suite.",
    "url": "https://github.com/koan-shdw/video-dancer",
-   "tag": "v0.10.0",
-   "date": "2026-08-26T11:37:38Z",
+   "tag": "v0.12.0",
+   "date": "2026-08-27T09:00:24Z",
    "img": "media/tools/video-dancer.png"
+  },
+  {
+   "id": "sprite-dancer",
+   "name": "sprite-dancer",
+   "desc": "AI sprite generator. One character in, a full moveset out.",
+   "url": "https://github.com/koan-shdw/sprite-dancer",
+   "tag": "v0.1.0",
+   "date": "2026-08-27T08:59:35Z",
+   "img": "media/tools/sprite-dancer.png"
   },
   {
    "id": "KOAN-IMG",
