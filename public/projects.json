@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-15T18:15:11.502Z",
+ "generated": "2026-09-16T06:06:07.021Z",
  "projects": [
   {
-   "id": "4d-print",
-   "name": "4d-print",
-   "desc": "Open-source 4D Print: create, animate and finish sprites for games. Windows and macOS installers.",
-   "url": "https://github.com/koan-shdw/4d-print",
-   "tag": "v0.2.30",
-   "date": "2026-09-15T13:52:01Z",
-   "img": "https://opengraph.githubassets.com/1/koan-shdw/4d-print"
+   "id": "sprite-dancer-app",
+   "name": "sprite-dancer-app",
+   "desc": "AI sprite generator. One character in, a full moveset out.",
+   "url": "https://github.com/koan-shdw/sprite-dancer-app",
+   "tag": "v0.2.32",
+   "date": "2026-09-16T04:23:34Z",
+   "img": "media/tools/sprite-dancer-app.png"
   },
   {
    "id": "video-dancer",
