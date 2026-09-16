@@ -1,15 +1,6 @@
 {
- "generated": "2026-09-16T06:06:07.021Z",
+ "generated": "2026-09-16T17:04:03.489Z",
  "projects": [
-  {
-   "id": "sprite-dancer-app",
-   "name": "sprite-dancer-app",
-   "desc": "AI sprite generator. One character in, a full moveset out.",
-   "url": "https://github.com/koan-shdw/sprite-dancer-app",
-   "tag": "v0.2.32",
-   "date": "2026-09-16T04:23:34Z",
-   "img": "media/tools/sprite-dancer-app.png"
-  },
   {
    "id": "video-dancer",
    "name": "video-dancer",
