@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-08T16:33:39.367Z",
+ "generated": "2026-10-09T21:43:36.411Z",
  "projects": [
   {
    "id": "video-dancer",
    "name": "video-dancer",
    "desc": "Desktop AI video generation creative suite.",
    "url": "https://github.com/koan-shdw/video-dancer",
-   "tag": "v0.26.0",
-   "date": "2026-10-08T11:56:13Z",
+   "tag": "v0.27.0",
+   "date": "2026-10-09T17:42:34Z",
    "img": "media/tools/video-dancer.png"
   },
   {
