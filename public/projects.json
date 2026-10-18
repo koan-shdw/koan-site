@@ -1,13 +1,13 @@
 {
- "generated": "2026-10-16T07:15:47.870Z",
+ "generated": "2026-10-18T11:15:47.686Z",
  "projects": [
   {
    "id": "video-dancer",
    "name": "video-dancer",
    "desc": "Desktop AI video generation creative suite.",
    "url": "https://www.shdw.work",
-   "tag": "v0.29.0",
-   "date": "2026-10-16T05:10:55Z",
+   "tag": "v0.30.0",
+   "date": "2026-10-18T07:36:09Z",
    "img": "media/tools/video-dancer.png"
   },
   {
