@@ -1,14 +1,14 @@
 {
- "generated": "2026-10-22T07:39:49.163Z",
+ "generated": "2026-10-22T18:34:59.121Z",
  "projects": [
   {
-   "id": "koan-ansi",
-   "name": "koan-ansi",
-   "desc": "Small ANSI art generator. Image and video in, BBS art out.",
-   "url": "https://koan-shdw.github.io/koan-ansi/",
+   "id": "KOAN-ANSI",
+   "name": "KOAN-ANSI",
+   "desc": "Image & video to authentic BBS-scene ANSI art — CP437 blocks, DOS 16 colors, half-block trick, Ansimation (.ansim) format. CLI + zero-backend web tool.",
+   "url": "https://koan-shdw.github.io/KOAN-ANSI/",
    "tag": "v1.0.0",
    "date": "2026-08-02T08:11:17Z",
-   "img": "media/tools/koan-ansi.png"
+   "img": "https://opengraph.githubassets.com/1/koan-shdw/KOAN-ANSI"
   }
  ]
 }
