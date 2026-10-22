@@ -1,24 +1,6 @@
 {
- "generated": "2026-10-20T18:29:52.168Z",
+ "generated": "2026-10-22T07:39:49.163Z",
  "projects": [
-  {
-   "id": "sprite-dancer-source",
-   "name": "sprite-dancer-source",
-   "desc": "Sprite Dancer: create, animate and finish sprites for games. Built on Video Dancer. Free and open source, for Windows.",
-   "url": "https://www.shdw.work",
-   "tag": "v0.3.0",
-   "date": "2026-10-20T13:57:51Z",
-   "img": "https://opengraph.githubassets.com/1/koan-shdw/sprite-dancer-source"
-  },
-  {
-   "id": "video-dancer",
-   "name": "video-dancer",
-   "desc": "Desktop AI video generation creative suite.",
-   "url": "https://www.shdw.work",
-   "tag": "v0.30.0",
-   "date": "2026-10-18T07:36:09Z",
-   "img": "media/tools/video-dancer.png"
-  },
   {
    "id": "koan-ansi",
    "name": "koan-ansi",
